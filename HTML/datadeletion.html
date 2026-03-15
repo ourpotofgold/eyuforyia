@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request | Teq Vault</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .form-container {
+            padding-top: 120px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .deletion-card {
+            background: var(--glass);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        select, 
+        textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, 
+        select:focus, 
+        textarea:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Styling the dropdown arrow for dark mode */
+        select option {
+            background: var(--darker);
+            color: #fff;
+        }
+
+        .instruction-text {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">TEQ VAULT</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../HTML/story.html">Lore</a></li>
+            <li><a href="mailto:jude.nana.baffoe@gmail.com">Support</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero lore-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="game-title">DATA DELETION</h1>
+            <p class="subtitle">Quetiemals Account Management</p>
+        </div>
+    </header>
+
+    <main class="lore-section">
+        <div class="form-container">
+            <div class="deletion-card">
+                <p class="instruction-text">
+                    Use this form to request the removal of your data for <strong>Quetiemals: The Fight for Eyuforyia</strong>. We will process your request within 30 days.
+                </p>
+                
+                <form action="mailto:support@teqvault.com?subject=Quetiemals%20Data%20Deletion%20Request" method="post" enctype="text/plain">
+                    
+                    <div class="form-group">
+                        <label for="name">In-Game Username or Full Name</label>
+                        <input type="text" id="name" name="Name" required placeholder="e.g. PlayerOne">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Associated Email Address</label>
+                        <input type="email" id="email" name="Email" required placeholder="email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="request-type">Type of Request</label>
+                        <select id="request-type" name="RequestType">
+                            <option value="Full Account Deletion">Full Account Deletion</option>
+                            <option value="Remove Analytics Data">Remove Analytics/Ads Data Only</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Additional Comments (Optional)</label>
+                        <textarea id="reason" name="Comments" rows="4" placeholder="Let us know if there is anything specific..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-main btn-submit">Send Deletion Request</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo">TEQ VAULT</div>
+            <div class="social-links">
+                <a href="#">TWITTER</a>
+                <a href="#">DISCORD</a>
+            </div>
+            <p class="copyright">&copy; 2026 TEQ VAULT. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
