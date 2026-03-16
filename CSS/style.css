@@ -390,3 +390,126 @@ footer {
     
     .footer-links { flex-direction: column; gap: 10px; }
 }
+/* =========================================
+   FEEDBACK PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* Container and Card Layout */
+.feedback-container {
+    padding: 120px 10% 80px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.feedback-card {
+    background: var(--glass); /* Uses variable from core style.css */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--gold); /* Matches Quetiemals branding */
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Input Fields */
+input[type="text"], 
+select, 
+textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--purple);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Custom Sentiment Picker */
+.sentiment-options {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sentiment-btn {
+    cursor: pointer;
+    font-size: 2rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.sentiment-btn:hover {
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 10px var(--purple));
+}
+
+/* Navigation & Buttons */
+.btn-submit {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--purple);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Feedback link specific glow in Navbar */
+.nav-links a[href*="feedback.html"] {
+    color: var(--gold) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.nav-links a[href*="feedback.html"]:hover {
+    background: var(--gold);
+    color: var(--dark) !important;
+    box-shadow: 0 0 20px var(--gold);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .feedback-container {
+        padding: 100px 5% 40px;
+    }
+    .feedback-card {
+        padding: 25px;
+    }
+    .sentiment-btn {
+        font-size: 1.5rem;
+    }
+}
