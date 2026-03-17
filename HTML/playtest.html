@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playtest Enrollment | Quetiemals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">QUETIEMALS</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="characters.html">Guardians</a></li>
+                <li><a href="locations.html">World</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero lore-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="game-title">BETA ACCESS</h1>
+                <p class="subtitle">ENLIST IN THE EYUFORYIA RESISTANCE</p>
+            </div>
+        </section>
+
+        <section class="feedback-container">
+            <div class="feedback-card reveal">
+                <h2 class="section-heading" style="font-size: 1.5rem; margin-bottom: 1rem;">Join the Testing Array</h2>
+                <p style="color: #cbd5e1; margin-bottom: 2rem;">Help us calibrate the resistance. Enlist now for closed alpha and open beta testing phases.</p>
+                
+                <form class="silent-form" action="https://script.google.com/macros/s/AKfycbzRBUGpsvXtfUDbu5Qa3jF5p_Trh9n5VQWIAjzLpn_5gbGn0eZFAsLr6W9qUdr1Se4_/exec" method="POST">
+                    
+                    <input type="hidden" name="_subject" value="New Playtest Enlistment!">
+
+                    <div class="form-group">
+                        <label for="name">Guardian Callsign</label>
+                        <input type="text" id="name" name="Name" required placeholder="Enter your in-game name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Communication Channel (Email)</label>
+                        <input type="email" id="email" name="Email" required placeholder="guardian@email.com" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phase">Deployment Phase</label>
+                        <select id="phase" name="Phase">
+                            <option value="Closed Alpha">Closed Alpha (Technical Test)</option>
+                            <option value="Open Beta">Open Beta (Scaling Test)</option>
+                            <option value="Full Release Updates">Post-Launch Intelligence</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="platform">Optimization Target (Platform)</label>
+                        <select id="platform" name="Platform">
+                            <option value="Android">Android</option>
+                            <option value="iOS">iOS / Apple</option>
+                            <option value="PC">PC / Emulator</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Prior Match-3 Experience?</label>
+                        <textarea id="experience" name="Experience" rows="3" placeholder="Tell us about other RPGs you've mastered..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-main btn-submit">TRANSMIT ENLISTMENT</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#">FB</a> / <a href="#">IG</a> / <a href="#">YT</a>
+            </div>
+            <button class="btn-sub" onclick="location.href='../index.html'">RETURN TO BASE</button>
+            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+        </div>
+    </footer>
+
+    <script src="../SCRIPT/script.js"></script>
+</body>
+</html>

@@ -6,6 +6,47 @@
     <title>Quest Log | Quetiemals</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
+    <style>
+        /* Special styling for the dual-image recon layout */
+        .recon-intel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .intel-frame {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0,0,0,0.5);
+        }
+        .intel-frame img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(30%) sepia(20%);
+            transition: var(--transition);
+        }
+        .intel-frame:hover img {
+            filter: grayscale(0%) sepia(0%);
+            transform: scale(1.05);
+        }
+        .intel-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(139, 92, 246, 0.7);
+            color: white;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,9 +54,7 @@
         <nav class="navbar">
             <div class="logo">QUETIEMALS</div>
             <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
@@ -45,6 +84,17 @@
                         <span class="tag">Chapters 1-3</span>
                         <h3>The Descent</h3>
                         <p>The invasion begins as Azure Heights is corrupted. The world watches in horror as young Quetiemals are abducted to serve as biological batteries for the Tech-Biome.</p>
+                        
+                        <div class="recon-intel">
+                            <div class="intel-frame">
+                                <img src="../IMG/chapter-1-01.png" alt="Whispering Woods">
+                                <div class="intel-label">Invasion Site</div>
+                            </div>
+                            <div class="intel-frame">
+                                <img src="../IMG/chapter-1-02.png" alt="Collector Drone">
+                                <div class="intel-label">Target: Harvester</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -53,7 +103,18 @@
                     <div class="chapter-card tech-glow">
                         <span class="tag">Chapters 4-8</span>
                         <h3>Fanning the Flames</h3>
-                        <p>Ice Heart is defeated by the <strong>Mirror of Frost</strong> but is rescued by <strong>Hotly</strong>. Together, they ascend to the Sky Sanctuary to convince Queen NyAqueen that the "ceiling" in the sky is a cage, not a shield.</p>
+                        <p>Ice Heart is defeated by the Mirror of Frost but is rescued by Hotly. Together, they ascend to the Sky Sanctuary to convince Queen NyAqueen that the "ceiling" in the sky is a cage.</p>
+                        
+                        <div class="recon-intel">
+                            <div class="intel-frame">
+                                <img src="../IMG/chapter-1-03-6.png" alt="Sky Sanctuary">
+                                <div class="intel-label">Recon: Sky Sanctuary</div>
+                            </div>
+                            <div class="intel-frame">
+                                <img src="../IMG/chapter-1-03-8.png" alt="Hotly">
+                                <div class="intel-label">Asset: Hotly</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -62,7 +123,18 @@
                     <div class="chapter-card">
                         <span class="tag">Chapters 9-20</span>
                         <h3>The Long March</h3>
-                        <p>A global trek to unite Eyuforyia. From the <strong>Molten Core</strong> to the <strong>Sunken Ruins</strong> and the <strong>Rotten Marsh</strong>, the resistance grows as they salvage technology and liberate the Great Behemoths from lethal hibernation.</p>
+                        <p>A global trek to unite Eyuforyia. From the Molten Core to the Sunken Ruins and the Rotten Marsh, the resistance grows as they salvage technology.</p>
+                        
+                        <div class="recon-intel">
+                            <div class="intel-frame">
+                                <img src="../IMG/endfirebiomescene-wide.png" alt="Molten Core">
+                                <div class="intel-label">Sector: Molten Core</div>
+                            </div>
+                            <div class="intel-frame">
+                                <img src="../IMG/endbiomewater-wide.png" alt="Sunken Ruins">
+                                <div class="intel-label">Sector: Sunken Ruins</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -71,7 +143,18 @@
                     <div class="chapter-card neon-glow">
                         <span class="tag">Chapters 21-23</span>
                         <h3>Zero Hour</h3>
-                        <p>The final assault on <strong>Tech-Shack City</strong>. Using the Veridian Flute, the united front breaches the inner sanctum to dismantle the Central AI and rescue the lost kin of the Glacier Wolves.</p>
+                        <p>The final assault on Tech-Shack City. Using the Veridian Flute, the united front breaches the inner sanctum to dismantle the Central AI.</p>
+                        
+                        <div class="recon-intel">
+                            <div class="intel-frame">
+                                <img src="../IMG/chapter-1-03.png" alt="Tech-Shack City">
+                                <div class="intel-label">Target: Core City</div>
+                            </div>
+                            <div class="intel-frame">
+                                <img src="../IMG/tech-wide.png" alt="Central AI">
+                                <div class="intel-label">Boss: Core Intel</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

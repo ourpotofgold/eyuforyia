@@ -513,3 +513,35 @@ textarea:focus {
         font-size: 1.5rem;
     }
 }
+/* =========================================
+   PLAYTEST PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* Highlighting the Playtest link if added to Nav */
+.nav-links a[href*="playtest.html"] {
+    color: var(--purple) !important;
+    border: 1px solid var(--purple);
+    padding: 5px 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+/* Enhancing the dropdowns for the testing phases */
+select option {
+    background-color: var(--darker);
+    color: #fff;
+}
+
+/* Checkbox/Radio styling for future use in playtests */
+input[type="checkbox"] {
+    accent-color: var(--purple);
+    margin-right: 10px;
+}
+
+/* Form success state placeholder */
+.form-success {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    margin-top: 20px;
+    display: none;
+}

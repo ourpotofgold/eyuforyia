@@ -1,6 +1,6 @@
 /**
  * Quetiemals: The Fight for Eyuforyia 
- * Core Website Logic
+ * Core Website Logic - v3.0 (Google Script Backend + Redirects)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -72,4 +72,52 @@ document.addEventListener('DOMContentLoaded', () => {
             heroContent.style.transition = 'all 1s ease-out';
         }, 300);
     }
+
+    // 5. Silent Form Submission & Redirect Logic
+    const silentForms = document.querySelectorAll('.silent-form');
+    
+    silentForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Stop the page from redirecting
+            
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            
+            // Loading state
+            btn.innerText = "TRANSMITTING...";
+            btn.style.opacity = "0.7";
+            btn.style.pointerEvents = "none";
+
+            // Send data to Google Script silently
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.result === "success") {
+                    // Look for a custom success page on the form, otherwise default to success.html
+                    const customRedirect = form.getAttribute('data-success') || "success.html";
+                    window.location.href = customRedirect; 
+                } else {
+                    throw new Error("Script returned error");
+                }
+            })
+            .catch(error => {
+                // Error state
+                console.error("Transmission failed:", error);
+                btn.innerText = "ERROR! TRY AGAIN.";
+                btn.style.background = "#ff4d00"; // Fire color
+                btn.style.opacity = "1";
+                
+                // Reset button after 3 seconds to allow retry
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = ""; 
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "auto";
+                }, 3000);
+            });
+        });
+    });
 });

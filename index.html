@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Quetiemals | The Fight for Eyuforyia">
+<meta property="og:description" content="Join the resistance. Reclaim the stars. Enlist for the playtest now.">
+<meta property="og:image" content="IMG/BGLandscape.png">
+<meta property="og:url" content="https://eyuforyia.com">
+<meta property="og:type" content="website">
     <title>Quetiemals | The Fight for Eyuforyia</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
@@ -20,6 +25,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="HTML/story.html">Story</a></li>
+                <li><a href="HTML/chapters.html">Quest Log</a></li>
                 <li><a href="HTML/characters.html">Guardians</a></li>
                 <li><a href="HTML/locations.html">World</a></li>
                 <li><a href="HTML/bosses.html">Threats</a></li>
@@ -35,7 +41,7 @@
                 <h1 class="game-title">QUETIEMALS</h1>
                 <p class="subtitle">THE FIGHT FOR EYUFORYIA</p>
                 <div class="cta-group">
-                    <button class="btn-main">PLAY NOW</button>
+                    <button class="btn-main" onclick="location.href='HTML/playtest.html'">PLAY NOW</button>
                     <button class="btn-sub" onclick="location.href='HTML/story.html'">EXPLORE LORE</button>
                 </div>
             </div>
@@ -61,46 +67,19 @@
                 </div>
             </div>
         </section>
-
-        <section id="showcase" class="showcase">
-            <h2 class="section-heading">Meet the Guardians</h2>
-            <div class="character-flex">
-                <div class="char-card reveal">
-                    <div class="aura fire-aura"></div>
-                    <div class="char-img-wrap">
-                        <img src="IMG/hotfly-03.png" alt="Hotly" class="char-img-inner">
-                    </div>
-                    <div class="char-info">
-                        <h3>Hotly</h3>
-                        <p>Firebird | Aerial Warrior </p>
-                    </div>
-                </div>
-                <div class="char-card reveal">
-                    <div class="aura shadow-aura"></div>
-                    <div class="char-img-wrap">
-                        <img src="IMG/wolce-03-01.png" alt="Ice Heart" class="char-img-inner">
-                    </div>
-                    <div class="char-info">
-                        <h3>Ice Heart</h3>
-                        <p>Glacier Wolf | Frost Protagonist </p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="footer-container">
             <div class="social-links">
-                <a href="#">FB</a> / <a href="#">IG</a> / <a href="#">YT</a>
+                <a href="https://www.facebook.com/teqvault" target="_blank">FB</a> / <a href="#">IG</a> / <a href="#">YT</a>
             </div>
-            <button class="btn-download">DOWNLOAD GAME</button>
+            <button class="btn-download" onclick="location.href='HTML/playtest.html'">JOIN ALPHA</button>
             <div class="footer-links">
                 <a href="HTML/privacy.html">Privacy Policy</a>
                 <a href="HTML/terms.html">Terms of Service</a>
                 <a href="HTML/datadeletion.html">Data Deletion</a>
             </div>
-            
             <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
         </div>
     </footer>
