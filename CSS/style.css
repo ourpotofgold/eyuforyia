@@ -173,7 +173,7 @@ body {
     font-style: italic; 
 }
 
-/* Aura/Glow Effects */
+/* Aura/Glow Effects for Lore */
 .fire-aura-glow { filter: drop-shadow(0 0 30px rgba(255, 77, 0, 0.3)); }
 .shadow-aura-glow { filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.3)); }
 
@@ -224,7 +224,7 @@ body {
 .btn-download { background: var(--gold); color: var(--dark); }
 
 /* =========================================
-   6. SHOWCASE & IMAGE SCALING FIXES
+   6. SHOWCASE & GRID SYSTEM
    ========================================= */
 .showcase, .features { 
     padding: 80px 10%; 
@@ -243,11 +243,18 @@ body {
     border-radius: 20px; 
     border: 1px solid rgba(255,255,255,0.1); 
     transition: var(--transition); 
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--gold); 
 }
 
 .char-img-wrap, .location-img-wrap {
     width: 100%; 
-    height: 300px; 
+    height: 250px; 
     margin-bottom: 20px; 
     position: relative;
     display: flex; 
@@ -257,6 +264,7 @@ body {
     border-radius: 12px; 
     background: rgba(0,0,0,0.3); 
     border: 1px solid rgba(255,255,255,0.1);
+    z-index: 2;
 }
 
 .char-img-inner { 
@@ -277,13 +285,38 @@ body {
     transition: 0.5s;
 }
 
+.char-story {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-top: 15px;
+}
+
+/* Background Auras for Cards */
+.aura {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fire-aura { background: radial-gradient(circle, var(--fire), transparent); }
+.shadow-aura { background: radial-gradient(circle, var(--purple), transparent); }
+
 /* =========================================
-   7. QUEST LOG / TIMELINE
+   7. QUEST LOG / TIMELINE & TAGS
    ========================================= */
 .timeline-container { max-width: 1100px; margin: 0 auto; padding: 40px 0; }
 .timeline-part { margin-bottom: 100px; border-left: 3px solid var(--purple); padding-left: 40px; text-align: left; }
 .chapter-card { background: var(--glass); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
-.tag { color: var(--purple); font-weight: bold; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
+.tag { color: var(--purple); font-weight: bold; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-top: 10px; display: inline-block;}
 
 /* =========================================
    8. FOOTER & PERSISTENT LINKS
@@ -384,12 +417,9 @@ footer {
         margin-top: 15px; 
     }
     
-    .char-img-wrap {
-        height: 250px;
-    }
-    
     .footer-links { flex-direction: column; gap: 10px; }
 }
+
 /* =========================================
    FEEDBACK PAGE SPECIFIC STYLES
    ========================================= */
@@ -403,7 +433,7 @@ footer {
 }
 
 .feedback-card {
-    background: var(--glass); /* Uses variable from core style.css */
+    background: var(--glass);
     padding: 40px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -422,7 +452,7 @@ footer {
     display: block;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    color: var(--gold); /* Matches Quetiemals branding */
+    color: var(--gold);
     margin-bottom: 10px;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -501,7 +531,7 @@ textarea:focus {
     box-shadow: 0 0 20px var(--gold);
 }
 
-/* Mobile Adjustments */
+/* Mobile Adjustments for Feedback */
 @media (max-width: 768px) {
     .feedback-container {
         padding: 100px 5% 40px;
@@ -513,6 +543,7 @@ textarea:focus {
         font-size: 1.5rem;
     }
 }
+
 /* =========================================
    PLAYTEST PAGE SPECIFIC STYLES
    ========================================= */
