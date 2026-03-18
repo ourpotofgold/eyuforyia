@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chronicles | Quetiemals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <style>
+        .book-showcase { padding: 60px 10%; }
+        .book-card { 
+            display: flex; 
+            gap: 4rem; 
+            background: var(--glass); 
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255,255,255,0.1);
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        .book-cover { flex: 1; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); transition: var(--transition); }
+        .book-cover:hover { transform: scale(1.02) rotate(-1deg); }
+        .book-detail { flex: 1.5; }
+        .excerpt-box { 
+            background: rgba(0,0,0,0.3); 
+            padding: 25px; 
+            border-left: 3px solid var(--gold); 
+            margin: 20px 0; 
+            font-style: italic; 
+            color: #cbd5e1;
+        }
+        @media (max-width: 968px) {
+            .book-card { flex-direction: column; text-align: center; }
+            .excerpt-box { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">QUETIEMALS</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="chronicles.html" style="color: var(--gold);">Chronicles</a></li>
+                <li><a href="chapters.html">Quest Log</a></li>
+                <li><a href="characters.html">Guardians</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero lore-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="game-title">THE CHRONICLES</h1>
+                <p class="subtitle">WRITTEN IN THE STARS OF EYUFORYIA</p>
+            </div>
+        </section>
+
+        <section class="book-showcase">
+            <div class="book-card reveal">
+                <img src="../IMG/book-cover-02.png" alt="For Land and Kin" class="book-cover">
+                <div class="book-detail">
+                    <span class="tag">Available Soon</span>
+                    <h2 class="section-heading" style="text-align: left; margin: 10px 0;">For Land and Kin</h2>
+                    <p>The definitive origin story of the Resistance. Before the battles began, the vibration was felt in the bones of every living creature in Meadow-Core.</p>
+                    
+                    <div class="excerpt-box">
+                        "The sky was violently torn open. The disturbance began not with a sound, but with a subtle, pervasive feeling... an ominous low-frequency vibration."
+                    </div>
+
+                    <div class="footer-links" style="justify-content: flex-start; gap: 15px;">
+                        <span style="color: var(--gold); font-weight: bold;">Featured Guardian: Ice Heart</span>
+                        <a href="characters.html" class="btn-sub" style="padding: 10px 20px; font-size: 0.7rem;">View Hero</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card reveal" style="opacity: 0.5; filter: grayscale(1);">
+                <div class="book-detail">
+                    <span class="tag">Coming 2026</span>
+                    <h2 class="section-heading" style="text-align: left; margin: 10px 0;">Shadows of the Marsh</h2>
+                    <p>Explore the neon-green sickly swamps of the Rotten Marsh and the shadow abilities of Nyx the Great Horned Owl.</p>
+                </div>
+                <img src="../IMG/night.png" alt="Coming Soon" class="book-cover" style="height: 200px; object-fit: cover;">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <button class="btn-main" onclick="location.href='../index.html'">RETURN TO BASE</button>
+            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+        </div>
+    </footer>
+
+    <script src="../SCRIPT/script.js"></script>
+</body>
+</html>
