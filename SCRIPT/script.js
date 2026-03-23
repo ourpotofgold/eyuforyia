@@ -1,6 +1,6 @@
 /**
  * Quetiemals: The Fight for Eyuforyia 
- * Core Website Logic - v3.0 (Google Script Backend + Redirects)
+ * Core Website Logic - v3.0 (Google Script Backend + Redirects + Music Player)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -120,4 +120,89 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // 6. Comm-Array Music Player Logic
+    // Figure out if we are in the HTML subfolder to adjust the file paths dynamically
+    const isSubpage = window.location.pathname.includes('/HTML/');
+    const pathPrefix = isSubpage ? '../AUDIO/' : 'AUDIO/';
+
+    const playlist = [
+        { name: "Scepter of the Guardian", artist: "Meadow Core", src: pathPrefix + "guardian.mp3" },
+        { name: "The Mechanical Thrum", artist: "Tech-Shack City", src: pathPrefix + "tech.mp3" },
+        { name: "Winds of Destiny", artist: "Sky Sanctuary", src: pathPrefix + "destiny.mp3" }
+    ];
+
+    let currentTrackIndex = 0;
+    const audio = document.getElementById('main-audio');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+
+    // Only run if the music player actually exists on the page
+    if (audio && playPauseBtn) {
+        
+        // Converted to function expressions to satisfy JSHint (W082)
+        const loadTrack = (index) => {
+            const track = playlist[index];
+            audio.src = track.src;
+            document.getElementById('track-name').innerText = track.name;
+            document.getElementById('track-artist').innerText = track.artist;
+        };
+
+        const playMusic = () => {
+            audio.play();
+            playPauseBtn.innerText = "⏸";
+        };
+
+        const pauseMusic = () => {
+            audio.pause();
+            playPauseBtn.innerText = "▶";
+        };
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                playMusic();
+            } else {
+                pauseMusic();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            playMusic();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+            loadTrack(currentTrackIndex);
+            playMusic();
+        });
+
+        // Auto-play next track when current one ends
+        audio.addEventListener('ended', () => {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            playMusic();
+        });
+
+        // Initialize the first track
+        loadTrack(currentTrackIndex);
+        // We ensure volume is low to be atmospheric!
+        audio.volume = 0.15; 
+
+        // THE AUTOPLAY ATTEMPT
+        let playPromise = audio.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Autoplay worked! (Usually happens on subpages because user has already interacted)
+                playPauseBtn.innerText = "⏸";
+            }).catch(error => {
+                // Autoplay was blocked by the browser (Usually on the first page load)
+                console.log("Eyuforyia Comm-Array: Autoplay blocked until user interaction.");
+                playPauseBtn.innerText = "▶";
+            });
+        }
+    }
 });
