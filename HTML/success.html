@@ -1,46 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transmission Received | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Enlistment Successful | Quetiemals</title>
+    <meta name="description" content="Transmission received. Your enlistment in the Eyuforyia Resistance is confirmed." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
+
     <style>
-        .success-wrapper {
-            height: 100vh;
+        .success-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
+            margin: 0 auto 2rem;
+            border: 2px solid #10b981;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
         }
-        .success-card {
-            background: var(--glass);
-            padding: 60px;
-            border-radius: 20px;
-            border: 1px solid var(--gold);
-            backdrop-filter: blur(20px);
-            max-width: 600px;
-            margin: 20px;
+        .success-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: white;
         }
-        .success-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
+        .success-title span {
+            color: var(--color-primary);
+        }
+        .success-text {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
         }
     </style>
 </head>
 <body>
-    <main class="success-wrapper">
-        <div class="success-card reveal active">
-            <span class="success-icon">🛰️</span>
-            <h1 class="game-title" style="font-size: 2.5rem; margin-bottom: 15px;">TRANSMISSION ENCRYPTED</h1>
-            <p class="subtitle" style="margin-bottom: 30px;">Your data has reached the Resistance High Command.</p>
-            <p style="color: #cbd5e1; margin-bottom: 40px;">Check your communication channels (Email) soon for further instructions, Guardian.</p>
-            <button class="btn-main" onclick="location.href='../index.html'">RETURN TO BASE</button>
+
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <div class="logo">QUETIEMALS</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
+            <li><a href="characters.html">Guardians</a></li>
+            <li><a href="bosses.html">Threats</a></li>
+            <li><a href="locations.html">World</a></li>
+            <li><a href="playtest.html">Beta Access</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+    </nav>
+
+    <main id="main-content" style="display: flex; align-items: center; min-height: 80vh; padding: 2rem 0;">
+        <div class="section-inner">
+            <div class="success-card reveal">
+                <div class="success-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h1 class="success-title">Transmission <span>Received</span></h1>
+                <p class="success-text">
+                    Your enlistment data has been successfully integrated into the Resistance database. 
+                    Expect further intelligence updates on the Eyuforyia Alpha and Beta testing arrays via your communication channel soon.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="../index.html" class="btn" style="background: var(--color-primary); color: #000; font-weight: 700; border: none; padding: 1rem 2rem;">Return to Base</a>
+                    <a href="story.html" class="btn" style="background: transparent; border: 1px solid var(--color-border); padding: 1rem 2rem;">Read the Lore</a>
+                </div>
+            </div>
         </div>
     </main>
-    <script src="../SCRIPT/script.js"></script>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p class="footer-copy">&copy; <span id="year"></span> Quetiemals | Teq Vault LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal script
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

@@ -1,102 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playtest Enrollment | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Enlist in the Eyuforyia Resistance. Join the closed alpha and open beta testing phases." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
+
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Barlow', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        select.form-control option {
+            background: var(--color-bg);
+            color: white;
+        }
+        .form-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="story.html">Story</a></li>
-                <li><a href="characters.html">Guardians</a></li>
-                <li><a href="locations.html">World</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-            </ul>
-        </nav>
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <div class="logo">QUETIEMALS</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
+            <li><a href="characters.html">Guardians</a></li>
+            <li><a href="bosses.html">Threats</a></li>
+            <li><a href="locations.html">World</a></li>
+            <li><a href="playtest.html" class="active">Beta Access</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+    </nav>
+
+    <header class="hero" role="banner">
+        <div class="hero-content" style="text-align: center;">
+            <div class="hero-eyebrow reveal" style="color: #10b981;">Beta Access</div>
+            <h1 class="hero-title reveal reveal-delay-1">THE <span>RESISTANCE</span></h1>
+            <p class="hero-subtitle reveal reveal-delay-2">Enlist in the Eyuforyia Alpha and Beta Testing Arrays.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero lore-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">BETA ACCESS</h1>
-                <p class="subtitle">ENLIST IN THE EYUFORYIA RESISTANCE</p>
-            </div>
-        </section>
-
-        <section class="feedback-container">
-            <div class="feedback-card reveal">
-                <h2 class="section-heading" style="font-size: 1.5rem; margin-bottom: 1rem;">Join the Testing Array</h2>
-                <p style="color: #cbd5e1; margin-bottom: 2rem;">Help us calibrate the resistance. Enlist now for closed alpha and open beta testing phases.</p>
-                
-                <form class="silent-form" action="https://script.google.com/macros/s/AKfycbzRBUGpsvXtfUDbu5Qa3jF5p_Trh9n5VQWIAjzLpn_5gbGn0eZFAsLr6W9qUdr1Se4_/exec" method="POST">
+    <main id="main-content">
+        <section class="lore-section" id="enrollment">
+            <div class="section-inner" style="max-width: 700px; margin: 0 auto;">
+                <div class="form-card reveal">
+                    <h2 class="section-title" style="text-align: center; margin-bottom: 1rem;">Join the Testing Array</h2>
+                    <p style="color: var(--color-text-muted); text-align: center; margin-bottom: 2rem;">Help us calibrate the resistance against the Optimization. Enlist now for closed alpha and open beta testing phases.</p>
                     
-                    <input type="hidden" name="_subject" value="New Playtest Enlistment!">
-                    <input type="text" name="bot_catcher" style="display:none" tabindex="-1" autocomplete="off">
+                    <form action="https://script.google.com/macros/s/AKfycbzRBUGpsvXtfUDbu5Qa3jF5p_Trh9n5VQWIAjzLpn_5gbGn0eZFAsLr6W9qUdr1Se4_/exec" method="POST">
+                        
+                        <input type="hidden" name="_subject" value="New Playtest Enlistment!">
+                        <input type="text" name="bot_catcher" style="display:none" tabindex="-1" autocomplete="off">
 
-                    <div class="form-group">
-                        <label for="name">Guardian Callsign</label>
-                        <input type="text" id="name" name="Name" required placeholder="Enter your in-game name">
-                    </div>
+                        <div class="form-group">
+                            <label for="name">Guardian Callsign</label>
+                            <input type="text" id="name" name="Name" class="form-control" required placeholder="Enter your in-game name">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="email">Communication Channel (Email)</label>
-                        <input type="email" id="email" name="Email" required placeholder="guardian@email.com" style="width: 100%; padding: 15px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white;">
-                    </div>
-                    
+                        <div class="form-group">
+                            <label for="email">Communication Channel (Email)</label>
+                            <input type="email" id="email" name="Email" class="form-control" required placeholder="guardian@email.com">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="phase">Deployment Phase</label>
-                        <select id="phase" name="Phase">
-                            <option value="Closed Alpha">Closed Alpha (Technical Test)</option>
-                            <option value="Open Beta">Open Beta (Scaling Test)</option>
-                            <option value="Full Release Updates">Post-Launch Intelligence</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="phase">Deployment Phase</label>
+                            <select id="phase" name="Phase" class="form-control">
+                                <option value="Closed Alpha">Closed Alpha (Technical Test)</option>
+                                <option value="Open Beta">Open Beta (Scaling Test)</option>
+                                <option value="Full Release Updates">Post-Launch Intelligence</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="platform">Optimization Target (Platform)</label>
-                        <select id="platform" name="Platform">
-                            <option value="Android">Android</option>
-                            <option value="iOS">iOS / Apple</option>
-                            <option value="PC">PC / Emulator</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="platform">Optimization Target (Platform)</label>
+                            <select id="platform" name="Platform" class="form-control">
+                                <option value="Android">Android</option>
+                                <option value="iOS">iOS / Apple</option>
+                                <option value="PC">PC / Emulator</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="experience">Prior Match-3 Experience?</label>
-                        <textarea id="experience" name="Experience" rows="3" placeholder="Tell us about other RPGs you've mastered..."></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="experience">Prior Match-3 Experience?</label>
+                            <textarea id="experience" name="Experience" class="form-control" rows="4" placeholder="Tell us about other RPGs or Match-3 games you've mastered..."></textarea>
+                        </div>
 
-                    <button type="submit" class="btn-main btn-submit">TRANSMIT ENLISTMENT</button>
-                </form>
+                        <div style="text-align: center; margin-top: 2.5rem;">
+                            <button type="submit" class="btn" style="background: linear-gradient(135deg, #4ade80, #10b981); color: #000; font-weight: 700; padding: 1rem 3rem; border: none; cursor: pointer; width: 100%;">
+                                TRANSMIT ENLISTMENT
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="social-links">
-    <a href="https://www.facebook.com/profile.php?id=61573981297113" target="_blank">FB</a> / 
-    <a href="#">IG</a> / 
-    <a href="#">YT</a>
-</div>
-            <button class="btn-sub" onclick="location.href='../index.html'">RETURN TO BASE</button>
-            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <div class="social-links" style="margin-bottom: 1.5rem;">
+                <a href="https://www.facebook.com/profile.php?id=61573981297113" target="_blank" style="color: var(--color-text-muted); text-decoration: none; margin: 0 10px;">Facebook</a> | 
+                <a href="#" style="color: var(--color-text-muted); text-decoration: none; margin: 0 10px;">Instagram</a> | 
+                <a href="#" style="color: var(--color-text-muted); text-decoration: none; margin: 0 10px;">YouTube</a>
+            </div>
+            <div class="footer-links" style="justify-content: center; margin-bottom: 1rem;">
+                <a href="../index.html">Home</a>
+                <a href="story.html">Story</a>
+                <a href="chapters.html">Chapters</a>
+                <a href="characters.html">Guardians</a>
+                <a href="bosses.html">Threats</a>
+                <a href="locations.html">World</a>
+            </div>
+            <p class="footer-copy">&copy; <span id="year"></span> Quetiemals | Teq Vault. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="../SCRIPT/script.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal script
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

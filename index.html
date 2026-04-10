@@ -1,151 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta name="google-site-verification" content="EwNHriVke6C1HkRrt9NQ9toqw_e5fjX2D9Z-4wwfinc" />
-    <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-7932735753046865">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Quetiemals | Reclaim Eyuforyia">
-    <meta property="og:description" content="Join the resistance. Master match-3 RPG combat and rescue the Guardians.">
-    <meta property="og:image" content="https://teqvault.online/IMG/BGLandscape.png">
-    <meta property="og:url" content="https://teqvault.online">
-    <meta property="og:type" content="website">
-    <title>Quetiemals | The Fight for Eyuforyia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lore | Quetiemals</title>
+  <meta name="description" content="Chronicles of Eyuforyia — the story of a world torn open, corrupted, and fighting to reclaim its soul." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="HTML/story.html">Lore</a></li>
-                <li><a href="HTML/chronicles.html" style="color: var(--gold); font-weight: bold;">Chronicles</a></li> 
-                <li><a href="HTML/chapters.html">Chapters</a></li>
-                <li><a href="HTML/characters.html">Guardians</a></li>
-                <li><a href="HTML/locations.html">World</a></li>
-                <li><a href="HTML/bosses.html">Threats</a></li>
-            </ul>
-        </nav>
-    </header>
+  <nav class="nav" role="navigation" aria-label="Main Navigation">
+    <a href="index.html" class="nav-logo" aria-label="Quetiemals Home">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      QUETIEMALS
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="HTML/story.html">Story</a></li>
+      <li><a href="HTML/chapters.html">Chapters</a></li>
+      <li><a href="HTML/characters.html">Guardians</a></li>
+      <li><a href="HTML/bosses.html">Threats</a></li>
+      <li><a href="HTML/locations.html">World</a></li>
+      <li><a href="HTML/playtest.html">Beta Access</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">QUETIEMALS</h1>
-                <p class="subtitle">THE FIGHT FOR EYUFORYIA</p>
-                <div class="cta-group">
-    <button class="btn-main" onclick="location.href='https://play.google.com/apps/test/RQ-ZwCPdSxw/ahAO29uNTKGxmw_8_2uPsfOOiGUNNI31GEHbQ0yjDJD1fTNTbJzncaooFzgzua9beRH5wVL1YeSPNpWa3nE-JGiEps'">PLAY NOW</button>
-    <button class="btn-sub" onclick="location.href='HTML/story.html'">EXPLORE LORE</button>
-</div>
-            </div>
-        </section>
+  <header class="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Chronicles of Eyuforyia</div>
+      <h1 class="hero-title">THE <span>LORE</span></h1>
+      <p class="hero-subtitle">A World Torn Open</p>
+      <p class="hero-desc">
+        Once a world of violet skies and golden twilights, Eyuforyia now fights for its very soul.
+        This is the story of invasion, corruption, and the resistance that refuses to fall.
+      </p>
+      <div class="hero-nav" role="list">
+        <a href="#origins" class="btn btn-primary">Begin the Story</a>
+        <a href="HTML/characters.html" class="btn btn-ghost">Meet the Guardians</a>
+      </div>
+    </div>
+  </header>
 
-        <section id="features" class="features">
-            <h2 class="section-heading">The Resistance</h2>
-            <div class="feature-grid">
-                <div class="feature-card reveal">
-                    <div class="icon-wrap">🛠️</div>
-                    <h3>Scavenge & Optimize</h3>
-                    <p>Recover alien Tech like Pressure Valves to upgrade your gear and survive lethal Tech-Biomes.</p>
-                </div>
-                <div class="feature-card reveal">
-                    <div class="icon-wrap">🐺</div>
-                    <h3>Rally the World</h3>
-                    <p>Unite the Sky, the Core, and the Peaks to form a resistance against the central AI.</p>
-                </div>
-                <div class="feature-card reveal">
-                    <div class="icon-wrap">⚔️</div>
-                    <h3>Strategic Combat</h3>
-                    <p>Master match-3 RPG mechanics to dismantle mechanical corruption and rescue captives.</p>
-                </div>
-            </div>
-        </section>
+  <div class="lore-tabs" role="navigation" aria-label="Lore sections">
+    <div class="lore-tabs-inner">
+      <a href="#origins"    class="lore-tab active">I. Origins</a>
+      <a href="#invasion"   class="lore-tab">II. The Invasion</a>
+      <a href="#corruption" class="lore-tab">III. The Corruption</a>
+      <a href="#reclamation" class="lore-tab">IV. The Resistance</a>
+    </div>
+  </div>
 
-        <section id="showcase" class="showcase">
-            <h2 class="section-heading">Featured Heroes</h2>
-            <div class="feature-grid">
-                
-                <div class="feature-card reveal">
-                    <div class="aura shadow-aura"></div>
-                    <div class="char-img-wrap">
-                        <img src="IMG/wolce-03-01.png" alt="Ice Heart" class="char-img-inner">
-                    </div>
-                    <h3>Ice Heart</h3>
-                    <p class="tag">GLACIER WOLF</p>
-                    <p class="char-story">
-                        Once a lone wanderer of the Frozen Peaks, Ice Heart became the first to sense the Central AI's vibration. Now, he leads the resistance with frost-shattered blades and an unbreakable spirit.
-                    </p>
-                </div>
+  <main id="main-content">
 
-                <div class="feature-card reveal">
-                    <div class="aura fire-aura"></div>
-                    <div class="char-img-wrap">
-                        <img src="IMG/hotfly-03.png" alt="Hotly" class="char-img-inner">
-                    </div>
-                    <h3>Hotly</h3>
-                    <p class="tag">AERIAL WARRIOR</p>
-                    <p class="char-story">
-                        Born from the embers of the Core-Fire, Hotly provides the tactical eye from the sky. Her speed is unmatched, allowing her to dismantle mechanical corruption before the enemy detects her heat signature.
-                    </p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <div class="aura fire-aura" style="filter: hue-rotate(100deg);"></div>
-                    <div class="char-img-wrap">
-                        <img src="IMG/aurelius-the-bloom-king-04.png" alt="Aurelius" class="char-img-inner">
-                    </div>
-                    <h3>Aurelius</h3>
-                    <p class="tag">THE BLOOM KING</p>
-                    <p class="char-story">
-                        The ancient protector of the Meadow-Core. Aurelius uses the power of nature to scavenge alien tech and repurpose it into organic defenses for the resistance forces.
-                    </p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <button class="btn-sub" onclick="location.href='HTML/characters.html'">VIEW ALL GUARDIANS</button>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61573981297113" target="_blank">FB</a> / 
-                <a href="#">IG</a> / 
-                <a href="#">YT</a>
-            </div>
-            <button class="btn-download" onclick="location.href='HTML/playtest.html'">JOIN ALPHA</button>
-            <div class="footer-links">
-                <a href="HTML/privacy.html">Privacy Policy</a>
-                <a href="HTML/terms.html">Terms of Service</a>
-                <a href="HTML/datadeletion.html">Data Deletion</a>
-            </div>
-            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+    <section class="lore-section" id="origins" aria-labelledby="origins-title">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-number" aria-hidden="true">01</div>
+          </div>
+          <div>
+            <div class="section-label">Chapter I</div>
+            <h2 class="section-title" id="origins-title">Origins — A World of Violet Skies</h2>
+            <p class="section-intro">
+              Before the machines came, Eyuforyia thrived. A living world, rich with ancient creatures,
+              wild biomes, and skies painted in hues of violet and gold.
+            </p>
+          </div>
         </div>
-    </footer>
-    <div class="comm-array-player">
-        <div class="track-info">
-            <span id="track-name">Scepter of the Guardian</span>
-            <span id="track-artist">Ambient Forest</span>
+
+        <div class="content-split reveal">
+          <div class="prose">
+            <p>
+              Eyuforyia was once a world unlike any other — a planet alive with rhythm, color, and an
+              ancient intelligence woven into the land itself. Its skies shifted from deep violet at
+              dawn to burning gold at twilight, a daily spectacle that the native <strong>Quetiemals</strong>
+              had celebrated for generations.
+            </p>
+            <p>
+              The land was divided into sovereign regions, each with its own ecosystem and guardians.
+              The <strong>Frozen Peaks</strong> in the far north housed lone wanderers. The volcanic <strong>Core-Fire</strong> deep underground burned with primal energy. The lush <strong>Meadow-Core</strong> served as the living heart of the world, and the drifting <strong>Sky Realm</strong> watched above it all.
+            </p>
+            <p>
+              The <strong>Great Behemoths</strong> — massive planetary creatures as old as Eyuforyia itself
+              — moved between these regions freely, their migration patterns dictating the seasons.
+            </p>
+          </div>
+
+          <div>
+            <div class="stats-row">
+              <div class="stat-item reveal reveal-delay-1">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Sovereign Regions</div>
+              </div>
+              <div class="stat-item reveal reveal-delay-2">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">Years of Peace</div>
+              </div>
+            </div>
+
+            <div class="regions-grid">
+              <div class="region-card reveal reveal-delay-1">
+                <div class="region-icon">🏔️</div>
+                <div class="region-name">Glacia Peaks</div>
+                <div class="region-desc">Northern wastes carved by wind and ice. Home to the slumbering Behemoths.</div>
+              </div>
+              <div class="region-card reveal reveal-delay-2">
+                <div class="region-icon">🌋</div>
+                <div class="region-name">Molten Core</div>
+                <div class="region-desc">Deep volcanic heart of the world where Magma-Pangolins dwell.</div>
+              </div>
+              <div class="region-card reveal reveal-delay-3">
+                <div class="region-icon">🌿</div>
+                <div class="region-name">Whispering Woods</div>
+                <div class="region-desc">The living heart of Eyuforyia that hums with telepathic memory.</div>
+              </div>
+              <div class="region-card reveal">
+                <div class="region-icon">☁️</div>
+                <div class="region-name">Sky Sanctuary</div>
+                <div class="region-desc">Floating archipelagos where Logic and the Sky Queties rule.</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="player-controls">
-            <button id="prev-btn">⏮</button>
-            <button id="play-pause-btn">▶</button>
-            <button id="next-btn">⏭</button>
-        </div>
-        <audio id="main-audio" src="AUDIO/guardian.mp3"></audio>
+      </div>
+    </section>
+
+    <div class="divider-scene" aria-hidden="true">
+      <div class="divider-text">EYUFORYIA</div>
     </div>
 
-    <script src="SCRIPT/script.js"></script>
+    <section class="lore-section" id="invasion" aria-labelledby="invasion-title">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-number" aria-hidden="true">02</div>
+          </div>
+          <div>
+            <div class="section-label">Chapter II</div>
+            <h2 class="section-title" id="invasion-title">The Invasion — They Came to Optimize</h2>
+            <p class="section-intro">
+              The silence broke with a low-frequency vibration. Geometric monolithic vessels
+              descended from orbit, and nothing would ever be the same.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-meta">First Contact</div>
+            <h3 class="timeline-heading">The Vessels Descend</h3>
+            <p class="timeline-body">
+              Massive monolithic vessels breached the upper atmosphere without warning. Elder Hoof initially mistook them for falling stars, but the green exhaust trails marked a permanent claim on the Azure Heights.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-meta">The Invaders Revealed</div>
+            <h3 class="timeline-heading">Scientists & Droids</h3>
+            <p class="timeline-body">
+              The invaders emerged in two forms: clinical scientists who catalogued biology with emotionless precision, and sleek mechanical droids. To them, Eyuforyia was not a living world — it was a <strong>resource node</strong>.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-meta">The Protocol</div>
+            <h3 class="timeline-heading">Operation: "Optimization"</h3>
+            <p class="timeline-body">
+              Young Quetiemals were targeted first — captured and integrated into the invaders' power infrastructure as biological batteries, their organic energy harvested to fuel the Central AI.
+            </p>
+          </div>
+        </div>
+
+        <div class="pull-quote reveal">
+          <blockquote>"They aren't merely visiting. They're rebuilding it. Making it theirs."</blockquote>
+          <cite>— Hotly, The Firebird</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="lore-section" id="corruption" aria-labelledby="corruption-title">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-number" aria-hidden="true">03</div>
+          </div>
+          <div>
+            <div class="section-label">Chapter III</div>
+            <h2 class="section-title" id="corruption-title">The Mechanical Corruption</h2>
+            <p class="section-intro">
+              The invaders didn't just conquer — they <em>rewrote</em> the land itself,
+              replacing living ecosystems with cold, hexagonal Tech-Biomes.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-split reverse reveal">
+          <div class="prose">
+            <p>
+              The invasion's most devastating weapon was a <strong>neon-green liquid</strong> deployed through massive harpoons driven deep into the planetary surface. Where it spread, transformation was total.
+            </p>
+            <p>
+              Lush grass calcified into metallic wire. The soft, rich earth hardened and fractured into cold <strong>hexagonal plates</strong>. The sky turned hazy as the invaders extracted the planet's thermal energy, drying the air to keep their machinery from rusting.
+            </p>
+            <p>
+              These transformed zones became known as <strong>Tech-Biomes</strong> — lethal environments where only those equipped with salvaged alien technology could survive.
+            </p>
+          </div>
+
+          <div>
+            <div class="corrupt-card reveal reveal-delay-1">
+              <div class="corrupt-badge">⚠ ACTIVE THREAT</div>
+              <div class="lore-card-title" style="color: var(--color-text);">The Tech-Biome Protocol</div>
+              <p class="lore-card-body">
+                Massive terrain-conversion harpoons are deployed at strategic points. Natural terrain recovery is considered impossible without dismantling the Central AI node governing the area.
+              </p>
+            </div>
+            <div class="lore-card reveal reveal-delay-2" style="margin-top: var(--space-4);">
+              <div class="lore-card-label">Survival Technology</div>
+              <div class="lore-card-title">Scavenged Alien Tech</div>
+              <p class="lore-card-body">
+                Pressure Valves, Hydro-Lenses, circuit amplifiers. Resistance storm-engineers have learned to repurpose these tools into gear capable of surviving in corrupted zones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-scene" aria-hidden="true">
+      <div class="divider-text">RESISTANCE</div>
+    </div>
+
+    <section class="lore-section" id="reclamation" aria-labelledby="reclamation-title">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-number" aria-hidden="true">04</div>
+          </div>
+          <div>
+            <div class="section-label">Chapter IV</div>
+            <h2 class="section-title" id="reclamation-title">The Reclamation — The Fight for Eyuforyia</h2>
+            <p class="section-intro">
+              From the ruins of a fractured world, a resistance rose. United across the Sky,
+              the Core, the Sea, and the Peaks.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-split reveal">
+          <div class="prose">
+            <p>
+              The resistance was born from grief. <strong>Ice Heart</strong>, a glacier wolf driven to rescue his captured brother, refused to accept the Optimization. Alongside <strong>Hotly</strong>, a firebird warrior, they carried a call to arms across the biomes.
+            </p>
+            <p>
+              One by one, the inhabitants answered. They scavenged alien components, destroyed the Resonance Siphons, and rallied the Behemoths from their artificial slumber.
+            </p>
+            <p>
+              With the <strong>Veridian Flute</strong> — an ancient instrument capable of generating frequencies that bypass AI security — the path to dismantling Tech-Shack City became possible.
+            </p>
+          </div>
+
+          <div>
+            <div class="lore-card reveal reveal-delay-1">
+              <div class="lore-card-label">Resistance Objective</div>
+              <div class="lore-card-title">Dismantle the Central AI</div>
+              <p class="lore-card-body">
+                The Central AI governs all Tech-Biome expansion. Shattering its core processor will halt the conversion and restore conditions for natural stars to return.
+              </p>
+            </div>
+            <div class="lore-card reveal reveal-delay-2" style="margin-top: var(--space-4);">
+              <div class="lore-card-label">The Key Artifact</div>
+              <div class="lore-card-title">The Veridian Flute</div>
+              <p class="lore-card-body">
+                An instrument whose resonance matches the Central AI's access encryption. In the right hands, it renders sonic security systems inert.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="cta-label">Join the Fight</div>
+      <h2 class="cta-title" id="cta-title">Eyuforyia Needs You</h2>
+      <p class="cta-desc">
+        The resistance is forming. Rally the world, scavenge alien tech, and take the fight
+        to the Central AI.
+      </p>
+      <div class="cta-buttons">
+        <a href="HTML/playtest.html" class="btn btn-primary">Play Now</a>
+        <a href="HTML/chapters.html" class="btn btn-ghost">Read the Chapters</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">QUETIEMALS</div>
+      <ul class="footer-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="HTML/story.html">Story</a></li>
+        <li><a href="HTML/chapters.html">Chapters</a></li>
+        <li><a href="HTML/characters.html">Guardians</a></li>
+        <li><a href="HTML/bosses.html">Threats</a></li>
+        <li><a href="HTML/locations.html">World</a></li>
+        <li><a href="HTML/privacy.html">Privacy Policy</a></li>
+        <li><a href="HTML/terms.html">Terms of Service</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 QUETIEMALS | TEQ VAULT</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+      menuBtn.querySelector('path').setAttribute('d',
+        open ? 'M18 6L6 18M6 6l12 12' : 'M3 12h18M3 6h18M3 18h18'
+      );
+    });
+
+    // Lore tab active state on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const tabs = document.querySelectorAll('.lore-tab');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          tabs.forEach(t => t.classList.remove('active'));
+          const active = document.querySelector(`.lore-tab[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // Close nav on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.querySelector('path').setAttribute('d', 'M3 12h18M3 6h18M3 18h18');
+      });
+    });
+  </script>
 </body>
 </html>

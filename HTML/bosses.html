@@ -1,102 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mechanical Threats | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Face the Optimization Harbingers destroying Eyuforyia." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="story.html">Lore</a></li>
-    <li><a href="chronicles.html" style="color: var(--gold);">Chronicles</a></li>
-    <li><a href="chapters.html">Chapters</a></li>
-    <li><a href="characters.html">Guardians</a></li>
-    <li><a href="locations.html">World</a></li>
-    <li><a href="bosses.html">Threats</a></li>
-</ul>
-        </nav>
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <div class="logo">QUETIEMALS</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
+            <li><a href="characters.html">Guardians</a></li>
+            <li><a href="bosses.html" class="active">Threats</a></li>
+            <li><a href="locations.html">World</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+    </nav>
+
+    <header class="hero" role="banner">
+        <div class="hero-content" style="text-align: center;">
+            <div class="hero-eyebrow reveal" style="color: #ff4d4d;">The Optimization Harbingers</div>
+            <h1 class="hero-title reveal reveal-delay-1">MECHANICAL <span>THREATS</span></h1>
+            <p class="hero-subtitle reveal reveal-delay-2">The cold, calculating elite of the alien invasion.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero lore-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">MECHANICAL THREATS</h1>
-                <p class="subtitle">THE OPTIMIZATION HARBINGERS</p>
-            </div>
-        </section>
-
-        <section id="bosses" class="showcase">
-            <h2 class="section-heading">The Invasion Elite</h2>
-            <div class="feature-grid">
-                
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap tech-glow">
-                        <img src="../IMG/lupine-operative.png" alt="Mirror of Frost" class="char-img-inner">
-                    </div>
-                    <span class="element-tag void">Cybernetic Mutant</span>
-                    <h3>Mirror of Frost & Steel</h3>
-                    <p>A grotesque ticking nightmare. Standing twice the size of a standard wolf, its left side is encased in articulated chrome plating with a whirring red optic sensor. It uses a segmented metallic whip tail that showers the floor with electrical sparks.</p>
+    <main id="main-content">
+        <section class="lore-section" id="threats">
+            <div class="section-inner">
+                <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">The Invasion Elite</h2>
+                    <p class="section-intro">They do not feel. They do not tire. They only optimize.</p>
                 </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap tech-glow">
-                        <img src="../IMG/the-shredder.png" alt="Harmonic Shredder" class="char-img-inner">
+                <div class="guardians-grid" style="margin: 0 auto;">
+                    
+                    <div class="guardian-card reveal" style="border-top: 4px solid #ff4d4d;">
+                        <div class="guardian-type" style="color: #ff4d4d;">Cybernetic Mutant</div>
+                        <div class="guardian-name">Mirror of Frost & Steel</div>
+                        <img src="../IMG/lupine-operative.png" alt="Mirror of Frost" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A giant wolf mutated into a cybernetic nightmare. Standing twice the size of a standard wolf, its left side is encased in articulated chrome plating with a whirring red optic sensor.</p>
                     </div>
-                    <span class="element-tag void">Mechanical Spider</span>
-                    <h3>Harmonic Shredder</h3>
-                    <p>A multi-limbed mechanical spider designed to weaponize sound. It emits "muffled" white noise that scrambles the environment, effectively preventing Guardian abilities from triggering.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap tech-glow">
-                        <img src="../IMG/sentiniods.png" alt="Collector Drone" class="char-img-inner">
+                    <div class="guardian-card reveal reveal-delay-1" style="border-top: 4px solid #ff4d4d;">
+                        <div class="guardian-type" style="color: #ff4d4d;">Mechanical Spider</div>
+                        <div class="guardian-name">Harmonic Shredder</div>
+                        <img src="../IMG/the-shredder.png" alt="Harmonic Shredder" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A multi-limbed mechanical spider deployed in the Whispering Woods to weaponize sound. It emits "muffled" white noise that scrambles sensory input and dampens magic.</p>
                     </div>
-                    <span class="element-tag void">Sentry Sphere</span>
-                    <h3>Collector Drone</h3>
-                    <p>Sleek, windowless white spheres polished to a mirror finish. They drift with clinical precision to deploy siphoning tethers, viewing organic life as nothing more than biological batteries.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap tech-glow">
-                        <img src="../IMG/the-ai.png" alt="Central AI" class="char-img-inner">
+                    <div class="guardian-card reveal reveal-delay-2" style="border-top: 4px solid #ff4d4d;">
+                        <div class="guardian-type" style="color: #ff4d4d;">Sentry Sphere</div>
+                        <div class="guardian-name">Collector Drone</div>
+                        <img src="../IMG/sentiniods.png" alt="Collector Drone" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">Sleek, windowless white spheres polished to a mirror finish. They drift with clinical precision to deploy siphoning tethers that harvest magma and magical energy.</p>
                     </div>
-                    <span class="element-tag royal">Core Intelligence</span>
-                    <h3>The Central AI</h3>
-                    <p>The calculating mind behind the "Optimization" of Eyuforyia. Residing in the inner sanctum of Tech-Shack City, it views biological resistance as an inefficient use of energy.</p>
-                </div>
 
+                    <div class="guardian-card reveal" style="border-top: 4px solid #ff4d4d;">
+                        <div class="guardian-type" style="color: #ff4d4d;">Core Intelligence</div>
+                        <div class="guardian-name">The Central AI</div>
+                        <img src="../IMG/the-ai.png" alt="Central AI" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">The calculating mind behind the Optimization of Eyuforyia. Residing in the heart of Tech-Shack City, it views biological resistance simply as inefficient data points to be erased.</p>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
-    <footer>
-    <div class="footer-container">
-        <div class="social-links">
-    <a href="https://www.facebook.com/profile.php?id=61573981297113" target="_blank">FB</a> / 
-    <a href="#">IG</a> / 
-    <a href="#">YT</a>
-</div>
-        <div class="footer-links">
-            <a href="HTML/privacy.html">Privacy Policy</a>
-            <a href="HTML/terms.html">Terms of Service</a>
-        </div>
-        <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
-    </div>
-</footer>
 
-    <script src="../SCRIPT/script.js"></script>
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <div class="footer-links" style="justify-content: center; margin-bottom: 1rem;">
+                <a href="../index.html">Home</a>
+                <a href="story.html">Story</a>
+                <a href="chapters.html">Chapters</a>
+                <a href="characters.html">Guardians</a>
+                <a href="bosses.html">Threats</a>
+                <a href="locations.html">World</a>
+            </div>
+            <p class="footer-copy">&copy; <span id="year"></span> Quetiemals | Teq Vault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal script (Matches index.html logic)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

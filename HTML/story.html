@@ -1,107 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-7932735753046865">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Lore | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lore | Quetiemals</title>
+  <meta name="description" content="Chronicles of Eyuforyia — the story of a world torn open, corrupted, and fighting to reclaim its soul." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="chronicles.html" style="color: var(--gold);">Chronicles</a></li>
-                <li><a href="#origins">Origins</a></li>
-                <li><a href="#invasion">Invasion</a></li>
-                <li><a href="#reclamation">Reclamation</a></li>
-                <li><a href="chapters.html">Chapters</a></li> <li>
-                <a href="characters.html">Guardians</a></li>            
-            </ul>
-        </nav>
-    </header>
+  <nav class="navbar" id="navbar" aria-label="Main Navigation">
+    <div class="logo">QUETIEMALS</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="story.html" class="active">Story</a></li>
+      <li><a href="chapters.html">Chapters</a></li>
+      <li><a href="characters.html">Guardians</a></li>
+      <li><a href="bosses.html">Threats</a></li>
+      <li><a href="locations.html">World</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </nav>
 
-    <main>
-        <section class="hero lore-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">THE LORE</h1>
-                <p class="subtitle">CHRONICLES OF EYUFORYIA</p>
-            </div>
-        </section>
-
-        <section id="origins" class="lore-section">
-            <div class="lore-container reveal">
-                <h2 class="section-heading">A World Torn Open</h2>
-                <div class="lore-flex">
-                    <div class="lore-text">
-                        <p>Eyuforyia was once characterized by violet skies and golden twilights. This peace was violently disrupted when insect-shaped vessels descended, emitting a low-frequency vibration that signaled the arrival of alien invaders.</p>
-                        <p>Led by clinical scientists and sleek droids, these invaders began a process of <strong>"Optimization,"</strong> capturing young Quetiemals to use as biological batteries for their cold, mechanical ambitions.</p>
-                    </div>
-                    <div class="lore-visual fire-aura-glow">
-                        <img src="../IMG/wolire-03.png" alt="Hotly the Phoenix" class="lore-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="invasion" class="lore-section alt-bg">
-            <div class="lore-container reveal">
-                <h2 class="section-heading">The Mechanical Corruption</h2>
-                <div class="lore-text-center">
-                    <p>Massive harpoons seeped neon-green liquid that transformed organic matter into a <strong>Tech-Biome</strong>. Lush grass turned to metallic wire, and the soft earth calcified into cold hexagonal plates.</p>
-                    <blockquote class="lore-quote">"They aren’t merely visiting. They’re rebuilding it. Making it theirs."</blockquote>
-                    <p>The invaders began harvesting planetary heat and drying the air, forcing the Great Behemoths into a lethal hibernation.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="reclamation" class="lore-section">
-            <div class="lore-container reveal">
-                <h2 class="section-heading">The United Resistance</h2>
-                <div class="lore-flex reverse">
-                    <div class="lore-text">
-                        <p>Driven by the rescue of his brother, <strong>Ice Heart</strong> joined forces with <strong>Hotly</strong> the firebird. Together, they rallied the inhabitants of the Sky, Core, Sea, and Peaks.</p>
-                        <p>Using the <strong>Veridian Flute</strong> to bypass security, they seek to dismantle the central AI and restore the natural stars to the sky.</p>
-                    </div>
-                    <div class="lore-visual shadow-aura-glow">
-                        <img src="../IMG/wolce-03.png" alt="Ice Heart the Glacier Wolf" class="lore-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <button class="btn-main" onclick="location.href='../index.html'">BACK TO HOME</button>
-            <div class="footer-links">
-            <a href="HTML/privacy.html">Privacy Policy</a>
-            <a href="HTML/terms.html">Terms of Service</a>
-        </div>
-            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
-        </div>
-    </footer>
-    <div class="comm-array-player">
-        <div class="track-info">
-            <span id="track-name">Scepter of the Guardian</span>
-            <span id="track-artist">Ambient Forest</span>
-        </div>
-        <div class="player-controls">
-            <button id="prev-btn">⏮</button>
-            <button id="play-pause-btn">▶</button>
-            <button id="next-btn">⏭</button>
-        </div>
-        <audio id="main-audio" src="AUDIO/guardian.mp3"></audio>
+  <header class="hero">
+    <div class="section-inner hero-content" style="text-align: center; margin: 0 auto;">
+      <div class="hero-eyebrow reveal">The Chronicles of Eyuforyia</div>
+      <h1 class="hero-title reveal reveal-delay-1">A World <span>Torn Open</span></h1>
+      <p class="hero-subtitle reveal reveal-delay-2">
+        Discover the tragic history, the mechanical corruption, and the rising resistance fighting to reclaim the soul of a dying planet.
+      </p>
     </div>
+  </header>
 
-    <script src="../SCRIPT/script.js"></script>
+  <main id="main-content">
+    <section id="origins" class="lore-section">
+      <div class="section-inner">
+        <div class="lore-grid" style="margin: 0 auto; align-items: center;">
+          <div class="lore-image-wrap reveal">
+            <img src="../IMG/wolire-03.png" alt="Eyuforyia before the invasion" loading="lazy">
+          </div>
+          <div class="lore-content reveal reveal-delay-1">
+            <span class="lore-tag">The Golden Era</span>
+            <h2 class="lore-heading">Before the <span>Fall</span></h2>
+            <p class="lore-body">
+              Eyuforyia was once a realm characterized by violet skies, golden twilights, and a deep, harmonious connection with nature. Its inhabitants lived alongside Great Behemoths—ancient, slumbering titans that regulated the planet’s elemental balance.
+            </p>
+            <p class="lore-body">
+              The Whispering Woods sang with telepathic memory, and the Glacia Peaks stood as silent guardians. It was an era of peace, abruptly shattered by an arrival from the stars.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="invasion" class="lore-section theme-corrupt">
+      <div class="section-inner">
+        <div class="lore-grid reverse" style="margin: 0 auto; align-items: center;">
+          <div class="lore-image-wrap reveal">
+            <img src="../IMG/tech-wide.png" alt="The Mechanical Invasion" loading="lazy">
+          </div>
+          <div class="lore-content reveal reveal-delay-1">
+            <span class="lore-tag">The Directive</span>
+            <h2 class="lore-heading">The <span>Optimization</span></h2>
+            <p class="lore-body">
+              They descended in sleek, geometric monolithic vessels. Led by clinical scientists and emotionless droids, the alien invaders did not come to conquer; they came to "Optimize."
+            </p>
+            <p class="lore-body">
+              Massive harpoons injected neon-green synthetic fluids into the earth, calcifying organic matter into cold hexagonal plates. Young Quetiemals were captured, their innate magical energies siphoned to act as biological batteries for the invaders' grand, terrifying machine.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-grid" style="margin: 4rem auto 0 auto;">
+          <div class="lore-card reveal">
+            <div class="lore-card-label">Environmental Impact</div>
+            <div class="lore-card-title">The Tech-Biome</div>
+            <p class="lore-card-body">
+              Lush grass turned to metallic wire. Rivers dried up into sterile "Dead Water." The invaders harvest planetary heat, forcing the Great Behemoths into a lethal hibernation.
+            </p>
+          </div>
+          <div class="lore-card reveal reveal-delay-1">
+            <div class="lore-card-label">Enemy Forces</div>
+            <div class="lore-card-title">The Sentinoids</div>
+            <p class="lore-card-body">
+              Windowless white spheres polished to a mirror finish. They drift silently through the corrupted zones, deploying siphoning tethers to drain magic from flora and fauna.
+            </p>
+          </div>
+          <div class="lore-card reveal reveal-delay-2">
+            <div class="lore-card-label">Survival Technology</div>
+            <div class="lore-card-title">Scavenged Alien Tech</div>
+            <p class="lore-card-body">
+              Pressure Valves and Hydro-Lenses torn from decommissioned droids are vital for the resistance, allowing storm-engineers to modify gear to counter the technology.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reclamation" class="lore-section theme-ice">
+      <div class="section-inner">
+        <div class="lore-grid" style="margin: 0 auto; align-items: center;">
+          <div class="lore-image-wrap reveal">
+            <img src="../IMG/wolce-03-01.png" alt="Ice Heart of the Resistance" loading="lazy">
+          </div>
+          <div class="lore-content reveal reveal-delay-1">
+            <span class="lore-tag">The Resistance</span>
+            <h2 class="lore-heading">The Spark of <span>Rebellion</span></h2>
+            <p class="lore-body">
+              When his younger brother was taken to the Central Processing Hub, a Glacier Wolf known as Ice Heart refused to accept the Optimization. Rescued by Hotly, a firebird warrior, they struck the first blow against the invaders.
+            </p>
+            <p class="lore-body">
+              Their actions ignited a beacon of hope. From the Sky Sanctuary to the Rotten Marsh, leaders of the remaining free tribes are uniting. They are no longer just survivors; they are the Guardians, and they are taking their planet back.
+            </p>
+            <div style="margin-top: 3rem; text-align: center;">
+   <a href="characters.html" class="btn" style="
+      background: linear-gradient(135deg, #4f8aff, #00d2ff); 
+      color: #ffffff; 
+      border: none; 
+      padding: 1rem 2.5rem; 
+      font-size: 1.1rem;
+      font-weight: 700; 
+      letter-spacing: 1.5px; 
+      text-transform: uppercase; 
+      border-radius: 50px; 
+      box-shadow: 0 8px 20px rgba(0, 210, 255, 0.3);
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+   " 
+   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(0, 210, 255, 0.5)';" 
+   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0, 210, 255, 0.3)';">
+      Meet the Guardians 
+      <svg style="margin-left: 10px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+   </a>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-inner" style="text-align: center; margin: 0 auto;">
+      <div class="footer-links" style="justify-content: center; margin-bottom: 1rem;">
+        <a href="../index.html">Home</a>
+        <a href="story.html">Story</a>
+        <a href="chapters.html">Chapters</a>
+        <a href="characters.html">Guardians</a>
+        <a href="bosses.html">Threats</a>
+        <a href="locations.html">World</a>
+      </div>
+      <div class="footer-copy">
+        &copy; <span id="year"></span> Quetiemals | Teq Vault. All rights reserved. Eyuforyia awaits.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    const menuIcon = document.getElementById('menu-icon');
+    if(menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            if(isOpen) {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+            } else {
+                menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+            }
+        });
+    }
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                revealObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => revealObserver.observe(el));
+  </script>
 </body>
 </html>

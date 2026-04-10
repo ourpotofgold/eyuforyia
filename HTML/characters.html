@@ -1,143 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Guardians | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Guardians | Quetiemals</title>
+    <meta name="description" content="Meet the heroes of the Eyuforyia Resistance." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="story.html">Lore</a></li>
-                <li><a href="chapters.html">Chapters</a></li>
-                <li><a href="characters.html">Guardians</a></li>
-                <li><a href="locations.html">World</a></li>
-                <li><a href="bosses.html">Threats</a></li>
-                <li><a href="chronicles.html" style="color: var(--gold);">Chronicles</a></li>
-            </ul>
-        </nav>
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <div class="logo">QUETIEMALS</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
+            <li><a href="characters.html" class="active">Guardians</a></li>
+            <li><a href="bosses.html">Threats</a></li>
+            <li><a href="locations.html">World</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+    </nav>
+
+    <header class="hero" role="banner">
+        <div class="hero-content" style="text-align: center;">
+            <div class="hero-eyebrow reveal">The Resistance Vanguard</div>
+            <h1 class="hero-title reveal reveal-delay-1">THE <span>GUARDIANS</span></h1>
+            <p class="hero-subtitle reveal reveal-delay-2">United across the Sky, Core, Sea, and Peaks.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero lore-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">THE GUARDIANS</h1>
-                <p class="subtitle">HEROES OF THE RESISTANCE</p>
-            </div>
-        </section>
-
-        <section id="roster" class="showcase">
-            <h2 class="section-heading">The United Front</h2>
-            <div class="feature-grid">
-                
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap shadow-aura">
-                        <img src="../IMG/wolce-03-01.png" alt="Ice Heart" class="char-img-inner">
-                    </div>
-                    <span class="element-tag frost">Glacier Wolf</span>
-                    <h3>Ice Heart</h3>
-                    <p>The protagonist driven by the rescue of his brother; uses frost magic and Static-Frost gauntlets.</p>
+    <main id="main-content">
+        <section class="lore-section" id="guardians">
+            <div class="section-inner">
+                <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">Heroes of the Resistance</h2>
+                    <p class="section-intro">From the molten depths to the frozen peaks, these are the warriors fighting to stop the Optimization.</p>
                 </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap fire-aura">
-                        <img src="../IMG/hotfly-03.png" alt="Hotly" class="char-img-inner">
+                <div class="guardians-grid" style="margin: 0 auto;">
+                    
+                    <div class="guardian-card ice reveal">
+                        <div class="guardian-type">Glacier Wolf</div>
+                        <div class="guardian-name">Ice Heart</div>
+                        <img src="../IMG/wolce-03-01.png" alt="Ice Heart" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">The protagonist driven by the rescue of his brother; uses frost magic and Static-Frost gauntlets.</p>
                     </div>
-                    <span class="element-tag fire">Firebird</span>
-                    <h3>Hotly</h3>
-                    <p>A fierce aerial warrior whose internal temperature rises with her emotions.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap sky-aura">
-                        <img src="../IMG/volt-04.png" alt="Volt" class="char-img-inner">
+                    <div class="guardian-card fire reveal reveal-delay-1">
+                        <div class="guardian-type">Firebird (Phoenix)</div>
+                        <div class="guardian-name">Hotly</div>
+                        <img src="../IMG/hotfly-03.png" alt="Hotly" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A fierce aerial warrior whose internal temperature rises with her emotions; rescues Ice Heart from the "Mirror of Frost".</p>
                     </div>
-                    <span class="element-tag sky">Sky Quety</span>
-                    <h3>Volt</h3>
-                    <p>An energetic storm-engineer who optimizes gear using salvaged alien technology.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap royal-aura">
-                        <img src="../IMG/nyaqueen.png" alt="NyAqueen" class="char-img-inner">
+                    <div class="guardian-card reveal reveal-delay-2">
+                        <div class="guardian-type">Sky Quety</div>
+                        <div class="guardian-name">Volt</div>
+                        <img src="../IMG/volt-04.png" alt="Volt" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">An energetic storm-engineer who optimizes the team's gear using salvaged alien technology.</p>
                     </div>
-                    <span class="element-tag royal">Sky Queen</span>
-                    <h3>NyAqueen</h3>
-                    <p>Ruler of the Sky Sanctuary who commits her people to war to prevent Eyuforyia from falling apart.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap earth-aura">
-                        <img src="../IMG/yara-02.png" alt="Yara" class="char-img-inner">
+                    <div class="guardian-card reveal">
+                        <div class="guardian-type">Sky Queen</div>
+                        <div class="guardian-name">NyAqueen</div>
+                        <img src="../IMG/nyaqueen.png" alt="NyAqueen" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">Ruler of the Sky Sanctuary who values logic; she eventually commits her people to the war to prevent the sky from becoming a "ceiling".</p>
                     </div>
-                    <span class="element-tag earth">Granite Badger</span>
-                    <h3>Yara</h3>
-                    <p>An Earth-Shield Tank with skin of reinforced stone; provides heavy defense.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap void-aura">
-                        <img src="../IMG/rotten-wide-newnyx.png" alt="Nyx" class="char-img-inner">
+                    <div class="guardian-card reveal reveal-delay-1">
+                        <div class="guardian-type">Granite Badger</div>
+                        <div class="guardian-name">Yara</div>
+                        <img src="../IMG/yara-02.png" alt="Yara" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">An Earth-Shield Tank with skin of reinforced stone; she provides heavy defense for the team.</p>
                     </div>
-                    <span class="element-tag void">Great Horned Owl</span>
-                    <h3>Nyx</h3>
-                    <p>A resident of the Rotten Marsh who uses shadow abilities to bypass enemy sensors.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="char-img-wrap woods-aura">
-                        <img src="../IMG/aurelius-the-bloom-king-04.png" alt="Elder Hoof" class="char-img-inner">
+                    <div class="guardian-card reveal reveal-delay-2">
+                        <div class="guardian-type">Great Horned Owl</div>
+                        <div class="guardian-name">Nyx</div>
+                        <img src="../IMG/rotten-wide-newnyx.png" alt="Nyx" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A resident of the Rotten Marsh who uses shadow abilities to bypass enemy sensors.</p>
                     </div>
-                    <span class="element-tag woods">Majestic Stag</span>
-                    <h3>Elder Hoof</h3>
-                    <p>Leader of the Whispering Woods; provides the Veridian Flute to bypass security.</p>
-                </div>
 
+                    <div class="guardian-card nature reveal">
+                        <div class="guardian-type">Majestic Stag</div>
+                        <div class="guardian-name">Elder Hoof</div>
+                        <img src="../IMG/aurelius-the-bloom-king-04.png" alt="Elder Hoof" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">Leader of the Whispering Woods whose antlers are made of cherry wood; he provides the Veridian Flute to bypass security.</p>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="social-links">
-                <a href="#">FB</a> / <a href="#">IG</a> / <a href="#">YT</a>
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <div class="footer-links" style="justify-content: center; margin-bottom: 1rem;">
+                <a href="../index.html">Home</a>
+                <a href="story.html">Story</a>
+                <a href="chapters.html">Chapters</a>
+                <a href="characters.html">Guardians</a>
+                <a href="bosses.html">Threats</a>
+                <a href="locations.html">World</a>
             </div>
-            <button class="btn-main" onclick="location.href='../index.html'">BACK TO HOME</button>
-            <div class="footer-links">
-                
-            <a href="HTML/privacy.html">Privacy Policy</a>
-            <a href="HTML/terms.html">Terms of Service</a>
-        </div>
-            
-            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+            <p class="footer-copy">&copy; <span id="year"></span> Quetiemals | Teq Vault. All rights reserved.</p>
         </div>
     </footer>
-    <div class="comm-array-player">
-        <div class="track-info">
-            <span id="track-name">Scepter of the Guardian</span>
-            <span id="track-artist">Ambient Forest</span>
-        </div>
-        <div class="player-controls">
-            <button id="prev-btn">⏮</button>
-            <button id="play-pause-btn">▶</button>
-            <button id="next-btn">⏭</button>
-        </div>
-        <audio id="main-audio" src="AUDIO/guardian.mp3"></audio>
-    </div>
 
-    <script src="../SCRIPT/script.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal script (Matches index.html logic)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

@@ -1,130 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World of Eyuforyia | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Explore the fractured biomes of Eyuforyia, from nature to machine." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="story.html">Lore</a></li>
-                <li><a href="chapters.html">Chapters</a></li>
-                <li><a href="chronicles.html">Chronicles</a></li>
-                <li><a href="characters.html">Guardians</a></li>
-                <li><a href="locations.html">World</a></li>
-                <li><a href="bosses.html">Threats</a></li>
-            </ul>
-        </nav>
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <div class="logo">QUETIEMALS</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
+            <li><a href="characters.html">Guardians</a></li>
+            <li><a href="bosses.html">Threats</a></li>
+            <li><a href="locations.html" class="active">World</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+    </nav>
+
+    <header class="hero" role="banner">
+        <div class="hero-content" style="text-align: center;">
+            <div class="hero-eyebrow reveal" style="color: #00d2ff;">The Fractured Biomes</div>
+            <h1 class="hero-title reveal reveal-delay-1">THE <span>WORLD</span></h1>
+            <p class="hero-subtitle reveal reveal-delay-2">From sovereign nature to mechanical corruption.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero lore-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">THE WORLD</h1>
-                <p class="subtitle">EXPLORE THE FRACTURED BIOMES</p>
-            </div>
-        </section>
-
-        <section id="world" class="showcase">
-            <h2 class="section-heading">From Nature to Machine</h2>
-            <div class="feature-grid">
-                
-                <div class="feature-card reveal">
-                    <div class="location-img-wrap">
-                        <img src="../IMG/forest.png" alt="Whispering Woods" class="loc-img">
-                    </div>
-                    <h3>Whispering Woods</h3>
-                    <p>The initial site of the invasion where the forest's "song" is harvested by Resonance Siphons to fuel kinetic shields.</p>
+    <main id="main-content">
+        <section class="lore-section" id="world">
+            <div class="section-inner">
+                <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">The Sovereign Regions</h2>
+                    <p class="section-intro">Explore the vibrant ecosystems of Eyuforyia, the mechanical blights, and the uncharted realms beyond.</p>
                 </div>
 
-                <div class="feature-card reveal">
-                    <div class="location-img-wrap">
-                        <img src="../IMG/light.png" alt="Sky Sanctuary" class="loc-img">
+                <div class="guardians-grid" style="margin: 0 auto;">
+                    
+                    <div class="guardian-card reveal" style="border-top: 4px solid #4ade80;">
+                        <div class="guardian-type" style="color: #4ade80;">Living Forest</div>
+                        <div class="guardian-name">Whispering Woods</div>
+                        <img src="../IMG/forest.png" alt="Whispering Woods" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">The initial site of the invasion. Once filled with a telepathic hum, the forest's "song" is now forcefully harvested by alien Resonance Siphons.</p>
                     </div>
-                    <h3>Sky Sanctuary</h3>
-                    <p>A paradise of floating islands and crystal trees (the Cloud Forest) located high above the mechanical smog.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="location-img-wrap">
-                        <img src="../IMG/fire.png" alt="Molten Core" class="loc-img">
+                    <div class="guardian-card reveal reveal-delay-1" style="border-top: 4px solid #fcd34d;">
+                        <div class="guardian-type" style="color: #fcd34d;">Floating Archipelagos</div>
+                        <div class="guardian-name">Sky Sanctuary</div>
+                        <img src="../IMG/light.png" alt="Sky Sanctuary" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A paradise of floating islands and crystal trees located high above the mechanical smog. It is ruled by logic and the detached Sky Queties.</p>
                     </div>
-                    <h3>The Molten Core</h3>
-                    <p>An underground lava castle where Magma-Pangolins live; the invaders use it to siphon planetary heat.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="location-img-wrap">
-                        <img src="../IMG/water.png" alt="Sunken Ruins" class="loc-img">
+                    <div class="guardian-card reveal reveal-delay-2" style="border-top: 4px solid #f87171;">
+                        <div class="guardian-type" style="color: #f87171;">Underground Forge</div>
+                        <div class="guardian-name">The Molten Core</div>
+                        <img src="../IMG/fire.png" alt="Molten Core" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">An underground lava castle where Magma-Pangolins live. The invaders have breached it to forcefully siphon the planet's internal heat.</p>
                     </div>
-                    <h3>Sunken Ruins</h3>
-                    <p>A deep-sea graveyard of an ancient civilization where the water has been turned into sterile "Dead Water".</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="location-img-wrap">
-                        <img src="../IMG/ice.png" alt="Glacia Peaks" class="loc-img">
+                    <div class="guardian-card reveal" style="border-top: 4px solid #60a5fa;">
+                        <div class="guardian-type" style="color: #60a5fa;">Deep-Sea Graveyard</div>
+                        <div class="guardian-name">Sunken Ruins</div>
+                        <img src="../IMG/water.png" alt="Sunken Ruins" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">The remnants of an ancient civilization beneath the waves. Massive alien suction tubes are draining the ocean, turning it into sterile "Dead Water".</p>
                     </div>
-                    <h3>Glacia Peaks</h3>
-                    <p>Home of the Behemoths, where the air is kept artificially dry by alien stabilizers to protect their machinery from rust.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="location-img-wrap neon-glow">
-                        <img src="../IMG/night.png" alt="Rotten Marsh" class="loc-img">
+                    <div class="guardian-card reveal reveal-delay-1" style="border-top: 4px solid #a5f3fc;">
+                        <div class="guardian-type" style="color: #a5f3fc;">Frozen Wastes</div>
+                        <div class="guardian-name">Glacia Peaks</div>
+                        <img src="../IMG/ice.png" alt="Glacia Peaks" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">Home of the great slumbering Behemoths. The air here is kept artificially dry by alien stabilizers to protect their machinery from rusting.</p>
                     </div>
-                    <h3>Rotten Marsh</h3>
-                    <p>A sickly neon-green swamp where Light-Spires cast a harsh, unnatural glare, trapping the nocturnal inhabitants in a waking madness.</p>
-                </div>
 
-                <div class="feature-card reveal">
-                    <div class="location-img-wrap tech-glow">
-                        <img src="../IMG/tech.png" alt="Tech-Shack City" class="loc-img">
+                    <div class="guardian-card reveal reveal-delay-2" style="border-top: 4px solid #a855f7;">
+                        <div class="guardian-type" style="color: #a855f7;">Sickly Swamp</div>
+                        <div class="guardian-name">Rotten Marsh</div>
+                        <img src="../IMG/night.png" alt="Rotten Marsh" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A domain of natural shadows ruined by alien Light-Spires. The harsh, unnatural glare traps the nocturnal inhabitants in a state of waking madness.</p>
                     </div>
-                    <h3>Tech-Shack City</h3>
-                    <p>The mechanical epicenter of the invasion and the final scar on the surface, housing the central AI processor.</p>
-                </div>
 
+                    <div class="guardian-card reveal" style="border-top: 4px solid #10b981;">
+                        <div class="guardian-type" style="color: #10b981;">The Tech-Biome</div>
+                        <div class="guardian-name">Tech-Shack City</div>
+                        <img src="../IMG/tech.png" alt="Tech-Shack City" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">The mechanical epicenter of the invasion and the final scar on the surface. This fortress houses the central AI processor that controls the corruption.</p>
+                    </div>
+
+                    <div class="guardian-card reveal reveal-delay-1" style="border-top: 4px solid #e879f9;">
+                        <div class="guardian-type" style="color: #e879f9;">Uncharted Territory</div>
+                        <div class="guardian-name">The Zone of the Void</div>
+                        <img src="../IMG/chapter-2-1-1.png" alt="The Shimmering Wastes" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A vast desert of pulverized crystal where the alien harpoons shattered upon impact. The air is thick with refracted light and temporal anomalies that scramble AI targeting systems.</p>
+                    </div>
+
+                    <div class="guardian-card reveal reveal-delay-2" style="border-top: 4px solid #9ca3af;">
+                        <div class="guardian-type" style="color: #9ca3af;">Glitching Sector</div>
+                        <div class="guardian-name">Chaos Thoey</div>
+                        <img src="../IMG/gemini-generated-image-8ejvyc8ejvyc8ejv.png" alt="The Null Zone" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">A sector where the Central AI's "Optimization" code fatally collapsed. It is a hazardous, jagged landscape of shifting geometry, corrupted metallic flora, and unstable gravity.</p>
+                    </div>
+
+                    <div class="guardian-card reveal" style="border-top: 4px solid #312e81;">
+                        <div class="guardian-type" style="color: #6366f1;">Subterranean Abyss</div>
+                        <div class="guardian-name">Eternia</div>
+                        <img src="../IMG/chapter-8-1-0.png" alt="The Deep Below" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <p class="guardian-desc">An endless cavern system extending miles beneath the Sunken Ruins. The invaders refuse to deploy drones here, fearful of the massive, ancient entities that glide through the absolute dark.</p>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <button class="btn-main" onclick="location.href='../index.html'">BACK TO HOME</button>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <div class="footer-links" style="justify-content: center; margin-bottom: 1rem;">
+                <a href="../index.html">Home</a>
+                <a href="story.html">Story</a>
+                <a href="chapters.html">Chapters</a>
+                <a href="characters.html">Guardians</a>
+                <a href="bosses.html">Threats</a>
+                <a href="locations.html">World</a>
             </div>
-            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+            <p class="footer-copy">&copy; <span id="year"></span> Quetiemals | Teq Vault. All rights reserved.</p>
         </div>
     </footer>
-<div class="comm-array-player">
-        <div class="track-info">
-            <span id="track-name">Scepter of the Guardian</span>
-            <span id="track-artist">Ambient Forest</span>
-        </div>
-        <div class="player-controls">
-            <button id="prev-btn">⏮</button>
-            <button id="play-pause-btn">▶</button>
-            <button id="next-btn">⏭</button>
-        </div>
-        <audio id="main-audio" src="AUDIO/guardian.mp3"></audio>
-    </div>
-    <script src="../SCRIPT/script.js"></script>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal script (Matches index.html logic)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
