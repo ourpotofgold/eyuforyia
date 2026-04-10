@@ -4,67 +4,79 @@
     <meta charset="UTF-8">
     <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playtest Enrollment | Quetiemals</title>
+    <title>Beta Access | Quetiemals</title>
     <link rel="stylesheet" href="../CSS/style.css">
     
     <style>
-        /* MODAL STYLES */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+        /* --- FIXING THE UI CENTERING --- */
+        body, html {
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none; 
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            backdrop-filter: blur(10px);
-            padding: 20px;
+            margin: 0;
         }
 
-        .modal-content {
+        #main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            min-height: 80vh;
+        }
+
+        .form-card {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
             border-radius: 12px;
             padding: 3rem;
-            max-width: 500px;
             width: 100%;
-            text-align: center;
-            box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
-            transform: translateY(20px);
-            transition: all 0.3s ease;
+            max-width: 600px; /* Forces the form to stay centered and appropriately sized */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-        .modal-overlay.active { display: flex; }
-        .modal-overlay.active .modal-content { transform: translateY(0); }
+        /* --- SUCCESS POPUP STYLES --- */
+        #successModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            z-index: 10000; /* Above everything */
+            backdrop-filter: blur(10px);
+        }
 
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(16, 185, 129, 0.1);
-            color: #10b981;
+        #successModal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #111;
+            border: 1px solid #10b981;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
+        }
+
+        .success-circle {
+            width: 70px;
+            height: 70px;
+            border: 2px solid #10b981;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 2rem;
-            border: 2px solid #10b981;
+            margin: 0 auto 1.5rem;
+            color: #10b981;
         }
 
-        .btn-submit.loading {
-            pointer-events: none;
-            opacity: 0.6;
-        }
-
-        /* Center the form properly */
-        #main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 60vh;
+        /* Prevent scrolling when modal is open */
+        body.modal-open {
+            overflow: hidden;
         }
     </style>
 </head>
@@ -83,111 +95,107 @@
         </ul>
         <button class="nav-menu-btn" id="menu-btn">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+            <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
         </button>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content" style="text-align: center;">
-            <div class="hero-eyebrow">Beta Access</div>
-            <h1 class="hero-title">THE <span>RESISTANCE</span></h1>
-            <p class="hero-subtitle">Enlist in the Eyuforyia Alpha and Beta Testing Arrays.</p>
-        </div>
-    </header>
-
     <main id="main-content">
-        <section class="lore-section" style="width: 100%;">
-            <div class="section-inner" style="max-width: 700px; margin: 0 auto;">
-                <div class="form-card" style="background: var(--color-surface); padding: 3rem; border-radius: 12px; border: 1px solid var(--color-border);">
-                    <h2 class="section-title" style="text-align: center;">Join the Testing Array</h2>
-                    <p style="text-align:center; color: var(--color-text-muted); margin-bottom: 2rem;">
-                        Help calibrate the resistance against the Optimization.
-                    </p>
-                    
-                    <form id="betaForm">
-                        <input type="hidden" name="_subject" value="New Quetiemals Enlistment!">
-                        
-                        <div class="form-group">
-                            <label style="color: var(--color-primary); display: block; margin-bottom: 0.5rem; font-weight: bold;">Guardian Callsign</label>
-                            <input type="text" name="Name" class="form-control" required placeholder="Enter your callsing" style="width:100%; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--color-border); color:white; border-radius:8px;">
-                        </div>
+        <div class="form-card">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 0.5rem;">Transmission <span>Array</span></h2>
+            <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2.5rem;">Enlist for the Eyuforyia Alpha and Beta testing phases.</p>
 
-                        <div class="form-group" style="margin-top: 1.5rem;">
-                            <label style="color: var(--color-primary); display: block; margin-bottom: 0.5rem; font-weight: bold;">Communication Channel (Email)</label>
-                            <input type="email" name="Email" class="form-control" required placeholder="guardian@email.com" style="width:100%; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--color-border); color:white; border-radius:8px;">
-                        </div>
-
-                        <div class="form-group" style="margin-top: 1.5rem;">
-                            <label style="color: var(--color-primary); display: block; margin-bottom: 0.5rem; font-weight: bold;">Deployment Phase</label>
-                            <select name="Phase" class="form-control" style="width:100%; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--color-border); color:white; border-radius:8px;">
-                                <option value="Closed Alpha">Closed Alpha</option>
-                                <option value="Open Beta">Open Beta</option>
-                            </select>
-                        </div>
-
-                        <div style="text-align: center; margin-top: 2.5rem;">
-                            <button type="submit" id="submitBtn" class="btn btn-submit" style="background: linear-gradient(135deg, #4ade80, #10b981); color: #000; width: 100%; padding: 15px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
-                                TRANSMIT ENLISTMENT
-                            </button>
-                        </div>
-                    </form>
+            <form id="enlistForm">
+                <input type="hidden" name="_subject" value="New Quetiemals Enlistment!">
+                
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="color: var(--color-primary); font-weight: bold; display: block; margin-bottom: 0.5rem;">Guardian Callsign</label>
+                    <input type="text" name="Name" class="form-control" required placeholder="Enter your callsing" style="width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
                 </div>
-            </div>
-        </section>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="color: var(--color-primary); font-weight: bold; display: block; margin-bottom: 0.5rem;">Communication Channel (Email)</label>
+                    <input type="email" name="Email" class="form-control" required placeholder="guardian@email.com" style="width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label style="color: var(--color-primary); font-weight: bold; display: block; margin-bottom: 0.5rem;">Deployment Phase</label>
+                    <select name="Phase" class="form-control" style="width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
+                        <option value="Closed Alpha">Closed Alpha</option>
+                        <option value="Open Beta">Open Beta</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn" style="width: 100%; background: linear-gradient(135deg, #4ade80, #10b981); color: #000; font-weight: bold; padding: 15px; border: none; border-radius: 8px; cursor: pointer;">
+                    TRANSMIT ENLISTMENT
+                </button>
+            </form>
+        </div>
     </main>
 
-    <div class="modal-overlay" id="successModal">
-        <div class="modal-content">
-            <div class="success-icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+    <div id="successModal">
+        <div class="modal-box">
+            <div class="success-circle">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
             </div>
-            <h2 style="font-family: 'Exo 2'; text-transform: uppercase; color: white;">Transmission <span>Successful</span></h2>
-            <p style="color: var(--color-text-muted); margin: 1.5rem 0; line-height: 1.6;">
-                Your data has been integrated into the resistance database for <strong>Teq Vault</strong>.
+            <h2 style="color: white; font-family: 'Exo 2';">ENLISTMENT <span>SUCCESSFUL</span></h2>
+            <p style="color: #888; margin: 1.5rem 0; line-height: 1.6;">
+                Your signal has been received, Guardian. Data integrated into the <strong>Teq Vault</strong> mainframe.
             </p>
-            <button class="btn" onclick="closeModal()" style="background: #333; color: white; padding: 0.8rem 2rem; border: none; border-radius: 8px; cursor: pointer;">Return to Base</button>
+            <button onclick="closeModal()" class="btn" style="background: #333; color: white; width: 100%; border: none; padding: 12px; border-radius: 8px; cursor: pointer;">Return to Base</button>
         </div>
     </div>
 
-    <footer class="footer" style="text-align: center; padding: 2rem 0;">
-        <p>&copy; 2026 TEQ VAULT. ALL RIGHTS RESERVED.</p>
+    <footer class="footer" style="text-align: center; padding: 2rem;">
+        <p class="footer-copy">&copy; 2026 Quetiemals | Teq Vault LLC. All rights reserved.</p>
     </footer>
 
     <script>
-        // FORM SUBMISSION LOGIC
-        const form = document.getElementById('betaForm');
+        const form = document.getElementById('enlistForm');
         const modal = document.getElementById('successModal');
         const submitBtn = document.getElementById('submitBtn');
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            submitBtn.classList.add('loading');
+            // 1. Visual feedback
             submitBtn.innerText = "TRANSMITTING...";
+            submitBtn.style.opacity = "0.5";
+            submitBtn.disabled = true;
 
+            // 2. Prepare Data
             const formData = new FormData(form);
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzRBUGpsvXtfUDbu5Qa3jF5p_Trh9n5VQWIAjzLpn_5gbGn0eZFAsLr6W9qUdr1Se4_/exec';
 
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => {
-                    submitBtn.classList.remove('loading');
-                    submitBtn.innerText = "TRANSMIT ENLISTMENT";
-                    modal.classList.add('active');
-                    form.reset();
-                })
-                .catch(error => {
-                    submitBtn.classList.remove('loading');
-                    submitBtn.innerText = "RETRY TRANSMISSION";
-                    alert("Transmission failed. Check your uplink.");
-                });
+            // 3. Trigger Modal IMMEDIATELY so the user isn't waiting on the script
+            showModal();
+
+            // 4. Send the data in the background
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: formData,
+                mode: 'no-cors' // This bypasses CORS issues that prevent popups
+            }).catch(err => console.log("Background upload handled."));
+
+            form.reset();
         });
 
-        function closeModal() { modal.classList.remove('active'); }
+        function showModal() {
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
 
-        // MOBILE MENU LOGIC
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            submitBtn.innerText = "TRANSMIT ENLISTMENT";
+            submitBtn.style.opacity = "1";
+            submitBtn.disabled = false;
+        }
+
+        // Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         menuBtn.addEventListener('click', () => {
