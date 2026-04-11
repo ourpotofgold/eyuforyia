@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-7932735753046865">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Guardians | Quetiemals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">QUETIEMALS</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="story.html">Lore</a></li>
+                <li><a href="chapters.html">Chapters</a></li>
+                <li><a href="characters.html">Guardians</a></li>
+                <li><a href="locations.html">World</a></li>
+                <li><a href="bosses.html">Threats</a></li>
+                <li><a href="chronicles.html" style="color: var(--gold);">Chronicles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero lore-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="game-title">THE GUARDIANS</h1>
+                <p class="subtitle">HEROES OF THE RESISTANCE</p>
+            </div>
+        </section>
+
+        <section id="roster" class="showcase">
+            <h2 class="section-heading">The United Front</h2>
+            <div class="feature-grid">
+                
+                <div class="feature-card reveal">
+                    <div class="char-img-wrap shadow-aura">
+                        <img src="../IMG/wolce-03-01.png" alt="Ice Heart" class="char-img-inner">
+                    </div>
+                    <span class="element-tag frost">Glacier Wolf</span>
+                    <h3>Ice Heart</h3>
+                    <p>The protagonist driven by the rescue of his brother; uses frost magic and Static-Frost gauntlets.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="char-img-wrap fire-aura">
+                        <img src="../IMG/hotfly-03.png" alt="Hotly" class="char-img-inner">
+                    </div>
+                    <span class="element-tag fire">Firebird</span>
+                    <h3>Hotly</h3>
+                    <p>A fierce aerial warrior whose internal temperature rises with her emotions.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="char-img-wrap sky-aura">
+                        <img src="../IMG/volt-04.png" alt="Volt" class="char-img-inner">
+                    </div>
+                    <span class="element-tag sky">Sky Quety</span>
+                    <h3>Volt</h3>
+                    <p>An energetic storm-engineer who optimizes gear using salvaged alien technology.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="char-img-wrap royal-aura">
+                        <img src="../IMG/nyaqueen.png" alt="NyAqueen" class="char-img-inner">
+                    </div>
+                    <span class="element-tag royal">Sky Queen</span>
+                    <h3>NyAqueen</h3>
+                    <p>Ruler of the Sky Sanctuary who commits her people to war to prevent Eyuforyia from falling apart.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="char-img-wrap earth-aura">
+                        <img src="../IMG/yara-02.png" alt="Yara" class="char-img-inner">
+                    </div>
+                    <span class="element-tag earth">Granite Badger</span>
+                    <h3>Yara</h3>
+                    <p>An Earth-Shield Tank with skin of reinforced stone; provides heavy defense.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="char-img-wrap void-aura">
+                        <img src="../IMG/rotten-wide-newnyx.png" alt="Nyx" class="char-img-inner">
+                    </div>
+                    <span class="element-tag void">Great Horned Owl</span>
+                    <h3>Nyx</h3>
+                    <p>A resident of the Rotten Marsh who uses shadow abilities to bypass enemy sensors.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="char-img-wrap woods-aura">
+                        <img src="../IMG/aurelius-the-bloom-king-04.png" alt="Elder Hoof" class="char-img-inner">
+                    </div>
+                    <span class="element-tag woods">Majestic Stag</span>
+                    <h3>Elder Hoof</h3>
+                    <p>Leader of the Whispering Woods; provides the Veridian Flute to bypass security.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#">FB</a> / <a href="#">IG</a> / <a href="#">YT</a>
+            </div>
+            <button class="btn-main" onclick="location.href='../index.html'">BACK TO HOME</button>
+            <div class="footer-links">
+                
+            <a href="HTML/privacy.html">Privacy Policy</a>
+            <a href="HTML/terms.html">Terms of Service</a>
+        </div>
+            
+            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+        </div>
+    </footer>
+    <div class="comm-array-player">
+        <div class="track-info">
+            <span id="track-name">Scepter of the Guardian</span>
+            <span id="track-artist">Ambient Forest</span>
+        </div>
+        <div class="player-controls">
+            <button id="prev-btn">⏮</button>
+            <button id="play-pause-btn">▶</button>
+            <button id="next-btn">⏭</button>
+        </div>
+        <audio id="main-audio" src="AUDIO/guardian.mp3"></audio>
+    </div>
+
+    <script src="../SCRIPT/script.js"></script>
+</body>
+</html>
