@@ -5,6 +5,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    // 0. Initialize Lucide Icons for Ecosystem/Socials
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+
     // 1. Mobile Menu Logic
     const menuToggle = document.querySelector('#mobile-menu');
     const navLinks = document.querySelector('.nav-links');
