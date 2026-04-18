@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.teqvault.quetiemals",
+      "sha256_cert_fingerprints": [
+        "F2:23:90:EE:51:14:15:D7:F8:37:90:7E:57:03:98:37:8A:C2:51:E9:59:98:72:A1:5E:B5:4B:66:51:1F:CD:6D"
+      ]
+    }
+  }
+]
