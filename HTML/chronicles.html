@@ -1,104 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Chronicles | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="../CSS/style.css">
+    
     <style>
-        .book-showcase { padding: 60px 10%; }
+        .book-showcase { 
+            padding: 60px 20px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         .book-card { 
             display: flex; 
             gap: 4rem; 
-            background: var(--glass); 
+            background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.1), transparent 60%), rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(18px);
             padding: 40px; 
             border-radius: 20px; 
             border: 1px solid rgba(255,255,255,0.1);
             align-items: center;
             margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .book-cover { flex: 1; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); transition: var(--transition); }
-        .book-cover:hover { transform: scale(1.02) rotate(-1deg); }
-        .book-detail { flex: 1.5; }
+        .book-cover { 
+            flex: 1; 
+            border-radius: 10px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6); 
+            transition: transform 0.3s ease; 
+            width: 100%;
+            max-width: 350px;
+        }
+        .book-cover:hover { 
+            transform: scale(1.02) rotate(-1deg); 
+        }
+        .book-detail { 
+            flex: 1.5; 
+        }
         .excerpt-box { 
-            background: rgba(0,0,0,0.3); 
+            background: rgba(0,0,0,0.4); 
             padding: 25px; 
-            border-left: 3px solid var(--gold); 
+            border-left: 3px solid var(--color-primary); 
             margin: 20px 0; 
             font-style: italic; 
-            color: #cbd5e1;
+            color: var(--color-text-muted);
+            border-radius: 0 8px 8px 0;
         }
         @media (max-width: 968px) {
-            .book-card { flex-direction: column; text-align: center; }
-            .excerpt-box { text-align: left; }
+            .book-card { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 2rem;
+                padding: 30px 20px;
+            }
+            .excerpt-box { 
+                text-align: left; 
+            }
+            .footer-links-inline {
+                justify-content: center !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="story.html">Lore</a></li>
-                <li><a href="chapters.html">Chapters</a></li>
-                <li><a href="characters.html">Guardians</a></li>
-            </ul>
-        </nav>
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Quetiemals Home">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            QUETIEMALS
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
+            <li><a href="characters.html">Guardians</a></li>
+            <li><a href="bosses.html">Threats</a></li>
+            <li><a href="locations.html">World</a></li>
+            <li><a href="playtest.html">Beta Access</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+    </nav>
+
+    <header class="hero" role="banner">
+        <div class="hero-content" style="text-align: center;">
+            <div class="hero-eyebrow reveal" style="color: var(--color-primary);">Written in the Stars of Eyuforyia</div>
+            <h1 class="hero-title reveal reveal-delay-1">THE <span>CHRONICLES</span></h1>
+            <p class="hero-subtitle reveal reveal-delay-2">Dive deeper into the lore of the Resistance.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero lore-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">THE CHRONICLES</h1>
-                <p class="subtitle">WRITTEN IN THE STARS OF EYUFORYIA</p>
-            </div>
-        </section>
-
+    <main id="main-content">
         <section class="book-showcase">
             <div class="book-card reveal">
-                <img src="../IMG/book-cover-02.png" alt="For Land and Kin" class="book-cover">
+                <img src="../IMG/book-cover-02.png" alt="For Land and Kin" class="book-cover" loading="lazy">
                 <div class="book-detail">
-                    <span class="tag">Available Soon</span>
-                    <h2 class="section-heading" style="text-align: left; margin: 10px 0;">For Land and Kin</h2>
-                    <p>The definitive origin story of the Resistance. Before the battles began, the vibration was felt in all corners of Eyuforyia</p>
+                    <span class="lore-tag">Available Soon</span>
+                    <h2 class="section-title" style="text-align: left; margin: 15px 0;">For Land and Kin</h2>
+                    <p style="color: var(--color-text-muted); line-height: 1.6;">The definitive origin story of the Resistance. Before the battles began, the vibration was felt in all corners of Eyuforyia.</p>
                     
                     <div class="excerpt-box">
                         "The sky was violently torn open. The disturbance began not with a sound, but with a subtle, pervasive feeling... an ominous low-frequency vibration."
                     </div>
 
-                    <div class="footer-links" style="justify-content: flex-start; gap: 15px;">
-                        <span style="color: var(--gold); font-weight: bold;">Featured Guardian: Ice Heart</span>
-                        <a href="characters.html" class="btn-sub" style="padding: 10px 20px; font-size: 0.7rem;">View Hero</a>
+                    <div class="footer-links-inline" style="display: flex; align-items: center; justify-content: flex-start; gap: 15px; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <span style="color: var(--color-primary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Featured Guardian: Ice Heart</span>
+                        <a href="characters.html" class="btn btn-ghost" style="padding: 8px 16px; font-size: 0.8rem;">View Hero</a>
                     </div>
                 </div>
             </div>
 
-            <div class="book-card reveal" style="opacity: 0.5; filter: grayscale(1);">
+            <div class="book-card reveal" style="opacity: 0.6; filter: grayscale(1); transition: all 0.3s ease;" onmouseover="this.style.opacity='1'; this.style.filter='grayscale(0)';" onmouseout="this.style.opacity='0.6'; this.style.filter='grayscale(1)';">
                 <div class="book-detail">
-                    <span class="tag">Coming 2026</span>
-                    <h2 class="section-heading" style="text-align: left; margin: 10px 0;">Shadows of the Marsh</h2>
-                    <p>Explore the neon-green sickly swamps of the Rotten Marsh and the shadow abilities of Nyx the Great Horned Owl.</p>
+                    <span class="lore-tag" style="background: rgba(255,255,255,0.1); color: #fff;">Coming 2026</span>
+                    <h2 class="section-title" style="text-align: left; margin: 15px 0;">Shadows of the Marsh</h2>
+                    <p style="color: var(--color-text-muted); line-height: 1.6;">Explore the neon-green sickly swamps of the Rotten Marsh and the shadow abilities of Nyx the Great Horned Owl.</p>
                 </div>
-                <img src="../IMG/night.png" alt="Coming Soon" class="book-cover" style="height: 200px; object-fit: cover;">
+                <img src="../IMG/night.png" alt="Coming Soon" class="book-cover" style="object-fit: cover;" loading="lazy">
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <button class="btn-main" onclick="location.href='../index.html'">RETURN TO BASE</button>
-            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+    <footer class="footer">
+      <div class="footer-inner" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="footer-logo mb-4">QUETIEMALS</div>
+        
+        <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 mt-8 mb-8 text-slate-400 text-sm font-space">
+            
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Ecosystem:</span>
+                <a href="https://teqvault.online" target="_blank" rel="noopener" class="hover:text-[#00a3ff] transition duration-300 flex items-center gap-1.5" title="Teq Vault">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://eyuforyia.com" target="_blank" rel="noopener" class="hover:text-[#ff7a1a] transition duration-300 flex items-center gap-1.5" title="Eyuforyia">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://quetiemals.online" target="_blank" rel="noopener" class="hover:text-emerald-400 transition duration-300 flex items-center gap-1.5" title="Quetiemals">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Quetiemals
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Socials:</span>
+                <a href="https://www.facebook.com/profile.php?id=61577353297986" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Teq Vault Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61587538385294" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Eyuforyia Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://discord.gg/4CAYz2ZCqC" target="_blank" rel="noopener" class="hover:text-[#5865F2] transition duration-300 flex items-center gap-1.5" title="Discord">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg> Discord
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Support:</span>
+                <a href="mailto:support@teqvault.online" class="hover:text-white transition duration-300 flex items-center gap-1.5" title="Email Support">
+                    <i data-lucide="mail" class="w-4 h-4"></i> support@teqvault.online
+                </a>
+            </div>
         </div>
+
+        <p class="footer-copy">© <span id="year"></span> QUETIEMALS | TEQ VAULT</p>
+      </div>
     </footer>
-<div class="comm-array-player">
+
+    <div class="comm-array-player">
         <div class="track-info">
             <span id="track-name">Scepter of the Guardian</span>
             <span id="track-artist">Ambient Forest</span>
@@ -110,6 +191,57 @@
         </div>
         <audio id="main-audio" src="AUDIO/guardian.mp3"></audio>
     </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../SCRIPT/script.js"></script>
+
+    <script>
+        // Initialize Lucide Icons for social links
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal script
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="../CSS/style.css">
 
     <style>
@@ -94,14 +97,18 @@
         }
         .section-anchor { scroll-margin-top: 100px; }
         
-            .reveal { opacity: 1 !important; transform: none !important; }
-
+        .reveal { opacity: 1 !important; transform: none !important; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar" id="navbar" aria-label="Main navigation">
-        <div class="logo">QUETIEMALS</div>
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Quetiemals Home">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            QUETIEMALS
+        </a>
         <ul class="nav-links" id="nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="story.html">Story</a></li>
@@ -178,7 +185,6 @@
                     <a href="#section21">21. AGE-RESTRICTED CONTENT</a>
                 </div>
 
-                <!-- ── SECTION 1 ── -->
                 <div id="section1" class="section-anchor">
                     <h2>1. WHAT INFORMATION DO WE COLLECT?</h2>
                     <h3>Personal information you disclose to us</h3>
@@ -214,7 +220,6 @@
                     <p>We by default access your Facebook basic account information, including your name, email, gender, birthday, current city, and profile picture URL.</p>
                 </div>
 
-                <!-- ── SECTION 2 ── -->
                 <div id="section2" class="section-anchor">
                     <h2>2. HOW DO WE PROCESS YOUR INFORMATION?</h2>
                     <div class="in-short-box">In Short: We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law.</div>
@@ -239,14 +244,12 @@
                     <p>Meta may use cookies and other storage technologies to collect information from our website and use that information to provide measurement services and target ads. You can adjust your preferences via <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener noreferrer">Facebook Ad Preferences</a>.</p>
                 </div>
 
-                <!-- ── SECTION 3 ── -->
                 <div id="section3" class="section-anchor">
                     <h2>3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?</h2>
                     <div class="in-short-box">In Short: We only process your personal information when we believe it is necessary and we have a valid legal reason to do so under applicable law.</div>
                     <p>(Applies to EU/UK and Canada residents based on Consent, Performance of a Contract, Legitimate Interests, Legal Obligations, and Vital Interests).</p>
                 </div>
 
-                <!-- ── SECTION 4 ── -->
                 <div id="section4" class="section-anchor">
                     <h2>4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h2>
                     <div class="in-short-box">In Short: We may share information in specific situations and/or with third parties.</div>
@@ -262,14 +265,12 @@
                     <p>We do not sell your personal information to third parties.</p>
                 </div>
 
-                <!-- ── SECTION 5 ── -->
                 <div id="section5" class="section-anchor">
                     <h2>5. WHAT IS OUR STANCE ON THIRD-PARTY WEBSITES?</h2>
                     <div class="in-short-box">In Short: We are not responsible for the safety of any information that you share with third parties that we may link to or who advertise on our Services.</div>
                     <p>Our Services may contain links to third-party websites, plugins, and applications. Clicking on those links may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements. We encourage you to read the privacy notice of every website you visit.</p>
                 </div>
 
-                <!-- ── SECTION 6 ── -->
                <div id="section6" class="section-anchor">
                     <h2>6. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h2>
                     <div class="in-short-box">In Short: We may use cookies and other tracking technologies to collect and store your information, including serving targeted advertisements.</div>
@@ -285,28 +286,24 @@
                     <p>You may also opt out of certain types of general tracking via your device settings or browser preferences. Refusing cookies may affect some features of our Services.</p>
                 </div>
 
-                <!-- ── SECTION 7 ── -->
                 <div id="section7" class="section-anchor">
                     <h2>7. HOW DO WE HANDLE YOUR SOCIAL LOGINS?</h2>
                     <div class="in-short-box">In Short: If you choose to register or log in to our Services using a social media account, we may have access to certain profile information about you.</div>
                     <p>Our Services offer you the ability to register and log in using your third-party social media account details (like Facebook or X). Where you choose to do this, we will receive certain profile information about you from your social media provider. We will use the information we receive only for the purposes that are described in this Privacy Notice or that are otherwise made clear to you on the relevant Services.</p>
                 </div>
 
-                <!-- ── SECTION 8 ── -->
                 <div id="section8" class="section-anchor">
                     <h2>8. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
                     <div class="in-short-box">In Short: We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law.</div>
                     <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law. When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize it.</p>
                 </div>
 
-                <!-- ── SECTION 9 ── -->
                 <div id="section9" class="section-anchor">
                     <h2>9. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2>
                     <div class="in-short-box">In Short: We aim to protect your personal information through a system of organizational and technical security measures. Transmission of personal information to and from our Services is at your own risk.</div>
                     <p>We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. Despite our safeguards, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure. Please access our Services within a secure environment.</p>
                 </div>
 
-                <!-- ── SECTION 10 ── -->
                 <div id="section10" class="section-anchor">
                     <h2>10. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
                     <div class="in-short-box">In Short: Depending on your state of residence in the US or in some regions (like the EEA, UK, Switzerland, and Canada), you have rights that allow you greater access to and control over your personal information.</div>
@@ -314,13 +311,11 @@
                     <p>To exercise any of these rights, please contact us at <a href="mailto:support@teqvault.online">support@teqvault.online</a> or submit a data subject access request.</p>
                 </div>
 
-                <!-- ── SECTION 11 ── -->
                 <div id="section11" class="section-anchor">
                     <h2>11. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
                     <p>Most web browsers include a Do-Not-Track ("DNT") feature. We do not currently respond to DNT browser signals. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.</p>
                 </div>
 
-                <!-- ── SECTION 12 ── -->
                 <div id="section12" class="section-anchor">
                     <h2>12. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2>
                     <div class="in-short-box">In Short: If you are a resident of certain states (California, Colorado, Connecticut, etc.), you have specific rights regarding your personal data.</div>
@@ -328,41 +323,35 @@
                     <p>You have the right to know, access, correct, delete, obtain copies of your data, non-discrimination, and opt-out of targeted advertising or sale of personal information. You can exercise these rights by submitting a data subject access request or contacting us at <a href="mailto:support@teqvault.online">support@teqvault.online</a>.</p>
                 </div>
 
-                <!-- ── SECTION 13 ── -->
                 <div id="section13" class="section-anchor">
                     <h2>13. DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</h2>
                     <div class="in-short-box">In Short: You may have additional rights based on the country you reside in, including Australia, New Zealand, and the Republic of South Africa.</div>
                     <p>If you are located in Australia, New Zealand, or South Africa, you may have additional rights regarding your personal information under applicable local laws. Please contact us at <a href="mailto:support@teqvault.online">support@teqvault.online</a> to learn more about and exercise any such rights.</p>
                 </div>
 
-                <!-- ── SECTION 14 ── -->
                 <div id="section14" class="section-anchor">
                     <h2>14. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
                     <div class="in-short-box">In Short: Yes, we will update this notice as necessary to stay compliant with relevant laws.</div>
                     <p>We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Last Updated" date at the top of this page. If we make material changes, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to stay informed.</p>
                 </div>
 
-                <!-- ── SECTION 15 ── -->
                 <div id="section15" class="section-anchor">
                     <h2>15. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
                     <p>If you have questions or comments about this notice, you may email us at <a href="mailto:support@teqvault.online">support@teqvault.online</a> or contact us at:</p>
                     <p><strong>Teq Vault (teqvault.online &amp; eyuforyia.com)</strong></p>
                 </div>
 
-                <!-- ── SECTION 16 ── -->
                 <div id="section16" class="section-anchor">
                     <h2>16. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
                     <p>Based on the applicable laws of your country or state of residence, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. To request to review, update, or delete your personal information, please submit a data subject access request by contacting us at <a href="mailto:support@teqvault.online">support@teqvault.online</a>.</p>
                 </div>
 
-                <!-- ── SECTION 17 (NEW) ── -->
                 <div id="section17" class="section-anchor">
                     <h2>17. CONTACTS PERMISSIONS</h2>
                     <div class="in-short-box">In Short: We do not request broad access to your device contacts. Where contact selection is needed, we use the Android Contact Picker.</div>
                     <p>In compliance with Google Play's Contacts Permissions policy, the App does not request READ_CONTACTS, WRITE_CONTACTS, or GET_ACCOUNTS permissions for broad access to your contact list. Where a feature requires selecting a contact (e.g., inviting a friend to play), we exclusively use the <strong>Android Contact Picker</strong> — a secure, system-managed interface that lets you choose a single contact without granting the App access to your full address book. This minimizes data collection and protects your privacy.</p>
                 </div>
 
-                <!-- ── SECTION 18 (NEW) ── -->
                 <div id="section18" class="section-anchor">
                     <h2>18. LOCATION PERMISSIONS</h2>
                     <div class="in-short-box">In Short: Precise location is requested only via the Android location button, using the minimum scope necessary, and only for the specific feature you activate.</div>
@@ -370,21 +359,18 @@
                     <p>We do not use geofencing as a foreground service use case. If geofencing functionality is offered, it is implemented via the <strong>Android Geofence API</strong>, which does not require a foreground service permission. You may revoke location access at any time in your device's app settings.</p>
                 </div>
 
-                <!-- ── SECTION 19 (NEW) ── -->
                 <div id="section19" class="section-anchor">
                     <h2>19. PHOTO &amp; VIDEO PERMISSIONS</h2>
                     <div class="in-short-box">In Short: We only access photos or videos when you explicitly trigger a feature that requires it. We never access your media library broadly.</div>
                     <p>In compliance with Google Play's Photo and Video Permissions policy, the App requests access to photos or videos only when a specific, user-initiated action requires it — for example, uploading a profile picture. We use the Android photo picker where applicable, which gives you precise control over which files are shared. We do not access, store, or share your media files beyond the scope of the action you have requested.</p>
                 </div>
 
-                <!-- ── SECTION 20 (NEW) ── -->
                 <div id="section20" class="section-anchor">
                     <h2>20. ACCOUNT TRANSFER POLICY</h2>
                     <div class="in-short-box">In Short: Any transfer of developer account ownership follows Google Play's official workflow exclusively.</div>
                     <p>In compliance with Google Play's Account Transfer policy, any transfer of our developer account or its associated apps is conducted exclusively through the <strong>"Transfer ownership" workflow</strong> available within the Google Play Console. We do not use unofficial methods to transfer account ownership. This ensures continuity of policy compliance and user data protections across any ownership change.</p>
                 </div>
 
-                <!-- ── SECTION 21 (NEW) ── -->
                 <div id="section21" class="section-anchor">
                     <h2>21. AGE-RESTRICTED CONTENT &amp; FUNCTIONALITY</h2>
                     <div class="in-short-box">In Short: Content or features restricted to adults are protected by age-gating to prevent access by minors.</div>
@@ -392,28 +378,63 @@
                     <p>We do not knowingly collect personal information from children under the age of 13. If you believe we have inadvertently collected such information, please contact us immediately at <a href="mailto:support@teqvault.online">support@teqvault.online</a> so we can promptly delete it.</p>
                 </div>
 
-            </div><!-- /.policy-container -->
-        </div><!-- /.section-inner -->
-    </section>
+            </div></div></section>
 </main>
 
     <footer class="footer">
-        <div class="container" style="text-align: center;">
-            <div class="footer-links" style="justify-content: center; margin-bottom: 1rem;">
-                <a href="../index.html">Home</a>
-                <a href="story.html">Story</a>
-                <a href="chapters.html">Chapters</a>
-                <a href="characters.html">Guardians</a>
-                <a href="bosses.html">Threats</a>
-                <a href="playtest.html">Beta Access</a>
+      <div class="footer-inner" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="footer-logo mb-4">QUETIEMALS</div>
+        
+        <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 mt-8 mb-8 text-slate-400 text-sm font-space">
+            
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Ecosystem:</span>
+                <a href="https://teqvault.online" target="_blank" rel="noopener" class="hover:text-[#00a3ff] transition duration-300 flex items-center gap-1.5" title="Teq Vault">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://eyuforyia.com" target="_blank" rel="noopener" class="hover:text-[#ff7a1a] transition duration-300 flex items-center gap-1.5" title="Eyuforyia">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://quetiemals.online" target="_blank" rel="noopener" class="hover:text-emerald-400 transition duration-300 flex items-center gap-1.5" title="Quetiemals">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Quetiemals
+                </a>
             </div>
-            <p class="footer-copy">&copy; <span id="year"></span> Quetiemals | Teq Vault LLC. All rights reserved.</p>
+
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Socials:</span>
+                <a href="https://www.facebook.com/profile.php?id=61577353297986" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Teq Vault Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61587538385294" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Eyuforyia Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://discord.gg/4CAYz2ZCqC" target="_blank" rel="noopener" class="hover:text-[#5865F2] transition duration-300 flex items-center gap-1.5" title="Discord">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg> Discord
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Support:</span>
+                <a href="mailto:support@teqvault.online" class="hover:text-white transition duration-300 flex items-center gap-1.5" title="Email Support">
+                    <i data-lucide="mail" class="w-4 h-4"></i> support@teqvault.online
+                </a>
+            </div>
         </div>
+
+        <p class="footer-copy">© <span id="year"></span> QUETIEMALS | TEQ VAULT LLC</p>
+      </div>
     </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script src="../SCRIPT/script.js"></script>
 
     <script>
+        // Initialize Lucide Icons for social links
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -444,7 +465,7 @@
             }
         });
 
-        // Scroll reveal script
+        // Scroll reveal script for header animations only
         const reveals = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => {

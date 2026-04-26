@@ -1,105 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guardian Feedback | Quetiemals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
-<link rel="stylesheet" href="../CSS/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="../CSS/style.css">
 
+    <style>
+        .form-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            color: var(--color-primary);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        .sentiment-options {
+            display: flex;
+            gap: 10px;
+            font-size: 2.5rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+        .sentiment-btn {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            filter: grayscale(100%);
+            opacity: 0.4;
+        }
+        .sentiment-btn:hover {
+            transform: scale(1.1);
+            filter: grayscale(50%);
+            opacity: 0.8;
+        }
+        .sentiment-btn.selected {
+            transform: scale(1.2);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #00a3ff, #ff7a1a);
+            color: white;
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Exo 2', sans-serif;
+        }
+        .btn-submit:hover {
+            box-shadow: 0 0 20px rgba(0, 163, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        .data-deletion-link {
+            color: #ef4444;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        .data-deletion-link:hover {
+            color: #dc2626;
+            text-decoration: underline;
+        }
+    </style>
 </head>
-    
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">QUETIEMALS</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="story.html">Story</a></li>
-                <li><a href="characters.html">Guardians</a></li>
-                <li><a href="locations.html">World</a></li>
-                <li><a href="feedback.html" style="color: var(--gold);">Feedback</a></li>
-            </ul>
-        </nav>
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Quetiemals Home">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            QUETIEMALS
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
+            <li><a href="characters.html">Guardians</a></li>
+            <li><a href="bosses.html">Threats</a></li>
+            <li><a href="locations.html">World</a></li>
+            <li><a href="playtest.html">Beta Access</a></li>
+            <li><a href="feedback.html" class="active" style="color: var(--color-primary);">Feedback</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+    </nav>
+
+    <header class="hero" role="banner">
+        <div class="hero-content" style="text-align: center;">
+            <div class="hero-eyebrow reveal" style="color: #ff7a1a;">Communication Array</div>
+            <h1 class="hero-title reveal reveal-delay-1">TRANSMIT <span>FEEDBACK</span></h1>
+            <p class="hero-subtitle reveal reveal-delay-2">Let us know about your experience in Eyuforyia.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero lore-hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="game-title">COMMUNICATION ARRAY</h1>
-                <p class="subtitle">TRANSMIT YOUR FEEDBACK</p>
-            </div>
-        </section>
-
-        <section class="feedback-container">
-            <div class="feedback-card reveal">
-                
-                <form class="silent-form" action="https://script.google.com/macros/s/AKfycbzRBUGpsvXtfUDbu5Qa3jF5p_Trh9n5VQWIAjzLpn_5gbGn0eZFAsLr6W9qUdr1Se4_/exec" method="POST">
+    <main id="main-content">
+        <section class="lore-section" id="feedback">
+            <div class="section-inner">
+                <div class="form-card reveal">
                     
-                    <input type="hidden" name="_subject" value="New Guardian Feedback!">
-                    <input type="text" name="bot_catcher" style="display:none" tabindex="-1" autocomplete="off">
+                    <form id="feedbackForm" class="silent-form" action="https://script.google.com/macros/s/AKfycbzRBUGpsvXtfUDbu5Qa3jF5p_Trh9n5VQWIAjzLpn_5gbGn0eZFAsLr6W9qUdr1Se4_/exec" method="POST">
+                        
+                        <input type="hidden" name="_subject" value="New Guardian Feedback!">
+                        <input type="text" name="bot_catcher" style="display:none" tabindex="-1" autocomplete="off">
+                        
+                        <input type="hidden" name="Sentiment" id="sentimentInput" value="Not Selected">
 
-                    <div class="form-group">
-                        <label>How is your experience in Eyuforyia?</label>
-                        <div class="sentiment-options">
-                            <span class="sentiment-btn" title="Terrible">💀</span>
-                            <span class="sentiment-btn" title="Bad">😐</span>
-                            <span class="sentiment-btn" title="Good">🔥</span>
-                            <span class="sentiment-btn" title="Amazing">✨</span>
+                        <div class="form-group" style="text-align: center; margin-bottom: 2rem;">
+                            <label style="font-size: 1.1rem;">How is your experience in Eyuforyia?</label>
+                            <div class="sentiment-options">
+                                <span class="sentiment-btn" title="Terrible">💀</span>
+                                <span class="sentiment-btn" title="Bad">😐</span>
+                                <span class="sentiment-btn" title="Good">🔥</span>
+                                <span class="sentiment-btn" title="Amazing">✨</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="name">Guardian Name</label>
-                        <input type="text" id="name" name="Name" required placeholder="Enter your username">
-                    </div>
+                        <div class="form-group">
+                            <label for="name">Guardian Callsign</label>
+                            <input type="text" id="name" name="Name" required placeholder="Enter your username">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="Email" required placeholder="guardian@email.com">
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Communication Channel (Email)</label>
+                            <input type="email" id="email" name="Email" required placeholder="guardian@email.com">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="subject">Topic</label>
-                        <select id="subject" name="Topic">
-                            <option value="General">General Feedback</option>
-                            <option value="Bug">Bug Report</option>
-                            <option value="Feature">Feature Request</option>
-                            <option value="Lore">Lore Suggestion</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="subject">Topic</label>
+                            <select id="subject" name="Topic">
+                                <option value="General">General Feedback</option>
+                                <option value="Bug">Bug Report</option>
+                                <option value="Feature">Feature Request</option>
+                                <option value="Lore">Lore Suggestion</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="message">Transmission Message</label>
-                        <textarea id="message" name="Message" rows="5" required placeholder="Type your message here..."></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="message">Transmission Message</label>
+                            <textarea id="message" name="Message" rows="5" required placeholder="Type your message here..."></textarea>
+                        </div>
 
-                    <button type="submit" class="btn-main btn-submit">Send Transmission</button>
-                </form>
+                        <button type="submit" id="submitBtn" class="btn-submit">Send Transmission</button>
+                    </form>
+
+                    <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.95rem;">
+                        <p style="color: var(--color-text-muted); margin: 0;">Looking to manage your account data?</p>
+                        <a href="datadeletion.html" class="data-deletion-link">Request Data Deletion &rarr;</a>
+                    </div>
+                    
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="social-links">
-    <a href="https://www.facebook.com/profile.php?id=61573981297113" target="_blank">FB</a> / 
-    <a href="#">IG</a> / 
-    <a href="#">YT</a>
-</div>
-            <button class="btn-sub" onclick="location.href='../index.html'">Return Home</button>
-            <p class="copyright">&copy; 2026 Quetiemals | Teq Vault</p>
+    <footer class="footer">
+      <div class="footer-inner" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="footer-logo mb-4">QUETIEMALS</div>
+        
+        <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 mt-8 mb-8 text-slate-400 text-sm font-space">
+            
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Ecosystem:</span>
+                <a href="https://teqvault.online" target="_blank" rel="noopener" class="hover:text-[#00a3ff] transition duration-300 flex items-center gap-1.5" title="Teq Vault">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://eyuforyia.com" target="_blank" rel="noopener" class="hover:text-[#ff7a1a] transition duration-300 flex items-center gap-1.5" title="Eyuforyia">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://quetiemals.online" target="_blank" rel="noopener" class="hover:text-emerald-400 transition duration-300 flex items-center gap-1.5" title="Quetiemals">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Quetiemals
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Socials:</span>
+                <a href="https://www.facebook.com/profile.php?id=61577353297986" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Teq Vault Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61587538385294" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Eyuforyia Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://discord.gg/4CAYz2ZCqC" target="_blank" rel="noopener" class="hover:text-[#5865F2] transition duration-300 flex items-center gap-1.5" title="Discord">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg> Discord
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Support:</span>
+                <a href="mailto:support@teqvault.online" class="hover:text-white transition duration-300 flex items-center gap-1.5" title="Email Support">
+                    <i data-lucide="mail" class="w-4 h-4"></i> support@teqvault.online
+                </a>
+            </div>
         </div>
+
+        <p class="footer-copy">© <span id="year"></span> QUETIEMALS | TEQ VAULT</p>
+      </div>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script src="../SCRIPT/script.js"></script>
+
+    <script>
+        // Initialize Lucide Icons for social links
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Handle Sentiment Emoji Clicks
+        const sentimentBtns = document.querySelectorAll('.sentiment-btn');
+        const sentimentInput = document.getElementById('sentimentInput');
+
+        sentimentBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove selected class from all
+                sentimentBtns.forEach(b => b.classList.remove('selected'));
+                // Add to clicked
+                btn.classList.add('selected');
+                // Update hidden input value
+                sentimentInput.value = btn.getAttribute('title');
+            });
+        });
+
+        // Form Submit Visual Feedback
+        const form = document.getElementById('feedbackForm');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        if(form) {
+            form.addEventListener('submit', function() {
+                submitBtn.innerText = "TRANSMITTING...";
+                submitBtn.style.opacity = "0.7";
+            });
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal script
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>

@@ -5,6 +5,13 @@
     <meta name="google-adsense-account" content="ca-pub-7932735753046865">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Access | Quetiemals</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="../CSS/style.css">
     
     <style>
@@ -18,7 +25,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 20px;
+            padding: 120px 20px 80px 20px; /* Added top padding to clear fixed nav */
             min-height: 80vh;
         }
 
@@ -82,8 +89,13 @@
 </head>
 <body>
 
-    <nav class="navbar" id="navbar">
-        <div class="logo">QUETIEMALS</div>
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Quetiemals Home">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            QUETIEMALS
+        </a>
         <ul class="nav-links" id="nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="story.html">Story</a></li>
@@ -93,16 +105,16 @@
             <li><a href="locations.html">World</a></li>
             <li><a href="playtest.html" class="active">Beta Access</a></li>
         </ul>
-        <button class="nav-menu-btn" id="menu-btn">
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12h18M3 6h18M3 18h18"/>
+            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
         </button>
     </nav>
 
     <main id="main-content">
         <div class="form-card">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 0.5rem;">Transmission <span>Array</span></h2>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 0.5rem; font-family: 'Exo 2', sans-serif;">Transmission <span style="color: var(--color-primary);">Array</span></h2>
             <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2.5rem;">Enlist for the Eyuforyia Alpha and Beta testing phases.</p>
 
             <form id="enlistForm">
@@ -110,7 +122,7 @@
                 
                 <div class="form-group" style="margin-bottom: 1.5rem;">
                     <label style="color: var(--color-primary); font-weight: bold; display: block; margin-bottom: 0.5rem;">Guardian Callsign</label>
-                    <input type="text" name="Name" class="form-control" required placeholder="Enter your callsing" style="width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
+                    <input type="text" name="Name" class="form-control" required placeholder="Enter your callsign" style="width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 1.5rem;">
@@ -126,7 +138,7 @@
                     </select>
                 </div>
 
-                <button type="submit" id="submitBtn" class="btn" style="width: 100%; background: linear-gradient(135deg, #4ade80, #10b981); color: #000; font-weight: bold; padding: 15px; border: none; border-radius: 8px; cursor: pointer;">
+                <button type="submit" id="submitBtn" class="btn" style="width: 100%; background: linear-gradient(135deg, #4ade80, #10b981); color: #000; font-weight: bold; padding: 15px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
                     TRANSMIT ENLISTMENT
                 </button>
             </form>
@@ -140,19 +152,69 @@
                     <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
             </div>
-            <h2 style="color: white; font-family: 'Exo 2';">ENLISTMENT <span>SUCCESSFUL</span></h2>
+            <h2 style="color: white; font-family: 'Exo 2', sans-serif;">ENLISTMENT <span style="color: #10b981;">SUCCESSFUL</span></h2>
             <p style="color: #888; margin: 1.5rem 0; line-height: 1.6;">
                 Your signal has been received, Guardian. Data integrated into the <strong>Teq Vault</strong> mainframe.
             </p>
-            <button onclick="closeModal()" class="btn" style="background: #333; color: white; width: 100%; border: none; padding: 12px; border-radius: 8px; cursor: pointer;">Return to Base</button>
+            <button onclick="closeModal()" class="btn" style="background: #333; color: white; width: 100%; border: none; padding: 12px; border-radius: 8px; cursor: pointer; transition: background 0.3s ease;">Return to Base</button>
         </div>
     </div>
 
-    <footer class="footer" style="text-align: center; padding: 2rem;">
-        <p class="footer-copy">&copy; 2026 Quetiemals | Teq Vault LLC. All rights reserved.</p>
+    <footer class="footer">
+      <div class="footer-inner" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="footer-logo mb-4">QUETIEMALS</div>
+        
+        <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 mt-8 mb-8 text-slate-400 text-sm font-space">
+            
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Ecosystem:</span>
+                <a href="https://teqvault.online" target="_blank" rel="noopener" class="hover:text-[#00a3ff] transition duration-300 flex items-center gap-1.5" title="Teq Vault">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://eyuforyia.com" target="_blank" rel="noopener" class="hover:text-[#ff7a1a] transition duration-300 flex items-center gap-1.5" title="Eyuforyia">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://quetiemals.online" target="_blank" rel="noopener" class="hover:text-emerald-400 transition duration-300 flex items-center gap-1.5" title="Quetiemals">
+                    <i data-lucide="globe" class="w-4 h-4"></i> Quetiemals
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Socials:</span>
+                <a href="https://www.facebook.com/profile.php?id=61577353297986" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Teq Vault Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Teq Vault
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61587538385294" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Eyuforyia Facebook">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Eyuforyia
+                </a>
+                <a href="https://discord.gg/4CAYz2ZCqC" target="_blank" rel="noopener" class="hover:text-[#5865F2] transition duration-300 flex items-center gap-1.5" title="Discord">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg> Discord
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Support:</span>
+                <a href="mailto:support@teqvault.online" class="hover:text-white transition duration-300 flex items-center gap-1.5" title="Email Support">
+                    <i data-lucide="mail" class="w-4 h-4"></i> support@teqvault.online
+                </a>
+            </div>
+        </div>
+
+        <p class="footer-copy">© <span id="year"></span> QUETIEMALS | TEQ VAULT LLC</p>
+      </div>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
+        // Initialize Lucide Icons for social links
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         const form = document.getElementById('enlistForm');
         const modal = document.getElementById('successModal');
         const submitBtn = document.getElementById('submitBtn');
@@ -195,11 +257,31 @@
             submitBtn.disabled = false;
         }
 
-        // Mobile Menu
+        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+                if(isOpen) {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+                } else {
+                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
+                }
+            });
+        }
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
     </script>
 </body>

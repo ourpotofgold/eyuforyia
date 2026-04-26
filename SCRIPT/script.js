@@ -1,52 +1,59 @@
 /**
  * Quetiemals: The Fight for Eyuforyia 
- * Core Website Logic - v3.0 (Google Script Backend + Redirects + Music Player)
+ * Core Website Logic - Final Version (Google Script Backend + No Redirects + Music Player)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 0. Initialize Lucide Icons for Ecosystem/Socials
+    // 1. Initialize Lucide Icons (Used in the footer)
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 
-    // 1. Mobile Menu Logic
-    const menuToggle = document.querySelector('#mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+    // 2. Mobile Menu Logic & Animations
+    const menuToggle = document.querySelector('.nav-menu-btn') || document.querySelector('#menu-btn') || document.querySelector('#mobile-menu');
+    const navLinks = document.querySelector('.nav-links') || document.getElementById('nav-links');
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('is-active');
+            const isOpen = navLinks.classList.toggle('open');
+            navLinks.classList.toggle('active'); // Fallback for older class names
             
-            const bars = document.querySelectorAll('.bar');
-            if (menuToggle.classList.contains('is-active')) {
-                // Animate hamburger to X
-                bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-                bars[1].style.opacity = '0';
-                bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-            } else {
-                resetMenuBars(bars);
+            // Handle standard SVG icon swap if it exists
+            const menuIcon = document.getElementById('menu-icon');
+            if (menuIcon) {
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                menuIcon.setAttribute('d', isOpen ? 'M18 6L6 18M6 6l12 12' : 'M3 12h18M3 6h18M3 18h18'); 
+            }
+
+            // Handle custom hamburger bars if they exist
+            menuToggle.classList.toggle('is-active');
+            const bars = menuToggle.querySelectorAll('.bar');
+            if (bars.length === 3) {
+                if (menuToggle.classList.contains('is-active')) {
+                    bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                    bars[1].style.opacity = '0';
+                    bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+                } else {
+                    bars[0].style.transform = 'none';
+                    bars[1].style.opacity = '1';
+                    bars[2].style.transform = 'none';
+                }
             }
         });
     }
 
-    function resetMenuBars(bars) {
-        bars[0].style.transform = 'none';
-        bars[1].style.opacity = '1';
-        bars[2].style.transform = 'none';
-    }
-
-    // 2. Intersection Observer (Scroll Reveal Animations)
+    // 3. Scroll Reveal Animations (Intersection Observer)
     const observerOptions = { 
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                entry.target.classList.add('visible'); // Main site class
+                entry.target.classList.add('active');  // Fallback class
                 revealObserver.unobserve(entry.target);
             }
         });
@@ -54,21 +61,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // 3. Navbar Background Change on Scroll
+    // 4. Navbar Background Change on Scroll
+    const navbar = document.getElementById('navbar') || document.querySelector('.navbar') || document.querySelector('.nav');
     window.addEventListener('scroll', () => {
-        const nav = document.querySelector('.navbar');
-        if (nav) {
+        if (navbar) {
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(0, 0, 0, 0.95)';
-                nav.style.padding = '1rem 5%';
+                navbar.classList.add('scrolled');
+                // Fallback direct styling if CSS class isn't present
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
             } else {
-                nav.style.background = 'rgba(0, 0, 0, 0.8)';
-                nav.style.padding = '1.5rem 5%';
+                navbar.classList.remove('scrolled');
+                // Fallback direct styling
+                navbar.style.background = '';
             }
         }
     });
 
-    // 4. Hero Entrance Animation
+    // 5. Hero Entrance Animation
     const heroContent = document.querySelector('.hero-content');
     if (heroContent) {
         setTimeout(() => {
@@ -78,47 +87,86 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 
-    // 5. Silent Form Submission & Redirect Logic
-    const silentForms = document.querySelectorAll('.silent-form');
+    // 6. Silent Form Submissions (Feedback, Playtest, Data Deletion)
+    const silentForms = document.querySelectorAll('.silent-form') || document.querySelectorAll('form');
     
     silentForms.forEach(form => {
+        // Skip forms that don't have a Google Script action
+        if (!form.action || !form.action.includes('script.google.com')) return;
+
         form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stop the page from redirecting
+            e.preventDefault(); // Stop the browser from leaving the page
             
-            const btn = form.querySelector('button[type="submit"]');
+            const btn = form.querySelector('button[type="submit"]') || document.getElementById('submitBtn');
+            if (!btn) return;
+
             const originalText = btn.innerText;
+            const originalBg = btn.style.background;
             
-            // Loading state
+            // Visual Loading State
             btn.innerText = "TRANSMITTING...";
             btn.style.opacity = "0.7";
             btn.style.pointerEvents = "none";
 
-            // Send data to Google Script silently
+            // Send data in the background bypassing CORS blocks
             fetch(form.action, {
                 method: 'POST',
-                body: new FormData(form)
+                body: new FormData(form),
+                mode: 'no-cors'
             })
-            .then(response => response.json())
-            .then(data => {
-                if(data.result === "success") {
-                    // Look for a custom success page on the form, otherwise default to success.html
-                    const customRedirect = form.getAttribute('data-success') || "success.html";
-                    window.location.href = customRedirect; 
+            .then(() => {
+                // SUCCESS LOGIC
+
+                // A. Check if this form triggers a modal (like the Beta Access page)
+                const modalId = form.getAttribute('data-modal-target') || 'successModal';
+                const modal = document.getElementById(modalId);
+                
+                if (modal && modal.classList) {
+                    modal.classList.add('active');
+                    document.body.classList.add('modal-open');
                 } else {
-                    throw new Error("Script returned error");
+                    // B. Inline success state (for Feedback & Data Deletion pages)
+                    btn.innerText = "TRANSMISSION SUCCESSFUL";
+                    btn.style.background = "#10b981"; // Green success color
+                }
+
+                // Reset form inputs
+                form.reset();
+
+                // Custom logic to reset emoji sentiments on the feedback page
+                const sentimentBtns = form.querySelectorAll('.sentiment-btn');
+                if (sentimentBtns.length > 0) {
+                    sentimentBtns.forEach(b => b.classList.remove('selected'));
+                    const sentimentInput = document.getElementById('sentimentInput');
+                    if(sentimentInput) sentimentInput.value = "Not Selected";
+                }
+
+                // Reset button UI after 3 seconds if not using a popup modal
+                if (!modal) {
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.background = originalBg; 
+                        btn.style.opacity = "1";
+                        btn.style.pointerEvents = "auto";
+                    }, 3000);
+                } else {
+                    // If a modal popped up, reset the button underneath it instantly
+                    btn.innerText = originalText;
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "auto";
                 }
             })
             .catch(error => {
-                // Error state
+                // ERROR LOGIC
                 console.error("Transmission failed:", error);
                 btn.innerText = "ERROR! TRY AGAIN.";
-                btn.style.background = "#ff4d00"; // Fire color
+                btn.style.background = "#ef4444"; // Red error color
                 btn.style.opacity = "1";
                 
                 // Reset button after 3 seconds to allow retry
                 setTimeout(() => {
                     btn.innerText = originalText;
-                    btn.style.background = ""; 
+                    btn.style.background = originalBg; 
                     btn.style.opacity = "1";
                     btn.style.pointerEvents = "auto";
                 }, 3000);
@@ -126,8 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Comm-Array Music Player Logic
-    // Figure out if we are in the HTML subfolder to adjust the file paths dynamically
+    // 7. Comm-Array Music Player Logic
     const isSubpage = window.location.pathname.includes('/HTML/');
     const pathPrefix = isSubpage ? '../AUDIO/' : 'AUDIO/';
 
@@ -143,15 +190,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
 
-    // Only run if the music player actually exists on the page
     if (audio && playPauseBtn) {
         
-        // Converted to function expressions to satisfy JSHint (W082)
         const loadTrack = (index) => {
             const track = playlist[index];
             audio.src = track.src;
-            document.getElementById('track-name').innerText = track.name;
-            document.getElementById('track-artist').innerText = track.artist;
+            
+            const trackNameEl = document.getElementById('track-name');
+            const trackArtistEl = document.getElementById('track-artist');
+            
+            if (trackNameEl) trackNameEl.innerText = track.name;
+            if (trackArtistEl) trackArtistEl.innerText = track.artist;
         };
 
         const playMusic = () => {
@@ -193,18 +242,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize the first track
         loadTrack(currentTrackIndex);
-        // We ensure volume is low to be atmospheric!
-        audio.volume = 0.15; 
+        audio.volume = 0.15; // Set volume low for atmospheric background
 
-        // THE AUTOPLAY ATTEMPT
+        // Autoplay attempt
         let playPromise = audio.play();
 
         if (playPromise !== undefined) {
             playPromise.then(() => {
-                // Autoplay worked! (Usually happens on subpages because user has already interacted)
+                // Autoplay succeeded
                 playPauseBtn.innerText = "⏸";
             }).catch(error => {
-                // Autoplay was blocked by the browser (Usually on the first page load)
+                // Autoplay blocked by browser until user clicks
                 console.log("Eyuforyia Comm-Array: Autoplay blocked until user interaction.");
                 playPauseBtn.innerText = "▶";
             });
