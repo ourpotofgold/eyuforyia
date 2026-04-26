@@ -44,6 +44,27 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="stylesheet" href="CSS/style.css">
+  
+  <style>
+    /* Added to ensure buttons layout correctly with icons */
+    .hero-nav, .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .hero-nav .btn, .cta-buttons .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
@@ -82,8 +103,14 @@
         This is the story of invasion, corruption, and the resistance that refuses to fall.
       </p>
       <div class="hero-nav" role="list">
-        <a href="#origins" class="btn btn-primary">Begin the Story</a>
-        <a href="HTML/characters.html" class="btn btn-ghost">Meet the Guardians</a>
+        <a href="https://play.google.com/store/apps/details?id=com.teqvault.quetiemals" target="_blank" rel="noopener" class="btn btn-primary flex items-center gap-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.31-.58L3 18.34V5.66c0-.222.072-.435.205-.607l.404-3.239zM14.5 12.7l3.056 3.056L21 14.134a1 1 0 0 0 0-1.732l-3.444-1.622L14.5 12.7zm-1.414-1.414L3.94 2.132a1 1 0 0 1 1.25-.132L13.086 11.286zm0 2.828l-7.896 9.32a1 1 0 0 1-1.25-.132l9.146-9.188z"/></svg>
+          Play Now
+        </a>
+        <a href="https://www.youtube.com/watch?v=ECYZ2HyvJaI&list=PLQOuY8C0Qg36U8garEJmC-OcfZu-geI_J" target="_blank" rel="noopener" class="btn btn-ghost flex items-center gap-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Watch Gameplay
+        </a>
       </div>
     </div>
   </header>
@@ -333,8 +360,8 @@
         to the Central AI.
       </p>
       <div class="cta-buttons">
-        <a href="HTML/playtest.html" class="btn btn-primary">Play Now</a>
-        <a href="HTML/chapters.html" class="btn btn-ghost">Read the Chapters</a>
+        <a href="https://play.google.com/store/apps/details?id=com.teqvault.quetiemals" target="_blank" rel="noopener" class="btn btn-primary">Download on Google Play</a>
+        <a href="https://www.youtube.com/watch?v=ECYZ2HyvJaI&list=PLQOuY8C0Qg36U8garEJmC-OcfZu-geI_J" target="_blank" rel="noopener" class="btn btn-ghost">Watch Lore Trailer</a>
       </div>
     </section>
 
