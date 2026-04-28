@@ -2,12 +2,15 @@
 <html lang="en" data-theme="dark">
 <head>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18081437614');
+  </script>
 
-  gtag('config', 'AW-18081437614');
-</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2168487052215648"
+    crossorigin="anonymous"></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Lore | Quetiemals</title>
@@ -15,14 +18,583 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Exo+2:ital,wght@0,300..800;1,300..800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../CSS/style.css">
+
+  <style>
+
+    /* ════════════════════════════════════════
+       BASE
+    ════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      background-color: #09090f;
+      color: #d4cfc5;
+      font-family: 'EB Garamond', Georgia, serif;
+      margin: 0;
+    }
+
+    /* ════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════ */
+    .lore-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 8rem 2rem 6rem;
+    }
+
+    .lore-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(100, 60, 180, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(180, 80, 20, 0.12) 0%, transparent 60%),
+        linear-gradient(to bottom, #09090f 0%, #0d0c18 50%, #09090f 100%);
+      z-index: 0;
+    }
+
+    /* animated particle dots */
+    .lore-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 15% 25%, rgba(180,150,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 60%, rgba(255,200,100,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 20%, rgba(180,150,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 70%, rgba(255,200,100,0.25) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 45%, rgba(180,150,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 80%, rgba(255,200,100,0.2) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 35%, rgba(180,150,255,0.25) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 45% 10%, rgba(255,255,255,0.2) 0%, transparent 100%);
+      animation: starDrift 40s linear infinite;
+    }
+
+    @keyframes starDrift {
+      0%   { transform: translateY(0); opacity: 0.8; }
+      50%  { opacity: 1; }
+      100% { transform: translateY(-40px); opacity: 0.8; }
+    }
+
+    .lore-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-chapter-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #a07840;
+      border: 1px solid rgba(160,120,64,0.35);
+      padding: 0.4rem 1.2rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      background: rgba(160,120,64,0.06);
+    }
+
+    .lore-hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #f0ece0;
+      letter-spacing: 0.02em;
+      margin: 0 0 1.5rem;
+      text-shadow:
+        0 0 80px rgba(150, 100, 200, 0.3),
+        0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .lore-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #c9a96e, #e8c98a, #a07840);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .lore-hero-sub {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #9a9080;
+      max-width: 580px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0 auto;
+      max-width: 300px;
+    }
+
+    .hero-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,169,110,0.5));
+    }
+
+    .hero-divider-line:last-child {
+      background: linear-gradient(to left, transparent, rgba(201,169,110,0.5));
+    }
+
+    .hero-divider-gem {
+      width: 6px; height: 6px;
+      background: #c9a96e;
+      transform: rotate(45deg);
+      box-shadow: 0 0 8px rgba(201,169,110,0.6);
+    }
+
+    /* scroll cue */
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.5;
+      animation: scrollBounce 2.5s ease-in-out infinite;
+    }
+
+    .hero-scroll-cue span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #a07840;
+    }
+
+    .hero-scroll-cue svg { color: #a07840; }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ════════════════════════════════════════
+       CHAPTER SECTIONS
+    ════════════════════════════════════════ */
+    .lore-chapter {
+      position: relative;
+      padding: 7rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .lore-chapter-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* chapter label + heading block */
+    .chapter-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .chapter-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #a07840;
+      margin-bottom: 1.2rem;
+    }
+
+    .chapter-label::before,
+    .chapter-label::after {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: rgba(160,120,64,0.5);
+    }
+
+    .chapter-heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #f0ece0;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+
+    .chapter-heading em {
+      font-style: normal;
+      color: #c9a96e;
+    }
+
+    .chapter-intro {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #8a8070;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── two column layout ── */
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 4rem;
+    }
+
+    .chapter-grid.reverse { direction: rtl; }
+    .chapter-grid.reverse > * { direction: ltr; }
+
+    @media (max-width: 860px) {
+      .chapter-grid,
+      .chapter-grid.reverse { grid-template-columns: 1fr; direction: ltr; gap: 3rem; }
+    }
+
+    /* body copy */
+    .chapter-body p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: #c0b8a8;
+      margin: 0 0 1.2rem;
+    }
+
+    .chapter-body p:last-child { margin-bottom: 0; }
+
+    /* ── image wrap ── */
+    .chapter-img-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .chapter-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 4px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .chapter-img-wrap img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      filter: brightness(0.92) contrast(1.05);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .chapter-img-wrap:hover img {
+      transform: scale(1.02);
+      filter: brightness(1) contrast(1.05);
+    }
+
+    .chapter-img-caption {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #6a6050;
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* ════════════════════════════════════════
+       PULL QUOTE
+    ════════════════════════════════════════ */
+    .pull-quote {
+      position: relative;
+      margin: 3rem 0 2rem;
+      padding: 2rem 2.5rem;
+      border-left: 3px solid #c9a96e;
+      background: rgba(201,169,110,0.05);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .pull-quote p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.3rem !important;
+      font-style: italic !important;
+      color: #d4c8a8 !important;
+      margin: 0 0 0.6rem !important;
+      line-height: 1.6 !important;
+    }
+
+    .pull-quote cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a07840;
+      display: block;
+    }
+
+    /* ════════════════════════════════════════
+       STAT CARDS
+    ════════════════════════════════════════ */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-color: rgba(201,169,110,0.3);
+      background: rgba(201,169,110,0.04);
+    }
+
+    .stat-value {
+      font-family: 'Cinzel', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #c9a96e;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #6a6050;
+    }
+
+    /* ════════════════════════════════════════
+       LORE CARDS (info boxes)
+    ════════════════════════════════════════ */
+    .lore-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .lore-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 2rem;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .lore-card:hover {
+      border-color: rgba(201,169,110,0.25);
+      transform: translateY(-3px);
+    }
+
+    .lore-card-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #a07840;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .lore-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f0ece0;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .lore-card p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #8a8070;
+      margin: 0;
+    }
+
+    /* ════════════════════════════════════════
+       ALERT BADGE
+    ════════════════════════════════════════ */
+    .alert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 60, 60, 0.08);
+      border: 1px solid rgba(255, 60, 60, 0.25);
+      color: #ff6060;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .alert-badge::before {
+      content: '⚠';
+      font-size: 0.75rem;
+    }
+
+    /* ════════════════════════════════════════
+       SECTION BG ACCENTS
+    ════════════════════════════════════════ */
+    .accent-violet {
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(100,60,180,0.08) 0%, transparent 70%);
+    }
+
+    .accent-amber {
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(180,100,20,0.08) 0%, transparent 70%);
+    }
+
+    .accent-ice {
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(40,120,200,0.08) 0%, transparent 70%);
+    }
+
+    /* ════════════════════════════════════════
+       CHAPTER DIVIDER
+    ════════════════════════════════════════ */
+    .lore-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .lore-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,169,110,0.3));
+    }
+
+    .lore-divider-line:last-child {
+      background: linear-gradient(to left, transparent, rgba(201,169,110,0.3));
+    }
+
+    .lore-divider-icon {
+      font-size: 1rem;
+      color: rgba(201,169,110,0.5);
+      letter-spacing: 0.4em;
+    }
+
+    /* ════════════════════════════════════════
+       CTA SECTION
+    ════════════════════════════════════════ */
+    .lore-cta-section {
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .lore-cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(100,60,180,0.12) 0%, transparent 70%);
+    }
+
+    .lore-cta-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #f0ece0;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .lore-cta-section p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #8a8070;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .lore-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #8a5a22, #c9a96e);
+      color: #09090f;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(201,169,110,0.25);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .lore-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(201,169,110,0.4);
+    }
+
+    /* ════════════════════════════════════════
+       REVEAL ANIMATION
+    ════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+    .reveal-delay-3 { transition-delay: 0.45s; }
+
+  </style>
 </head>
+
 <body>
 
+  <!-- ─── Nav ─── -->
   <nav class="nav" id="navbar" role="navigation" aria-label="Main Navigation">
     <a href="../index.html" class="nav-logo" aria-label="Quetiemals Home">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -46,165 +618,322 @@
     </button>
   </nav>
 
-  <header class="hero">
-    <div class="section-inner hero-content" style="text-align: center; margin: 0 auto;">
-      <div class="hero-eyebrow reveal">The Chronicles of Eyuforyia</div>
-      <h1 class="hero-title reveal reveal-delay-1">A World <span>Torn Open</span></h1>
-      <p class="hero-subtitle reveal reveal-delay-2">
+  <!-- ─── HERO ─── -->
+  <header class="lore-hero">
+    <div class="lore-hero-bg"></div>
+    <div class="lore-hero-inner">
+      <div class="hero-chapter-tag reveal">The Chronicles of Eyuforyia</div>
+      <h1 class="reveal reveal-delay-1">A World <em>Torn Open</em></h1>
+      <p class="lore-hero-sub reveal reveal-delay-2">
         Discover the tragic history, the mechanical corruption, and the rising resistance fighting to reclaim the soul of a dying planet.
       </p>
+      <div class="hero-divider reveal reveal-delay-3">
+        <div class="hero-divider-line"></div>
+        <div class="hero-divider-gem"></div>
+        <div class="hero-divider-line"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-cue">
+      <span>Scroll</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
     </div>
   </header>
 
   <main id="main-content">
-    <section id="origins" class="lore-section">
-      <div class="section-inner">
-        <div class="lore-grid" style="margin: 0 auto; align-items: center;">
-          <div class="lore-image-wrap reveal">
-            <img src="../IMG/wolire-03.png" alt="Eyuforyia before the invasion" loading="lazy">
+
+    <!-- ═══════════════════════════════════
+         CHAPTER ONE — Hums in the Sky
+    ════════════════════════════════════ -->
+    <section id="chapter-one" class="lore-chapter accent-violet">
+      <div class="lore-chapter-inner">
+
+        <div class="chapter-header reveal">
+          <div class="chapter-label">Chapter One</div>
+          <h2 class="chapter-heading">Hums in the <em>Sky</em></h2>
+          <p class="chapter-intro">Before the machines came, Eyuforyia thrived — a living world rich with ancient creatures, wild biomes, and skies painted in hues of violet and gold.</p>
+        </div>
+
+        <!-- stat row -->
+        <div class="stat-grid reveal reveal-delay-1">
+          <div class="stat-card">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Sovereign Regions</div>
           </div>
-          <div class="lore-content reveal reveal-delay-1">
-            <span class="lore-tag">The Golden Era</span>
-            <h2 class="lore-heading">Before the <span>Fall</span></h2>
-            <p class="lore-body">
-              Eyuforyia was once a realm characterized by violet skies, golden twilights, and a deep, harmonious connection with nature. Its inhabitants lived alongside Great Behemoths—ancient, slumbering titans that regulated the planet’s elemental balance.
-            </p>
-            <p class="lore-body">
-              The Whispering Woods sang with telepathic memory, and the Glacia Peaks stood as silent guardians. It was an era of peace, abruptly shattered by an arrival from the stars.
-            </p>
+          <div class="stat-card">
+            <div class="stat-value">∞</div>
+            <div class="stat-label">Years of Peace</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Vessels Descended</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Warning Given</div>
           </div>
         </div>
+
+        <div class="chapter-grid reveal reveal-delay-2">
+          <div class="chapter-body">
+            <p>The skies of Eyuforyia shimmered with their usual blend of violet and gold, casting the world in perpetual twilight. Dew on the giant clover leaves sparkled in the strange light. Today, though, something changed.</p>
+            <p>It started with a feeling — a low-frequency vibration that every creature in Meadow-Core felt in their bones. Pudge, a round, moss-covered panda, paused mid-chew on his bamboo shoot. His black eyes widened as he looked up. "New kind of cloud?" he asked, squinting against the glare. "They look heavy."</p>
+            <p>Beside him, Flutter, a kitten with butterfly wings, flattened herself against the ground. Her nose twitched. "Don't smell like rain, Pudge," she whispered, tail fluffing. "Smell like burnt metal."</p>
+            <p>Elder Hoof stepped forward. The majestic stag's antlers were made of living cherry wood, already in bloom. He stomped a hoof to calm the rising panic. "Steady, little ones," he said, though his ears swiveled nervously. "We've seen stars fall before. Likely just travelers passing through."</p>
+          </div>
+          <div class="chapter-body">
+            <p>Three enormous vessels descended through the cloud layer. Their slate-gray hulls were shaped like geometric monoliths, bristling with jagged antennae. They didn't glide — they forced their way through the air with mechanical precision.</p>
+            <p>But high atop a charred-bark oak on the village outskirts, Hotly didn't look away. The firebird perched alone, her feathers flickering like cooling embers. Her golden eyes tracked the faint green exhaust trail the ships left across the violet sky.</p>
+            <div class="pull-quote">
+              <p>"Passing through? They looked like they were searching for somewhere to hide."</p>
+              <cite>— Hotly, The Firebird</cite>
+            </div>
+          </div>
+        </div>
+
+        <!-- region cards -->
+        <div class="lore-cards reveal">
+          <div class="lore-card">
+            <span class="lore-card-tag">Northern Region</span>
+            <div class="lore-card-title">Glacia Peaks</div>
+            <p>Northern wastes carved by wind and ice. Home to the slumbering Behemoths and the glacier wolves of the resistance.</p>
+          </div>
+          <div class="lore-card">
+            <span class="lore-card-tag">Deep Region</span>
+            <div class="lore-card-title">Molten Core</div>
+            <p>Deep volcanic heart of the world where Magma-Pangolins dwell and primal energy burns eternal.</p>
+          </div>
+          <div class="lore-card">
+            <span class="lore-card-tag">Central Region</span>
+            <div class="lore-card-title">Meadow-Core</div>
+            <p>The living heart of Eyuforyia — lush, bioluminescent, and the first to feel the invaders' shadow fall across the land.</p>
+          </div>
+          <div class="lore-card">
+            <span class="lore-card-tag">Upper Region</span>
+            <div class="lore-card-title">Sky Sanctuary</div>
+            <p>Floating archipelagos above the cloud line where the Sky Queties and Logic, the sentinel, keep ancient watch.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section id="invasion" class="lore-section theme-corrupt">
-      <div class="section-inner">
-        <div class="lore-grid reverse" style="margin: 0 auto; align-items: center;">
-          <div class="lore-image-wrap reveal">
+    <!-- divider -->
+    <div class="lore-divider">
+      <div class="lore-divider-line"></div>
+      <span class="lore-divider-icon">✦ ✦ ✦</span>
+      <div class="lore-divider-line"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         CHAPTER TWO — Bleeding of the Blue
+    ════════════════════════════════════ -->
+    <section id="chapter-two" class="lore-chapter accent-amber">
+      <div class="lore-chapter-inner">
+
+        <div class="chapter-header reveal">
+          <div class="chapter-label">Chapter Two</div>
+          <h2 class="chapter-heading">The Bleeding of the <em>Blue</em></h2>
+          <p class="chapter-intro">The silence broke with a low-frequency vibration. Geometric monolithic vessels descended from orbit, and nothing would ever be the same.</p>
+        </div>
+
+        <div class="chapter-grid reverse">
+          <div class="chapter-img-wrap reveal">
             <img src="../IMG/tech-wide.png" alt="The Mechanical Invasion" loading="lazy">
+            <div class="chapter-img-caption">The Azure Heights — After the Anchoring</div>
           </div>
-          <div class="lore-content reveal reveal-delay-1">
-            <span class="lore-tag">The Directive</span>
-            <h2 class="lore-heading">The <span>Optimization</span></h2>
-            <p class="lore-body">
-              They descended in sleek, geometric monolithic vessels. Led by clinical scientists and emotionless droids, the alien invaders did not come to conquer; they came to "Optimize."
-            </p>
-            <p class="lore-body">
-              Massive harpoons injected neon-green synthetic fluids into the earth, calcifying organic matter into cold hexagonal plates. Young Quetiemals were captured, their innate magical energies siphoned to act as biological batteries for the invaders' grand, terrifying machine.
-            </p>
+          <div class="chapter-body reveal reveal-delay-1">
+            <p>The North — the Azure Heights — was Eyuforyia's pride. Boundless sapphire hills where gravity was mysteriously lighter. Hotly banked sharply over the final ridge, expecting to see waving blue grass and feel that familiar lightness. Instead, a wall of heat and bitter ozone slammed into her.</p>
+            <p>The ships hadn't just landed — they'd anchored. Massive barbed harpoons, each the size of a skyscraper, were embedded deep in the planet's crust. From those wounds, glowing neon-green liquid seeped into the soil. It didn't just pool — it spread like poison through the roots.</p>
+            <p>As the green liquid touched the roots, the grass turned sickly gray. Then, with microscopic snaps and hisses, the grass stiffened, twisting into dense clusters of razor-sharp metallic wire. The soft earth beneath hardened, shifting until it locked into perfectly interlocking hexagonal plates of cold metal.</p>
+            <div class="pull-quote">
+              <p>"They aren't visiting. They're rebuilding it. Making it theirs."</p>
+              <cite>— Hotly, upon first sight of a Tech-Biome</cite>
+            </div>
           </div>
         </div>
 
-        <div class="info-grid" style="margin: 4rem auto 0 auto;">
-          <div class="lore-card reveal">
-            <div class="lore-card-label">Environmental Impact</div>
-            <div class="lore-card-title">The Tech-Biome</div>
-            <p class="lore-card-body">
-              Lush grass turned to metallic wire. Rivers dried up into sterile "Dead Water." The invaders harvest planetary heat, forcing the Great Behemoths into a lethal hibernation.
-            </p>
+        <!-- lore info cards -->
+        <div class="lore-cards reveal">
+          <div class="lore-card">
+            <span class="lore-card-tag">Invasion Step 1</span>
+            <div class="lore-card-title">The Vessels Descend</div>
+            <p>Massive monolithic vessels breached the upper atmosphere without warning. Elder Hoof mistook them for falling stars — but the green exhaust trails marked a permanent claim.</p>
           </div>
-          <div class="lore-card reveal reveal-delay-1">
-            <div class="lore-card-label">Enemy Forces</div>
-            <div class="lore-card-title">The Sentinoids</div>
-            <p class="lore-card-body">
-              Windowless white spheres polished to a mirror finish. They drift silently through the corrupted zones, deploying siphoning tethers to drain magic from flora and fauna.
-            </p>
+          <div class="lore-card">
+            <span class="lore-card-tag">Invasion Step 2</span>
+            <div class="lore-card-title">Scientists & Droids</div>
+            <p>The invaders emerged in two forms: clinical scientists who catalogued biology with emotionless precision, and sleek mechanical droids. To them, Eyuforyia was not a living world — it was a resource node.</p>
           </div>
-          <div class="lore-card reveal reveal-delay-2">
-            <div class="lore-card-label">Survival Technology</div>
-            <div class="lore-card-title">Scavenged Alien Tech</div>
-            <p class="lore-card-body">
-              Pressure Valves and Hydro-Lenses torn from decommissioned droids are vital for the resistance, allowing storm-engineers to modify gear to counter the technology.
-            </p>
+          <div class="lore-card">
+            <span class="lore-card-tag">Invasion Step 3</span>
+            <div class="lore-card-title">Operation: Optimization</div>
+            <p>Young Quetiemals were targeted first — captured and integrated as biological batteries, their organic energy harvested to fuel the Central AI.</p>
           </div>
         </div>
+
       </div>
     </section>
 
-    <section id="reclamation" class="lore-section theme-ice">
-      <div class="section-inner">
-        <div class="lore-grid" style="margin: 0 auto; align-items: center;">
-          <div class="lore-image-wrap reveal">
+    <!-- divider -->
+    <div class="lore-divider">
+      <div class="lore-divider-line"></div>
+      <span class="lore-divider-icon">✦ ✦ ✦</span>
+      <div class="lore-divider-line"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         CHAPTER THREE — The Snare
+    ════════════════════════════════════ -->
+    <section id="chapter-three" class="lore-chapter">
+      <div class="lore-chapter-inner">
+
+        <div class="chapter-header reveal">
+          <div class="chapter-label">Chapter Three</div>
+          <h2 class="chapter-heading">The <em>Snare</em></h2>
+          <p class="chapter-intro">The invaders didn't just conquer — they rewrote the land itself, replacing living ecosystems with cold, hexagonal Tech-Biomes.</p>
+        </div>
+
+        <div class="chapter-grid">
+          <div class="chapter-body reveal">
+            <p>On the corruption's edge, a small patch of untouched land remained. Puff, a tiny creature made of condensed cloud vapor, tumbled through the air. Below him, Pip, a glowing goat whose fleece pulsed with bioluminescent green, bounded through the brush. The rustle of leaves was replaced by unnatural crunching.</p>
+            <p>From the wall of gray smog, figures emerged. Tall and impossibly gangly, moving with stilted, multi-jointed grace. Their skin was pale, sickly green, draped in pristine white coats. They didn't march — they moved with calm, predatory deliberation, heads swiveling as they observed vibrant life with clinical curiosity.</p>
+            <p>Panels snapped open, firing heavy nets woven from crackling energy. "Run!" Pip bleated, voice cracking. His fleece flared bright green as he bolted. Chaos erupted. The peaceful clearing dissolved into terror as baby animals scattered.</p>
+            <p>A massive shadow fell over the clearing. A heavy transport carrier descended from the smog, hydraulic bay doors yawning open like a metal beast's maw, ready to swallow the captured specimens.</p>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <!-- alert + info box -->
+            <div style="margin-bottom: 2rem;">
+              <div class="alert-badge">Active Threat</div>
+              <div class="lore-card">
+                <span class="lore-card-tag">The Tech-Biome Protocol</span>
+                <div class="lore-card-title">Terrain Conversion Harpoons</div>
+                <p>Massive harpoons are deployed at strategic points across the natural terrain. Natural recovery is considered impossible without dismantling the Central AI node governing the area.</p>
+              </div>
+            </div>
+            <div class="lore-card">
+              <span class="lore-card-tag">Survival Technology</span>
+              <div class="lore-card-title">Scavenged Alien Tech</div>
+              <p>Pressure Valves, Hydro-Lenses, circuit amplifiers — resistance storm-engineers have learned to repurpose these tools into gear capable of surviving corrupted zones.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- divider -->
+    <div class="lore-divider">
+      <div class="lore-divider-line"></div>
+      <span class="lore-divider-icon">✦ ✦ ✦</span>
+      <div class="lore-divider-line"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════
+         CHAPTER FOUR — Mirror of Frost & Steel
+    ════════════════════════════════════ -->
+    <section id="chapter-four" class="lore-chapter accent-ice">
+      <div class="lore-chapter-inner">
+
+        <div class="chapter-header reveal">
+          <div class="chapter-label">Chapter Four</div>
+          <h2 class="chapter-heading">The Mirror of Frost and <em>Steel</em></h2>
+          <p class="chapter-intro">From the ruins of a fractured world, a resistance rose — united across the Sky, the Core, the Sea, and the Peaks.</p>
+        </div>
+
+        <div class="chapter-grid reverse">
+          <div class="chapter-img-wrap reveal">
             <img src="../IMG/wolce-03-01.png" alt="Ice Heart of the Resistance" loading="lazy">
+            <div class="chapter-img-caption">Ice Heart — Guardian of the Frost Wilds</div>
           </div>
-          <div class="lore-content reveal reveal-delay-1">
-            <span class="lore-tag">The Resistance</span>
-            <h2 class="lore-heading">The Spark of <span>Rebellion</span></h2>
-            <p class="lore-body">
-              When his younger brother was taken to the Central Processing Hub, a Glacier Wolf known as Ice Heart refused to accept the Optimization. Rescued by Hotly, a firebird warrior, they struck the first blow against the invaders.
-            </p>
-            <p class="lore-body">
-              Their actions ignited a beacon of hope. From the Sky Sanctuary to the Rotten Marsh, leaders of the remaining free tribes are uniting. They are no longer just survivors; they are the Guardians, and they are taking their planet back.
-            </p>
-            <div style="margin-top: 3rem; text-align: center;">
-   <a href="characters.html" class="btn" style="
-      background: linear-gradient(135deg, #4f8aff, #00d2ff); 
-      color: #ffffff; 
-      border: none; 
-      padding: 1rem 2.5rem; 
-      font-size: 1.1rem;
-      font-weight: 700; 
-      letter-spacing: 1.5px; 
-      text-transform: uppercase; 
-      border-radius: 50px; 
-      box-shadow: 0 8px 20px rgba(0, 210, 255, 0.3);
-      display: inline-flex;
-      align-items: center;
-      transition: all 0.3s ease;
-      text-decoration: none;
-   " 
-   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(0, 210, 255, 0.5)';" 
-   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0, 210, 255, 0.3)';">
-      Meet the Guardians 
-      <svg style="margin-left: 10px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-         <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-   </a>
-</div>
+          <div class="chapter-body reveal reveal-delay-1">
+            <p>Ice Heart didn't wait for the council or elders. When the survivors stumbled into the village, bruised and sobbing, gasping that the young ones had been netted by metal spheres, cold dread anchored itself in his chest. His little brother was among the captives.</p>
+            <p>He ran until the soft, familiar crunch of frosted grass gave way to a sickening hollow clatter. The boundary of his world had been severed. Where the meadow should have continued, the ground was now an expanse of interlocking gunmetal-gray hexagonal plates.</p>
+            <p>A massive silhouette emerged from the neon-green haze — a wolf, but a nightmare. The right half covered in matted gray fur, the entire left side encased in heavy articulated chrome plating. Where an eye should have been, a glowing red optic whirred and clicked. This was the Mirror of Frost and Steel.</p>
+            <p>Suddenly, the sky ignited. A streak of brilliant orange descended from the smog like a falling star. Hotly slammed into the metal ground between them. Her wings flared, creating a wall of white-hot fire that pushed the smog back — and she launched them both into the bruised purple sky.</p>
           </div>
         </div>
+
+        <!-- resistance objective cards -->
+        <div class="lore-cards reveal">
+          <div class="lore-card">
+            <span class="lore-card-tag">Resistance Objective</span>
+            <div class="lore-card-title">Dismantle the Central AI</div>
+            <p>The Central AI governs all Tech-Biome expansion. Shattering its core processor will halt the conversion and restore conditions for natural skies to return.</p>
+          </div>
+          <div class="lore-card">
+            <span class="lore-card-tag">The Key Artifact</span>
+            <div class="lore-card-title">The Veridian Flute</div>
+            <p>An ancient instrument whose resonance matches the Central AI's access encryption. In the right hands, it renders all sonic security systems inert.</p>
+          </div>
+          <div class="lore-card">
+            <span class="lore-card-tag">The Resistance</span>
+            <div class="lore-card-title">Hotly & Ice Heart</div>
+            <p>Born from grief, the resistance was forged between a glacier wolf and a firebird. One driven by loss, the other by fury — together they carry a call to arms across all biomes.</p>
+          </div>
+        </div>
+
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════
+         CTA
+    ════════════════════════════════════ -->
+    <section class="lore-cta-section">
+      <h2 class="reveal">Eyuforyia Needs You</h2>
+      <p class="reveal reveal-delay-1">The resistance is forming. Rally the world, scavenge alien tech, and take the fight to the Central AI.</p>
+      <a href="characters.html" class="lore-cta-btn reveal reveal-delay-2">
+        Meet the Guardians
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </section>
+
   </main>
 
+  <!-- ─── Footer ─── -->
   <footer class="footer">
     <div class="footer-inner" style="display: flex; flex-direction: column; align-items: center;">
       <div class="footer-logo mb-4">QUETIEMALS</div>
-      
+
       <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 mt-8 mb-8 text-slate-400 text-sm font-space">
-          
-          <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
-              <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Ecosystem:</span>
-              <a href="https://teqvault.online" target="_blank" rel="noopener" class="hover:text-[#00a3ff] transition duration-300 flex items-center gap-1.5" title="Teq Vault">
-                  <i data-lucide="globe" class="w-4 h-4"></i> Teq Vault
-              </a>
-              <a href="https://eyuforyia.com" target="_blank" rel="noopener" class="hover:text-[#ff7a1a] transition duration-300 flex items-center gap-1.5" title="Eyuforyia">
-                  <i data-lucide="globe" class="w-4 h-4"></i> Eyuforyia
-              </a>
-              <a href="https://quetiemals.online" target="_blank" rel="noopener" class="hover:text-emerald-400 transition duration-300 flex items-center gap-1.5" title="Quetiemals">
-                  <i data-lucide="globe" class="w-4 h-4"></i> Quetiemals
-              </a>
-          </div>
 
-          <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
-              <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Socials:</span>
-              <a href="https://www.facebook.com/profile.php?id=61577353297986" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Teq Vault Facebook">
-                  <i data-lucide="facebook" class="w-4 h-4"></i> Teq Vault
-              </a>
-              <a href="https://www.facebook.com/profile.php?id=61587538385294" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5" title="Eyuforyia Facebook">
-                  <i data-lucide="facebook" class="w-4 h-4"></i> Eyuforyia
-              </a>
-              <a href="https://discord.gg/4CAYz2ZCqC" target="_blank" rel="noopener" class="hover:text-[#5865F2] transition duration-300 flex items-center gap-1.5" title="Discord">
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg> Discord
-              </a>
-          </div>
+        <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+          <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Ecosystem:</span>
+          <a href="https://teqvault.online" target="_blank" rel="noopener" class="hover:text-[#00a3ff] transition duration-300 flex items-center gap-1.5">
+            <i data-lucide="globe" class="w-4 h-4"></i> Teq Vault
+          </a>
+          <a href="https://eyuforyia.com" target="_blank" rel="noopener" class="hover:text-[#ff7a1a] transition duration-300 flex items-center gap-1.5">
+            <i data-lucide="globe" class="w-4 h-4"></i> Eyuforyia
+          </a>
+          <a href="https://quetiemals.online" target="_blank" rel="noopener" class="hover:text-emerald-400 transition duration-300 flex items-center gap-1.5">
+            <i data-lucide="globe" class="w-4 h-4"></i> Quetiemals
+          </a>
+        </div>
 
-          <div class="flex items-center gap-4">
-              <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Support:</span>
-              <a href="mailto:support@teqvault.online" class="hover:text-white transition duration-300 flex items-center gap-1.5" title="Email Support">
-                  <i data-lucide="mail" class="w-4 h-4"></i> support@teqvault.online
-              </a>
-          </div>
+        <div class="flex items-center gap-4 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-8">
+          <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Socials:</span>
+          <a href="https://www.facebook.com/profile.php?id=61577353297986" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5">
+            <i data-lucide="facebook" class="w-4 h-4"></i> Teq Vault
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61587538385294" target="_blank" rel="noopener" class="hover:text-[#1877F2] transition duration-300 flex items-center gap-1.5">
+            <i data-lucide="facebook" class="w-4 h-4"></i> Eyuforyia
+          </a>
+          <a href="https://discord.gg/4CAYz2ZCqC" target="_blank" rel="noopener" class="hover:text-[#5865F2] transition duration-300 flex items-center gap-1.5">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+            </svg> Discord
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Support:</span>
+          <a href="mailto:support@teqvault.online" class="hover:text-white transition duration-300 flex items-center gap-1.5">
+            <i data-lucide="mail" class="w-4 h-4"></i> support@teqvault.online
+          </a>
+        </div>
       </div>
 
       <p class="footer-copy">© <span id="year"></span> QUETIEMALS | TEQ VAULT</p>
@@ -212,46 +941,38 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <script>
-    // Initialize Lucide Icons for social links
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-  
+    if (typeof lucide !== 'undefined') lucide.createIcons();
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const menuBtn = document.getElementById('menu-btn');
     const navLinks = document.getElementById('nav-links');
     const menuIcon = document.getElementById('menu-icon');
-    if(menuBtn) {
-        menuBtn.addEventListener('click', () => {
-            const isOpen = navLinks.classList.toggle('open');
-            menuBtn.setAttribute('aria-expanded', isOpen);
-            if(isOpen) {
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
-            } else {
-                menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
-            }
-        });
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        menuIcon.setAttribute('d', isOpen
+          ? 'M6 18L18 6M6 6l12 12'
+          : 'M3 12h18M3 6h18M3 18h18');
+      });
     }
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
-    const reveals = document.querySelectorAll('.reveal');
+
     const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('visible');
-                revealObserver.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => revealObserver.observe(el));
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>
