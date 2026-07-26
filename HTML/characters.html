@@ -1,238 +1,228 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18081437614');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardians of Eyuforyia | Quetiemals: The Fight For Eyuforyia</title>
-    <meta name="description" content="Meet the Guardians of Eyuforyia — Ice Heart, Hotly, Volt, NyAqueen, Yara, Nyx, Elder Hoof, and Grand Tusk. Every hero, every power, every story in the fight against the Central AI." />
-<script src="https://cdn.tailwindcss.com/3.4.1/tailwind.min.js"></script>
-    
-    <link rel="stylesheet" href="../CSS/theme.css">
-  <link rel="stylesheet" href="../CSS/style.css">
-<link rel="canonical" href="https://eyuforyia.com/HTML/characters.html">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18081437614');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardians of Eyuforyia | Quetiemals: The Fight For Eyuforyia</title>
+  <meta name="description" content="Meet the Guardians of Eyuforyia — Ice Heart, Hotly, Volt, NyAqueen, Yara, Nyx, Elder Hoof, and Grand Tusk.">
+  <link rel="canonical" href="https://eyuforyia.com/HTML/characters.html">
   <meta name="google-adsense-account" content="ca-pub-7932735753046865">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7932735753046865" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../CSS/theme.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <style>
+    .g-hero { padding: clamp(4rem, 10vw, 7rem) 1.5rem 3rem; text-align: center; }
+    .g-hero-eyebrow { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.75rem; }
+    .g-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; letter-spacing: 0.04em; margin-bottom: 1rem; }
+    .g-hero h1 span { color: var(--color-accent); }
+    .g-hero-sub { font-family: var(--font-body); font-size: var(--text-lg); color: var(--color-text-muted); max-width: 36ch; margin: 0 auto; }
+    .g-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem 5rem; }
+    .g-intro { text-align: center; max-width: 52ch; margin: 0 auto 3.5rem; color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.8; }
+    .g-featured { display: grid; gap: 2.5rem; margin-bottom: 4rem; }
+    .g-feature { display: grid; grid-template-columns: 1fr 1.15fr; gap: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); background: rgba(15, 13, 26, 0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); min-height: 320px; }
+    .g-feature.reverse { grid-template-columns: 1.15fr 1fr; }
+    .g-feature.reverse .g-feature-art { order: 2; }
+    .g-feature-art { position: relative; min-height: 280px; background: radial-gradient(ellipse at center, rgba(153,102,255,0.12), transparent 70%); }
+    .g-feature-art img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .g-feature-body { padding: 2rem 1.75rem; display: flex; flex-direction: column; justify-content: center; }
+    .g-badge { display: inline-block; font-family: var(--font-ui); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: var(--radius-full); margin-bottom: 0.85rem; width: fit-content; }
+    .g-feature-body h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; margin-bottom: 0.85rem; letter-spacing: 0.03em; }
+    .g-feature-body p { color: var(--color-text-muted); font-size: 0.98rem; line-height: 1.75; margin-bottom: 1.1rem; }
+    .g-abilities { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .g-chip { font-family: var(--font-ui); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.28rem 0.65rem; border-radius: var(--radius-full); border: 1px solid var(--color-border); color: var(--color-text-muted); background: rgba(255,255,255,0.03); }
+    .accent-ice .g-badge { color: var(--color-ice); background: var(--color-ice-glow); border: 1px solid rgba(79,195,212,0.35); }
+    .accent-ice .g-feature-art { background: radial-gradient(ellipse at center, rgba(79,195,212,0.15), transparent 70%); }
+    .accent-fire .g-badge { color: var(--color-fire); background: var(--color-fire-glow); border: 1px solid rgba(255,123,61,0.35); }
+    .accent-fire .g-feature-art { background: radial-gradient(ellipse at center, rgba(255,123,61,0.15), transparent 70%); }
+    .accent-storm .g-badge { color: #f5d76e; background: rgba(245,215,110,0.12); border: 1px solid rgba(245,215,110,0.3); }
+    .accent-celestial .g-badge { color: var(--color-primary); background: var(--color-primary-glow); border: 1px solid var(--color-primary-border); }
+    .accent-earth .g-badge { color: var(--color-nature); background: var(--color-nature-glow); border: 1px solid rgba(200,168,75,0.35); }
+    .accent-shadow .g-badge { color: #b794f6; background: rgba(183,148,246,0.12); border: 1px solid rgba(183,148,246,0.3); }
+    .accent-nature .g-badge { color: var(--color-corrupt); background: var(--color-corrupt-glow); border: 1px solid rgba(57,211,83,0.3); }
+    .accent-behemoth .g-badge { color: #a8c5d4; background: rgba(168,197,212,0.12); border: 1px solid rgba(168,197,212,0.3); }
+    .g-roster-label { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); text-align: center; margin-bottom: 0.5rem; }
+    .g-roster-title { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); text-align: center; margin-bottom: 2rem; }
+    .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+    .g-card { border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: rgba(15, 13, 26, 0.82); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); overflow: hidden; display: flex; flex-direction: column; transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease); }
+    .g-card:hover { border-color: var(--color-primary-border); box-shadow: 0 0 28px var(--color-primary-glow); transform: translateY(-3px); }
+    .g-card-art { aspect-ratio: 1 / 1; overflow: hidden; background: rgba(0,0,0,0.25); }
+    .g-card-art img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.45s ease; }
+    .g-card:hover .g-card-art img { transform: scale(1.04); }
+    .g-card-body { padding: 1.15rem 1.2rem 1.35rem; flex: 1; display: flex; flex-direction: column; }
+    .g-card-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 0.35rem 0 0.55rem; letter-spacing: 0.03em; }
+    .g-card-body p { color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.65; flex: 1; margin-bottom: 0.9rem; }
+    @media (max-width: 800px) {
+      .g-feature, .g-feature.reverse { grid-template-columns: 1fr; }
+      .g-feature.reverse .g-feature-art { order: 0; }
+      .g-feature-art { min-height: 220px; max-height: 280px; }
+    }
+  </style>
 </head>
 <body>
+  <nav class="nav" id="navbar" role="navigation" aria-label="Main Navigation">
+    <a href="../index.html" class="nav-logo" aria-label="Quetiemals Home">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      QUETIEMALS
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="story-reader.html">Full Story</a></li>
+      <li><a href="chapters.html">Chapters</a></li>
+      <li><a href="characters.html" class="active">Guardians</a></li>
+      <li><a href="bosses.html">Threats</a></li>
+      <li><a href="locations.html">World</a></li>
+      <li><a href="playtest.html">Beta Access</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </nav>
 
-    <nav class="nav" id="navbar" role="navigation" aria-label="Main Navigation">
-        <a href="../index.html" class="nav-logo" aria-label="Quetiemals Home">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-            </svg>
-            QUETIEMALS
-        </a>
-                <ul class="nav-links" id="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="story.html">Story</a></li>
-            <li><a href="story-reader.html">Full Story</a></li>
-            <li><a href="chapters.html">Chapters</a></li>
-            <li><a href="characters.html" class="active">Guardians</a></li>
-            <li><a href="bosses.html">Threats</a></li>
-            <li><a href="locations.html">World</a></li>
-            <li><a href="playtest.html">Beta Access</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-        </ul>
-        <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
-          </svg>
-        </button>
-    </nav>
+  <header class="g-hero">
+    <div class="g-hero-eyebrow reveal">The Resistance Vanguard</div>
+    <h1 class="reveal reveal-delay-1">THE <span>GUARDIANS</span></h1>
+    <p class="g-hero-sub reveal reveal-delay-2">United across the Sky, the Core, the Sea, and the Peaks.</p>
+  </header>
 
-    <header class="hero" role="banner">
-        <div class="hero-content" style="text-align: center;">
-            <div class="hero-eyebrow reveal">The Resistance Vanguard</div>
-            <h1 class="hero-title reveal reveal-delay-1">THE <span>GUARDIANS</span></h1>
-            <p class="hero-subtitle reveal reveal-delay-2">United across the Sky, Core, Sea, and Peaks.</p>
+  <main class="g-wrap">
+    <p class="g-intro reveal">From the molten depths to the frozen peaks — the glacier wolf who refused to stop running, the firebird who never looked away, and every warrior who answered the call.</p>
+
+    <div class="g-featured">
+      <article class="g-feature accent-ice reveal">
+        <div class="g-feature-art"><img src="../IMG/wolce-03-01.png" alt="Ice Heart"></div>
+        <div class="g-feature-body">
+          <span class="g-badge">Glacier Wolf · Frost / Spirit</span>
+          <h2>Ice Heart</h2>
+          <p>The resistance&#39;s driving force. A resolute glacier wolf who crossed every biome on a single mission: rescue his brother from the Central AI&#39;s processing pods. Static-Frost gauntlets, frost-shattering blows, and a will that convinced a Sky Queen and cracked the AI&#39;s core. He fights not as a soldier — but as a brother who refuses to stop running.</p>
+          <div class="g-abilities">
+            <span class="g-chip">Frost Shard</span>
+            <span class="g-chip">Mystic Bolt Barrage</span>
+            <span class="g-chip">Sovereign Roar: Blue Fenrir</span>
+            <span class="g-chip">Static-Frost Gauntlet Strike</span>
+          </div>
         </div>
-    </header>
+      </article>
 
-    <main id="main-content">
-        <section class="lore-section" id="guardians">
-            <div class="section-inner">
-                <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
-                    <h2 class="section-title">Heroes of the Resistance</h2>
-                    <p class="section-intro">From the molten depths to the frozen peaks — the glacier wolf who refused to stop running, the firebird who never looked away, and every warrior who answered the call. These are the Guardians of Eyuforyia.</p>
-                </div>
-
-                                <div class="guardians-grid" style="margin: 0 auto;">
-
-                    <!-- Ice Heart -->
-                    <div class="guardian-card ice reveal">
-                        <div class="guardian-type">Glacier Wolf · Frost / Spirit</div>
-                        <div class="guardian-name">Ice Heart</div>
-                        <img src="../IMG/wolce-03-01.png" alt="Ice Heart" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <p class="guardian-desc">The resistance's driving force. A resolute glacier wolf who crossed every biome in Eyuforyia on a single mission: rescue his brother from the Central AI's processing pods. Equipped with Static-Frost gauntlets forged from scavenged alien tech by Volt, Ice Heart funnels his grief directly into elemental power — delivering frost-shattering blows that crack chrome plating and freeze digital energy flows. He convinced a Sky Queen with logic, broke a Forge-Guard with raw cold, and shattered the AI's central processor with one strike. He fights not as a soldier — but as a brother who refuses to stop running.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Frost Shard · Mystic Bolt Barrage · Sovereign Roar: Blue Fenrir · Static-Frost Gauntlet Strike</p>
-                    </div>
-
-                    <!-- Hotly -->
-                    <div class="guardian-card fire reveal reveal-delay-1">
-                        <div class="guardian-type">Firebird (Phoenix) · Volcanic / Avian</div>
-                        <div class="guardian-name">Hotly</div>
-                        <img src="../IMG/hotfly-03.png" alt="Hotly" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <p class="guardian-desc">The one who didn't look away. While Elder Hoof told the village to return to their games, Hotly tracked the alien exhaust trails north alone. Her internal temperature rises with her emotions — the hotter her fury, the more powerful her fire — and she was the first to understand what the invaders truly were: not travelers, but colonizers. She saved Ice Heart from the Mirror of Frost with a thermal surge that blinded the cybernetic wolf and launched them into the sky, despite burning through nearly all her strength to do it. She is fierce, aerial, and carries the resistance's anger so the others can carry hope.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Cinder Swoop · Phoenix Rebirth Strike · Solar Flare Cloak · Will-o'-Wisp Feathers</p>
-                    </div>
-
-                    <!-- Volt -->
-                    <div class="guardian-card reveal reveal-delay-2">
-                        <div class="guardian-type">Sky Quetie · Storm / Battery</div>
-                        <div class="guardian-name">Volt</div>
-                        <img src="../IMG/volt-04.png" alt="Volt" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <p class="guardian-desc">The resistance's storm-engineer and the reason the team survived the second half of the journey. Assigned by Queen NyAqueen after the Sky Sanctuary committed to the fight, Volt is a young, hyperactive squirrel equipped with sub-zero and storm technology — pilot goggles, a massive wrench, and ears that spark with golden bursts of static when he's working. He reverse-engineered a Pressure Valve from the Molten Core to build atmospheric re-calibrators for Ice Heart, installed thermal regulation micro-valves on Hotly's bracers, and destroyed the Glacia Peaks' atmospheric stabilizer by routing mountain lightning through its core housing. His Static Pulse scrambles enemy equilibrium. His Eyuforyian Conduit turns every match-3 combo into a lightning strike.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Static Strike · Ionic Discharge · Eyuforyian Conduit · Overcharge Jab</p>
-                    </div>
-
-                    <!-- NyAqueen -->
-                    <div class="guardian-card reveal">
-                        <div class="guardian-type">Sky Queen · Celestial / Wind</div>
-                        <div class="guardian-name">NyAqueen</div>
-                        <img src="../IMG/nyaqueen.png" alt="NyAqueen" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <p class="guardian-desc">Ruler of the Sky Sanctuary and the hardest ally to win. NyAqueen is breathtaking — larger than other Queties, her form shifting between solid matter and pure light, wings of gossamer energy, fur rippling with iridescent sheen. She is governed entirely by logic and detachment. She dismissed the surface corruption as a "surface problem" until Ice Heart told her: <em>"A world made of metal needs no sky — only a ceiling."</em> That single variable broke her model. She committed her people to the war — and in the final battle, her Prismatic Confusion and Crystalline Coronation turned the tide inside the AI's sanctum. She fights not from rage, but from the cold recognition that the math demands it.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Prismatic Confusion · Rainbow Feather Storm · Crystalline Coronation · Spectrum Overload</p>
-                    </div>
-
-                    <!-- Yara -->
-                    <div class="guardian-card reveal reveal-delay-1">
-                        <div class="guardian-type">Granite Badger · Earth / Nature</div>
-                        <div class="guardian-name">Yara</div>
-                        <img src="../IMG/yara-02.png" alt="Yara" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <p class="guardian-desc">The resistance's shield. A massive badger whose skin and fur are composed of living, reinforced granite, Yara emerged from the shadows of the Glacia Peaks after watching Ice Heart dismantle the alien atmospheric stabilizer with pure unyielding resolve. She had lived by the Law of the Forge — extreme stillness, the belief that any movement was weakness — until that moment. Her paws leave deep indentations in permafrost. Her granite hide absorbed the full electrical assault of the Rotten Marsh's Light-Spires while Volt worked on the frequency override. She is the team's immovable vanguard: she takes what would destroy others, and then she releases it.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Granite Cleave · Tectonic Slam · Garrison of the Peaks · Runic Overload: Granite Aegis</p>
-                    </div>
-
-                    <!-- Nyx -->
-                    <div class="guardian-card reveal reveal-delay-2">
-                        <div class="guardian-type">Great Horned Owl · Night / Shadow</div>
-                        <div class="guardian-name">Nyx</div>
-                        <img src="../IMG/rotten-wide-newnyx.png" alt="Nyx" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <p class="guardian-desc">The guardian of the marsh shadows — and the most haunting recruit. When the team found her, Nyx's once-vibrant mahogany feathers had been bleached pale gray by the alien Light-Spires. She sat on a bleached skeletal tree with heavy, drooping posture, eyes vacant and clouded, locked in the synthetic telepathic addiction the machines had installed to replace the planet's natural hum. She communicated in hollow laughter before the team destroyed the dampeners. Freed into natural darkness for the first time in months, she looked up at real stars and wept. Now she uses her Shadow Step to vanish between pockets of silence, strikes sensors with spectral precision, and calls the night back wherever the machines tried to erase it.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Shadow Step · Fracture Peck · Void-Mirror Warp · Soul-Burn Howl</p>
-                    </div>
-
-                    <!-- Elder Hoof -->
-                    <div class="guardian-card nature reveal">
-                        <div class="guardian-type">Majestic Stag · Nature / Spirit</div>
-                        <div class="guardian-name">Elder Hoof</div>
-                        <img src="../IMG/aurelius-the-bloom-king-04.png" alt="Elder Hoof" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <p class="guardian-desc">The leader who chose comfort over truth — and has never forgiven himself. Elder Hoof was the first to see the alien vessels descend. He called them falling stars and told the village to return to their games. By the time the machines came for the children, his blossoms had wilted with guilt. The invaders suspended him inside a sonic containment field inside the corrupted Elder's Grove, slowly deleting his life-force — draining the planet's memory through him. After the Harmonic Shredder was destroyed and the Resonance Siphons shattered, it was Elder Hoof who retrieved the Veridian Flute from the hollow of the Great Oak and pressed it into Ice Heart's scarred paws. His antlers bloom again now, faintly — a reminder that forests can recover from their elders' mistakes.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Petal Burst · Royal Trample · Bramble Lash · Vernal Rebirth</p>
-                    </div>
-
-                    <!-- Grand Tusk -->
-                    <div class="guardian-card reveal">
-                        <div class="guardian-type">Elder Behemoth · Earth / Ice</div>
-                        <div class="guardian-name">Grand Tusk</div>
-                        <img src="../IMG/grand-tusk.png" alt="Grand Tusk" class="char-img-inner" style="width: 100%; border-radius: 8px; margin: 1rem 0;" onerror="this.style.display='none'">
-                        <p class="guardian-desc">The mountain that finally chose to move. Grand Tusk and the Behemoths are ancient planetary creatures, their bodies composed of weathered stone and muscle so massive they are indistinguishable from the peaks themselves. They lived by the Law of the Forge: stillness is strength; to react to the world is to be broken by it. The alien atmospheric stabilizers exploited this perfectly — drying the Glacia Peaks air to protect their machinery from rust, forcing the Behemoths into a life-threatening permanent hibernation. When Ice Heart destroyed the machine and the natural moisture rushed back, Grand Tusk's tusks — encrusted with centuries of ice — cracked as he bowed. In the final battle, he slammed his fists into the sanctum floor and buckled the Central AI's entire support structure.</p>
-                        <div class="guardian-desc" style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Signature Abilities</div>
-                        <p class="guardian-desc" style="font-size: 0.85rem;">Tectonic Stomp · Avalanche of Eyuforyia · Glacial Overgrowth · Crag-Shell Bash</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-        <footer class="footer">
-      <div class="footer-inner" style="display:flex;flex-direction:column;align-items:center;padding:2rem 1rem;">
-        <div class="footer-logo" style="margin-bottom:1.5rem;">QUETIEMALS</div>
-
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1rem 0;margin-bottom:1.5rem;font-size:0.875rem;">
-
-          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-right:32px;margin-right:32px;border-right:1px solid rgba(255,255,255,0.08);">
-            <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#6b7280;font-weight:700;white-space:nowrap;">Ecosystem:</span>
-            <a href="https://teqvault.online" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;transition:color 0.2s;"><svg style="width:16px;height:16px;stroke:currentColor;fill:none;flex-shrink:0;" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Teq Vault</a>
-            <a href="https://eyuforyia.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;transition:color 0.2s;"><svg style="width:16px;height:16px;stroke:currentColor;fill:none;flex-shrink:0;" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Eyuforyia</a>
-            <a href="https://quetiemals.online" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;transition:color 0.2s;"><svg style="width:16px;height:16px;stroke:currentColor;fill:none;flex-shrink:0;" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Quetiemals</a>
+      <article class="g-feature reverse accent-fire reveal">
+        <div class="g-feature-art"><img src="../IMG/hotfly-03.png" alt="Hotly"></div>
+        <div class="g-feature-body">
+          <span class="g-badge">Firebird · Volcanic / Avian</span>
+          <h2>Hotly</h2>
+          <p>The one who didn&#39;t look away. While others returned to their games, Hotly tracked the alien exhaust trails north alone. Her fire rises with her fury. She was first to see the invaders as colonizers, and she saved Ice Heart from the Mirror of Frost with a thermal surge that nearly burned her out. Fierce, aerial, and carrying the resistance&#39;s anger so others can carry hope.</p>
+          <div class="g-abilities">
+            <span class="g-chip">Cinder Swoop</span>
+            <span class="g-chip">Phoenix Rebirth Strike</span>
+            <span class="g-chip">Solar Flare Cloak</span>
+            <span class="g-chip">Will-o&#39;-Wisp Feathers</span>
           </div>
-
-          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-right:32px;margin-right:32px;border-right:1px solid rgba(255,255,255,0.08);">
-            <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#6b7280;font-weight:700;white-space:nowrap;">Socials:</span>
-            <a href="https://www.facebook.com/profile.php?id=61577353297986" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;transition:color 0.2s;"><svg style="width:16px;height:16px;stroke:currentColor;fill:none;flex-shrink:0;" viewBox="0 0 24 24" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Teq Vault</a>
-            <a href="https://www.facebook.com/profile.php?id=61587538385294" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;transition:color 0.2s;"><svg style="width:16px;height:16px;stroke:currentColor;fill:none;flex-shrink:0;" viewBox="0 0 24 24" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Eyuforyia</a>
-            <a href="https://discord.gg/4CAYz2ZCqC" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;transition:color 0.2s;"><svg style="width:16px;height:16px;fill:currentColor;flex-shrink:0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg> Discord</a>
-          </div>
-
-          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-            <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#6b7280;font-weight:700;white-space:nowrap;">Support:</span>
-            <a href="mailto:support@teqvault.online" style="display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;transition:color 0.2s;"><svg style="width:16px;height:16px;stroke:currentColor;fill:none;flex-shrink:0;" viewBox="0 0 24 24" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> support@teqvault.online</a>
-          </div>
-
         </div>
-
-        <p class="footer-copy">© <span id="year"></span> QUETIEMALS | TEQ VAULT LLC</p>
-      </div>
-    </footer>
-
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        // Initialize Lucide Icons for social links
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const navLinks = document.getElementById('nav-links');
-        const menuIcon = document.getElementById('menu-icon');
-
-        if(menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                const isOpen = navLinks.classList.toggle('open');
-                menuBtn.setAttribute('aria-expanded', isOpen);
-                if(isOpen) {
-                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
-                } else {
-                    menuIcon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18'); 
-                }
-            });
-        }
-
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Scroll reveal script
-        const reveals = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    revealObserver.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        reveals.forEach(el => revealObserver.observe(el));
-    </script>
-    <div style="overflow:hidden;flex:1;">
+      </article>
     </div>
-</div>
+
+    <div class="g-roster-label reveal">The Full Vanguard</div>
+    <h2 class="g-roster-title reveal">Every Guardian Who Answered</h2>
+
+    <div class="g-grid">
+      <article class="g-card accent-storm reveal">
+        <div class="g-card-art"><img src="../IMG/volt-04.png" alt="Volt"></div>
+        <div class="g-card-body">
+          <span class="g-badge">Sky Quetie · Storm / Battery</span>
+          <h3>Volt</h3>
+          <p>Storm-engineer of the resistance. Pilot goggles, a massive wrench, ears that spark gold when he&#39;s working. He reverse-engineered alien tech into tools that kept the team alive through the second half of the journey.</p>
+          <div class="g-abilities"><span class="g-chip">Static Strike</span><span class="g-chip">Ionic Discharge</span><span class="g-chip">Eyuforyian Conduit</span><span class="g-chip">Overcharge Jab</span></div>
+        </div>
+      </article>
+
+      <article class="g-card accent-celestial reveal">
+        <div class="g-card-art"><img src="../IMG/nyaqueen.png" alt="NyAqueen"></div>
+        <div class="g-card-body">
+          <span class="g-badge">Sky Queen · Celestial / Wind</span>
+          <h3>NyAqueen</h3>
+          <p>Ruler of the Sky Sanctuary. Calculated and distant — until Ice Heart told her a world of metal needs no sky, only a ceiling. That broke her model. She committed her people to the war.</p>
+          <div class="g-abilities"><span class="g-chip">Prismatic Confusion</span><span class="g-chip">Rainbow Feather Storm</span><span class="g-chip">Crystalline Coronation</span><span class="g-chip">Spectrum Overload</span></div>
+        </div>
+      </article>
+
+      <article class="g-card accent-earth reveal">
+        <div class="g-card-art"><img src="../IMG/yara-02.png" alt="Yara"></div>
+        <div class="g-card-body">
+          <span class="g-badge">Granite Badger · Earth / Nature</span>
+          <h3>Yara</h3>
+          <p>The resistance&#39;s shield. Living granite hide, paws that indent permafrost. Immovable vanguard: she takes what would destroy others, then releases it.</p>
+          <div class="g-abilities"><span class="g-chip">Granite Cleave</span><span class="g-chip">Tectonic Slam</span><span class="g-chip">Garrison of the Peaks</span><span class="g-chip">Granite Aegis</span></div>
+        </div>
+      </article>
+
+      <article class="g-card accent-shadow reveal">
+        <div class="g-card-art"><img src="../IMG/rotten-wide-newnyx.png" alt="Nyx"></div>
+        <div class="g-card-body">
+          <span class="g-badge">Great Horned Owl · Night / Shadow</span>
+          <h3>Nyx</h3>
+          <p>Once locked in the Light-Spires&#39; synthetic addiction. Freed into real darkness, she looked up at the stars and wept. Now she calls the night back wherever the machines tried to erase it.</p>
+          <div class="g-abilities"><span class="g-chip">Shadow Step</span><span class="g-chip">Fracture Peck</span><span class="g-chip">Void-Mirror Warp</span><span class="g-chip">Soul-Burn Howl</span></div>
+        </div>
+      </article>
+
+      <article class="g-card accent-nature reveal">
+        <div class="g-card-art"><img src="../IMG/aurelius-the-bloom-king-04.png" alt="Elder Hoof"></div>
+        <div class="g-card-body">
+          <span class="g-badge">Majestic Stag · Nature / Spirit</span>
+          <h3>Elder Hoof</h3>
+          <p>First to see the vessels. Called them falling stars. Freed from the sonic field, he pressed the Veridian Flute into Ice Heart&#39;s paws. His antlers bloom again — faintly. Forests can recover.</p>
+          <div class="g-abilities"><span class="g-chip">Petal Burst</span><span class="g-chip">Royal Trample</span><span class="g-chip">Bramble Lash</span><span class="g-chip">Vernal Rebirth</span></div>
+        </div>
+      </article>
+
+      <article class="g-card accent-behemoth reveal">
+        <div class="g-card-art"><img src="../IMG/grand-tusk.png" alt="Grand Tusk"></div>
+        <div class="g-card-body">
+          <span class="g-badge">Elder Behemoth · Earth / Ice</span>
+          <h3>Grand Tusk</h3>
+          <p>The mountain that finally chose to move. Forced into deadly hibernation by alien stabilizers, then awakened — and in the final battle, buckled the AI&#39;s support structure with one blow.</p>
+          <div class="g-abilities"><span class="g-chip">Tectonic Stomp</span><span class="g-chip">Avalanche of Eyuforyia</span><span class="g-chip">Glacial Overgrowth</span><span class="g-chip">Crag-Shell Bash</span></div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">QUETIEMALS</div>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="datadeletion.html">Data Deletion</a>
+      <a href="mailto:support@teqvault.online">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> QUETIEMALS | TEQ VAULT LLC</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    const menuIcon = document.getElementById('menu-icon');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+        if (menuIcon) menuIcon.setAttribute('d', open ? 'M6 18L18 6M6 6l12 12' : 'M3 12h18M3 6h18M3 18h18');
+      });
+    }
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50); });
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+  <script src="../SCRIPT/cookie-consent.js"></script>
 </body>
 </html>

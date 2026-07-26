@@ -31,6 +31,7 @@
   <meta name="google-site-verification" content="EwNHriVke6C1HkRrt9NQ9toqw_e5fjX2D9Z-4wwfinc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Lore | Quetiemals</title>
+  <link rel="stylesheet" href="../CSS/theme.css">
   <meta name="description" content="Chronicles of Eyuforyia — the story of a world torn open, corrupted, and fighting to reclaim its soul." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -918,8 +919,7 @@
 
   </style>
   <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7932735753046865"
-         crossorigin="anonymous"></script>
+    <!-- AdSense gated by cookie-consent.js -->
 </head>
 
 <body>
@@ -944,7 +944,8 @@
       <li><a href="HTML/locations.html">World</a></li>
       <li><a href="HTML/playtest.html">Beta Access</a></li>
       <li><a href="HTML/feedback.html">Feedback</a></li>
-    </ul>
+      <li><a href="privacy.html">Privacy</a></li>
+        </ul>
     <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path id="menu-icon" d="M3 12h18M3 6h18M3 18h18"/>
@@ -1339,7 +1340,13 @@
         </div>
       </div>
 
-      <p class="footer-copy" style="font-family: var(--font-display); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.2em;">© 2026 QUETIEMALS | TEQ VAULT</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="datadeletion.html">Data Deletion</a>
+        <a href="mailto:support@teqvault.online">Contact</a>
+      </div>
+      <p class="footer-copy" style="font-family:var(--font-display);font-size:0.7rem;color:var(--text-muted);letter-spacing:0.2em;">© 2026 QUETIEMALS | TEQ VAULT</p>
     </div>
   </footer>
 
@@ -1394,5 +1401,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   </script>
+<script src="../SCRIPT/cookie-consent.js"></script>
 </body>
 </html>
